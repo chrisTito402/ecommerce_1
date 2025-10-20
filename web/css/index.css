@@ -1,0 +1,46 @@
+@import url("../css/global.css");
+
+body{
+    margin: 0px;
+    background-color: var(--bg-color);
+    font-family: var(--font);
+}
+
+
+/*ESTILOS AL NAV*/
+nav{
+    background-color: var(--bg-color-nav);
+}
+
+nav > ul{
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;  
+    padding: 0px;
+}
+
+.nav-item{
+    margin: auto 20px auto 20px;
+    font-size: 30px;        
+}
+
+.nav-item > a{
+    text-decoration: none;
+    color: white;
+}
+
+.nav-item a > img{
+    width: 180px;
+}
+
+.nav-item-container{
+    text-align: center;
+}
+
+#iniciarSesion{
+    display: block;
+    font-size: 20px;
+    text-decoration: underline;
+}
