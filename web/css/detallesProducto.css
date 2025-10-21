@@ -1,0 +1,142 @@
+@import url("../css/global.css");
+
+body {
+    margin: 0px;
+    background-color: var(--bg-color);
+    font-family: var(--font);
+}
+
+
+/*ESTILOS AL NAV*/
+nav {
+    width: 100%;
+}
+
+nav>ul {
+    background-color: var(--bg-color-nav);
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0px;
+}
+
+.nav-item {
+    margin: auto 20px auto 20px;
+    font-size: 30px;
+}
+
+.nav-item>a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-item>a:hover {
+    color: var(--color-azul-grisiento);
+}
+
+.nav-item a>img {
+    width: 180px;
+}
+
+.nav-item a>img:hover {
+    transform: scale(1.1);
+}
+
+.nav-item-container {
+    text-align: center;
+}
+
+#iniciarSesion {
+    display: block;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+/* General */
+main {
+    display: flex;
+    flex-direction: column;   /* Apila las secciones una debajo de otra */
+    align-items: center;      /* Centra las secciones horizontalmente */
+    min-height: 100vh;        /* Ocupa toda la altura de la ventana */
+}
+
+.ordenar {
+    width: 100%;
+}
+
+.rectangulo-centro {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: repeat(2, auto);
+    height: auto;
+    width: 90%;
+    margin: 50px auto;        /* Centra horizontalmente en la página */
+    padding: 20px;
+
+    border-radius: 10px;
+    background-color: var(--bg-color-card);
+    color: white;
+}
+
+.rectangulo-centro > img {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    width: 60%;
+    height: auto;
+    border-radius: 1px;
+    object-fit: cover;
+    justify-self: center;    /* Centra horizontalmente en su celda */
+}
+
+.rectangulo-centro > h2 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    text-align: center;
+    margin: 10px 0 0 0;
+}
+
+.rectangulo-centro > h1, .rectangulo-centro > p {
+    grid-column: 2 / 3;
+}
+
+.rectangulo-centro > h1 {
+    margin-bottom: 5px;
+}
+
+.rectangulo-centro > p {
+    margin-top: 0;
+    text-align: justify;
+}
+
+.comentarios {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: 90%;
+    margin: 50px auto;        /* Centra horizontalmente en la página */
+    text-align: left;
+}
+
+.tuComentario {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: 90%;
+    margin: 50px auto;        /* Centra horizontalmente en la página */
+}
+
+.tuComentario > input {
+    width: 50%;
+}
+
+.tuComentario > button {
+    font-size: larger;
+    height: 25%;
+    width: 15%;
+    margin-top: 5px;
+    border-radius: 5px;
+    color: var(--bg-color-card);
+    background-color: var(--color-azul-grisiento);
+}
