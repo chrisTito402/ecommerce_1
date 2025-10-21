@@ -1,0 +1,42 @@
+@import url("../css/global.css");
+
+.seccion-catalogo {
+    color: white;
+    width: 60%;
+    margin: 0 auto; /* Añadido: Para centrar la sección en la página */
+    height: auto;
+    background-color: var(--bg-color-card);
+    padding-top: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.seccion-catalogo > h1 {
+    text-align: center;
+}
+
+.seccion-catalogo > .producto-catalogo > .info-producto > .nombre-album {
+    font-size: 150%;
+}
+
+.seccion-catalogo > .producto-catalogo > img {
+    width: 20%;
+    height: auto;
+}
+
+.seccion-catalogo > .producto-catalogo {
+    border: 1px solid lightgray;
+    border-radius: 15px;
+
+    /* --- AÑADE ESTAS LÍNEAS --- */
+    display: flex;        /* Pone los elementos (imagen y div de texto) en fila */
+    align-items: center;  /* Los alinea verticalmente al centro */
+    gap: 20px;            /* Crea un espacio entre la imagen y el texto */
+    margin-bottom: 20px;  /* Añadido: Para separar los productos entre sí */
+}
+
+/* Opcional: para quitar márgenes extra de los párrafos */
+.info-producto p {
+    margin: 5px 0;
+}
+
