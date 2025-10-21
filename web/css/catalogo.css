@@ -3,7 +3,7 @@
 .seccion-catalogo {
     color: white;
     width: 60%;
-    margin: 0 auto; /* Añadido: Para centrar la sección en la página */
+    margin: 0 auto;
     height: auto;
     background-color: var(--bg-color-card);
     padding-top: 1%;
@@ -28,15 +28,12 @@
     border: 1px solid lightgray;
     border-radius: 15px;
 
-    /* --- AÑADE ESTAS LÍNEAS --- */
-    display: flex;        /* Pone los elementos (imagen y div de texto) en fila */
-    align-items: center;  /* Los alinea verticalmente al centro */
-    gap: 20px;            /* Crea un espacio entre la imagen y el texto */
-    margin-bottom: 20px;  /* Añadido: Para separar los productos entre sí */
+    display: flex;   
+    align-items: center; 
+    gap: 20px;            
+    margin-bottom: 20px;
 }
 
-/* Opcional: para quitar márgenes extra de los párrafos */
 .info-producto p {
     margin: 5px 0;
 }
-
