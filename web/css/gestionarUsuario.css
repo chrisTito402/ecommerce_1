@@ -76,6 +76,7 @@ nav > ul > li > a:hover{
 #seccion-usuarios{
     width: 98%;
     background-color: var(--bg-color-card);
+    border-radius: 10px;
     margin: auto;
 }
 
@@ -93,6 +94,10 @@ table{
 th{
     color: white;
     font-size: 20px;
+}
+
+td{
+    padding-top: 10px;
 }
 
 td{
