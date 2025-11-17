@@ -1,0 +1,5 @@
+DAOs\UsuarioMokitoDAO.class
+IPersistencia\IPersistencia.class
+DAOs\PersistenciaDAO.class
+IPersistencia\IUsuarioDAO.class
+entidades\Usuario.class
