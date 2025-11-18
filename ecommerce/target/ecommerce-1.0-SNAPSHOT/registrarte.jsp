@@ -16,7 +16,7 @@
     <body>
         <main>
             <section id="seccion-formulario">
-                <a href="../html/index.html"><img src="IMGS/Vinylia.png" alt=""></a>
+                <a href="/index"><img src="IMGS/Vinylia.png" alt=""></a>
                 <h2>Registrarte</h2>
                 <form action="/registrarte" method="post">
                     <div class="nombre">

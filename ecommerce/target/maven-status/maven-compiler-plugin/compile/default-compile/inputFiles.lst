@@ -1,14 +1,17 @@
+C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\filtros\NoJSPFilter.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\AutenticacionServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\mappers\ProductoMapper.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\dtos\ProductoDTO.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\resources\JakartaEE10Resource.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\filtros\AuthFilter.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\negocio\ProductoBO.java
+C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\CerrarSesionServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\filtros\LogFilter.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\JakartaRestConfiguration.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\mappers\UsuarioMapper.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\IniciarSesionServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\dtos\UsuarioDTO.java
+C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\PerfilServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\IndexServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\negocio\AutenticacionBO.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\RegistrarteServlet.java
