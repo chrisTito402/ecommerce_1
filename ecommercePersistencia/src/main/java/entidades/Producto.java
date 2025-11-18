@@ -5,7 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -23,8 +26,28 @@ public class Producto implements Serializable {
     
     @Column(name = "nombre", unique = true, nullable = false, length = 200)
     private String nombre;
+    @Column(name = "precio", nullable = false)
+    private Double precio;
+    @Column(name = "categoria", nullable = false, length = 200)
+    private String categoria;
+    @OneToOne(cascade = {CascadeType.PERSIST})
+    @JoinColumn(name = "ficha_id")
+    private FichaDetalladaProducto ficha;
 
     public Producto() {
+    }
+
+    public Producto(Long id, String nombre, Double precio, String categoria) {
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.categoria = categoria;
+    }
+
+    public Producto(String nombre, Double precio, String categoria) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.categoria = categoria;
     }
 
     public Producto(String nombre) {
@@ -37,6 +60,38 @@ public class Producto implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(Double precio) {
+        this.precio = precio;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public FichaDetalladaProducto getFicha() {
+        return ficha;
+    }
+
+    public void setFicha(FichaDetalladaProducto ficha) {
+        this.ficha = ficha;
     }
 
     @Override
