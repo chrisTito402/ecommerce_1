@@ -52,7 +52,7 @@ public class ReseniasServlet extends HttpServlet {
         List<Resenias> lista = reseniasBO.consultarResenias();
         request.setAttribute("listaResenias", lista);
 
-        request.getRequestDispatcher("/WEB-INF/admin/resenias.jsp")
+        request.getRequestDispatcher("resenias.jsp")
                 .forward(request, response);
     }
 
