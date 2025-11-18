@@ -17,7 +17,7 @@
 <body>
     <main>
         <section id="seccion-formulario">
-            <a href="/index"><img src="../IMGS/Vinylia.png" alt=""></a>
+            <a href="#"><img src="../IMGS/Vinylia.png" alt=""></a>
             <h2>Inicio de Sesion</h2>
             <form action="/autenticacion" method="post">
                 <div class="correo">
