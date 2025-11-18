@@ -1,0 +1,113 @@
+@import url("../css/global.css");
+
+body{
+    background-color: var(--bg-color);
+    margin: 0px;
+}
+
+nav{
+        background-color: var(--bg-color-nav);
+}
+
+/*Estilos de nav*/
+nav > ul{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+nav > ul > li{
+    list-style-type: none;
+    margin: auto auto auto auto;
+}
+
+nav > ul > li > a:hover{
+    color: var(--color-azul-grisiento);
+
+}
+
+.nav-item-usuarios{
+    flex-basis: 5%;
+    margin-right: 50px;
+}
+
+.nav-item-productos{
+    flex-basis: 10%;
+}
+
+.nav-item-img{
+    flex-basis: 60%;
+    width: 180px;   
+}
+
+.nav-item-img > a > img{
+    display: block;
+    margin: auto 25% auto 25%;
+    width: 180px;   
+}
+
+.nav-item-img > a > img:hover{
+    transform: scale(1.2);
+}
+
+.nav-item-img > span{
+    display: block;
+    color: white;
+    font-size: 20px;
+    margin: auto 22% auto 22%;
+    font-weight: bold;
+}
+
+.nav-item-historial-pagos{
+    flex-basis: 10%;
+}
+
+.nav-item > a{
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/*SECCION GESTIONAR CUENTAS*/
+#seccion-usuarios{
+    width: 98%;
+    background-color: var(--bg-color-card);
+    margin: auto;
+}
+
+#seccion-usuarios > h2{
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+
+table{
+    margin: auto;
+}
+
+
+th{
+    color: white;
+    font-size: 20px;
+}
+
+td{
+    text-align: center;
+    width: 200px;
+    color: #E0FBFC;
+}
+
+td > i{
+    color: white;
+}
+
+td > i:hover{
+    color: #E0FBFC;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+

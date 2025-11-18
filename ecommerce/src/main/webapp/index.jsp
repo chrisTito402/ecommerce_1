@@ -32,28 +32,28 @@
                         <p class="nombre-album">Por que La Demora</p>
                         <p class="puntuacion">4.5 Stars</p>
                         <p class="detalles"><a href="../html/detallesProducto.html">Ver Detalles</a></p>
-                        <div class="agregar-a-carrito">AÃ±adir A Carrito</div>
+                        <div class="agregar-a-carrito">Añadir A Carrito</div>
                     </div>
                     <div class="card-producto">
                         <img src="../imgs/imgsProductos/DebiTirarMasFotosAlbum.jfif" alt="">
                         <p class="nombre-album">Debi Tirar Mas Fotos</p>
                         <p class="puntuacion">4.0 Stars</p>
                         <p class="detalles"><a href="#">Ver Detalles</a></p>
-                        <div class="agregar-a-carrito">AÃ±adir A Carrito</div>
+                        <div class="agregar-a-carrito">Añadir A Carrito</div>
                     </div>
                     <div class="card-producto">
                         <img src="../imgs/imgsProductos/adisonAlbum.jpg" alt="">
                         <p class="nombre-album">Adison</p>
                         <p class="puntuacion">3.8 Stars</p>
                         <p class="detalles"><a href="#">Ver Detalles</a></p>
-                        <div class="agregar-a-carrito">AÃ±adir A Carrito</div>
+                        <div class="agregar-a-carrito">Añadir A Carrito</div>
                     </div>
                     <div class="card-producto">
                         <img src="../imgs/imgsProductos/letGoLettersAlbum.jfif" alt="">
                         <p class="nombre-album">Let Go Letters</p>
                         <p class="puntuacion">4.5 Stars</p>
                         <p class="detalles"><a href="#">Ver Detalles</a></p>
-                        <div class="agregar-a-carrito">AÃ±adir A Carrito</div>
+                        <div class="agregar-a-carrito">Añadir A Carrito</div>
                     </div>
                 </div>
             </section>
