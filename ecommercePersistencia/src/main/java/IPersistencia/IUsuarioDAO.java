@@ -11,4 +11,6 @@ public interface IUsuarioDAO {
     
     public void registrarUsuario(Usuario usuario);
     
+    public void editarUsuario(Usuario usuario);
+    
 }

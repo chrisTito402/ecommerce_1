@@ -46,5 +46,22 @@ public class UsuarioMokitoDAO implements IUsuarioDAO{
     public void registrarUsuario(Usuario usuario) {
         listaUsuarios.add(usuario);
     }
+
+    @Override
+    public void editarUsuario(Usuario usuario) {
+        int index = 0;
+        
+        for (Usuario user : listaUsuarios) {
+            if(user.getCorreo().equals(usuario.getCorreo())){
+                user.setNombre(usuario.getNombre());
+                user.setTelefono(usuario.getTelefono());
+                user.setDireccion(usuario.getDireccion());
+                user.setCorreo(usuario.getCorreo());
+                user.setContraseña(usuario.getContraseña());
+                listaUsuarios.set(index, user);
+            }
+            index++;
+        }
+    }
     
 }

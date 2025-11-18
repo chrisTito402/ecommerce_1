@@ -44,7 +44,7 @@ public class AutenticacionBO {
         }
         
         UsuarioMapper usuarioMapper = new UsuarioMapper();
-        Usuario usuario = usuarioMapper.toDTO(usuarioDTO);
+        Usuario usuario = usuarioMapper.toEntity(usuarioDTO);
         
         persistencia.registrarUsuario(usuario);
     }

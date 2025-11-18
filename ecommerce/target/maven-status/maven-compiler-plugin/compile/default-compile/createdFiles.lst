@@ -10,10 +10,12 @@ com\mycompany\ecommerce\servlets\IndexServlet.class
 com\mycompany\ecommerce\servlets\PerfilServlet.class
 com\mycompany\ecommerce\negocio\ReseniasBO.class
 com\mycompany\ecommerce\servlets\RegistrarteServlet.class
+com\mycompany\ecommerce\negocio\UsuarioBO.class
 com\mycompany\ecommerce\servlets\IniciarSesionServlet.class
 com\mycompany\ecommerce\resources\JakartaEE10Resource.class
 com\mycompany\ecommerce\servlets\AutenticacionServlet.class
 com\mycompany\ecommerce\dtos\UsuarioDTO.class
+com\mycompany\ecommerce\servlets\ModificarUsuario.class
 com\mycompany\ecommerce\servlets\EliminarReseniaServlet.class
 com\mycompany\ecommerce\servlets\ReseniasServlet.class
 com\mycompany\ecommerce\filtros\NoJSPFilter.class

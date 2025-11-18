@@ -8,6 +8,7 @@ C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommer
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\negocio\ProductoBO.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\EliminarReseniaServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\CerrarSesionServlet.java
+C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\ModificarUsuario.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\filtros\LogFilter.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\JakartaRestConfiguration.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\mappers\UsuarioMapper.java
@@ -17,4 +18,5 @@ C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommer
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\PerfilServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\IndexServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\negocio\AutenticacionBO.java
+C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\negocio\UsuarioBO.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\RegistrarteServlet.java

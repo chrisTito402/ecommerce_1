@@ -16,12 +16,14 @@ public interface IPersistencia {
 
     public void registrarUsuario(Usuario usuario);
 
+    public void editarUsuario(Usuario usuario);
     
     public List<Producto> consultarProductos();
 
 
-    List<Resenias> consultarResenias();
+    public List<Resenias> consultarResenias();
 
-    void eliminarResenia(int id);
+    public void eliminarResenia(int id);
+    
 
 }

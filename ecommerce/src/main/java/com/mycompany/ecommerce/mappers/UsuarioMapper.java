@@ -8,7 +8,7 @@ import entidades.Usuario;
  * @author janot
  */
 public class UsuarioMapper {
-    public Usuario toDTO(UsuarioDTO usuarioDTO){
+    public Usuario toEntity(UsuarioDTO usuarioDTO){
         return new Usuario(
                 usuarioDTO.getNombre(), 
                 usuarioDTO.getTelefono(), 
@@ -16,4 +16,14 @@ public class UsuarioMapper {
                 usuarioDTO.getCorreo(), 
                 usuarioDTO.getContraseña());
     }
+    
+    public UsuarioDTO toDTO(Usuario usuario){
+        return new UsuarioDTO(
+                usuario.getNombre(), 
+                usuario.getTelefono(), 
+                usuario.getDireccion(), 
+                usuario.getCorreo(), 
+                usuario.getContraseña());
+    }
+    
 }

@@ -52,4 +52,9 @@ public class PersistenciaDAO implements IPersistencia.IPersistencia {
     public void eliminarResenia(int id) {
         RESENIASDAO.eliminarResenia(id);
     }
+
+    @Override
+    public void editarUsuario(Usuario usuario) {
+        USUARIODAO.editarUsuario(usuario);
+    }
 }

@@ -73,23 +73,23 @@ nav > ul{
     color: white;
 }
 
-.rectangulo-centro > .perfil {
+.rectangulo-centro > form > .perfil {
     text-align: left;
     margin-left: 25%;
 }
 
-.rectangulo-centro > h1 {
+.rectangulo-centro > form > h1 {
     text-align: center;
 }
 
-.rectangulo-centro > input {
+.rectangulo-centro  > form > input {
     text-align: left;
     font-size: medium;
     margin-left: 25%;
     width: 50%;
 }
 
-.rectangulo-centro > div {
+.rectangulo-centro > form > div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -97,7 +97,7 @@ nav > ul{
     height: 150px;
 }
 
-.rectangulo-centro > div > button {
+.rectangulo-centro > form > div > input {
     font-size: larger;
     height: 40%;
     width: 30%;
@@ -107,7 +107,7 @@ nav > ul{
     background-color: var(--color-azul-grisiento);
 }
 
-.rectangulo-centro > div > .cerrar-sesion {
+.rectangulo-centro > form > div > .cerrar-sesion {
     font-size: larger;
     width: 30%;
     margin-top: 5px;
@@ -116,6 +116,12 @@ nav > ul{
     background-color: red;
 }
 
-a{
+form > div > a{
     text-align: center;
+}
+
+.mensaje{
+    color: red;
+    font-size: 14px;
+    font-weight:normal;
 }

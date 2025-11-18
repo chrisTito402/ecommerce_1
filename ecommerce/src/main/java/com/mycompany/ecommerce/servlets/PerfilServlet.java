@@ -38,6 +38,18 @@ public class PerfilServlet extends HttpServlet {
             request.getRequestDispatcher("/iniciarSesion.jsp").forward(request, response);
         }
     }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        HttpSession sesion = request.getSession(false);
+        if(sesion != null){
+            request.getRequestDispatcher("/perfil.jsp").forward(request, response);
+        }
+        else{
+            request.getRequestDispatcher("/iniciarSesion.jsp").forward(request, response);
+        }
+    }
 
 
 }
