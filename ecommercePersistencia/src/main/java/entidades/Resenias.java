@@ -10,19 +10,19 @@ package entidades;
  */
 public class Resenias {
 
-     private int id;
-    private String usuarioCorreo;   
-    private String productoNombre;  
+    private int id;
+    private String usuarioCorreo;
+    private int idProducto;
     private String comentario;
     private int rating;
 
     public Resenias() {
     }
 
-    public Resenias(int id, String usuarioCorreo, String productoNombre, String comentario, int rating) {
+    public Resenias(int id, String usuarioCorreo, int idProducto, String comentario, int rating) {
         this.id = id;
         this.usuarioCorreo = usuarioCorreo;
-        this.productoNombre = productoNombre;
+        this.idProducto = idProducto;
         this.comentario = comentario;
         this.rating = rating;
     }
@@ -43,12 +43,12 @@ public class Resenias {
         this.usuarioCorreo = usuarioCorreo;
     }
 
-    public String getProductoNombre() {
-        return productoNombre;
+    public int getIdProducto() {
+        return idProducto;
     }
 
-    public void setProductoNombre(String productoNombre) {
-        this.productoNombre = productoNombre;
+    public void setIdProducto(int idProducto) {
+        this.idProducto = idProducto;
     }
 
     public String getComentario() {

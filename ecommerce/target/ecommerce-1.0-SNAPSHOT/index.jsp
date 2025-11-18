@@ -17,7 +17,7 @@
     </head>
     <body>
         <%@include file="FRAGMENTOS/navegacion.jspf"%>
-        
+
         <main>
             <section id="seccion-banner">
                 <img src="IMGS/banner.png" alt="">
@@ -30,11 +30,15 @@
                             <img src="${producto.getRutaImg()}" alt="">
                             <p class="nombre-album">${producto.getNombre()}</p>
                             <p class="puntuacion">${producto.getEstrellas()}</p>
-                            <p class="detalles"><a href="../html/detallesProducto.html">Ver Detalles</a></p>
+                            <p class="detalles">
+                                <a href="${pageContext.request.contextPath}/DetalleProducto?id=${producto.getId()}">
+                                    Ver Detalles
+                                </a>
+                            </p>
                             <div class="agregar-a-carrito">Añadir A Carrito</div>
                         </div>
                     </c:forEach>
-                    
+
                     <!-- <div class="card-producto">
                         <img src="../IMGS/imgsProductos/porqueLaDemora.jpg" alt="">
                         <p class="nombre-album">Por que La Demora</p>

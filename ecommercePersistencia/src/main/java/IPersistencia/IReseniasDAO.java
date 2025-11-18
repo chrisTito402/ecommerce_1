@@ -14,7 +14,9 @@ import java.util.List;
 public interface IReseniasDAO {
 
     List<Resenias> consultarResenias();
-    
+
     void eliminarResenia(int id);
+    
+    List<Resenias> consultarReseniasPorProducto(int idProducto);
 
 }

@@ -26,11 +26,11 @@ public class ProductoDTO {
         this.categorias = categorias;
     }
 
-    public int getIdProducto() {
+    public int getId() {
         return idProducto;
     }
 
-    public void setIdProducto(int idProducto) {
+    public void setId(int idProducto) {
         this.idProducto = idProducto;
     }
 
