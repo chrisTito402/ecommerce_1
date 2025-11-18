@@ -39,6 +39,8 @@ public class AuthFilter implements Filter {
         PATH_PUBLICOS.add("registrarte.jsp");
         PATH_PUBLICOS.add("iniciarSesion");
         PATH_PUBLICOS.add("registrarte");
+        PATH_PUBLICOS.add("index.jsp");
+        PATH_PUBLICOS.add("index");
     }    
     
     private void doBeforeProcessing(ServletRequest request, ServletResponse response)

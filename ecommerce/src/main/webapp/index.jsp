@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,18 +16,8 @@
         <title>Vinylia</title>
     </head>
     <body>
-        <header>
-            <nav>
-                <ul>
-                    <li class="nav-item"><a href="../html/catalogo.html">Catalogo</a></li>
-                    <li class="nav-item"><a href="../html/index.html"><img src="IMGS/Vinylia.png" alt=""></a></li>
-                    <div class="nav-item-container nav-item">
-                    <li class="nav-item"><a href="../html/carrito.html"><i class="fa-solid fa-cart-shopping"> 3</a></i></li>
-                    <li class="nav-item"><a href="../html/iniciarSesion.html" id="iniciarSesion">Iniciar Sesion</a></li>
-                    </div>
-                </ul>
-            </nav>
-        </header>
+        <%@include file="FRAGMENTOS/navegacion.jspf"%>
+        
         <main>
             <section id="seccion-banner">
                 <img src="IMGS/banner.png" alt="">
@@ -34,7 +25,17 @@
             <section id="seccion-trending">
                 <h2>Trending</h2>
                 <div class="container-productos">
-                    <div class="card-producto">
+                    <c:forEach items="${requestScope.productos}" var="producto" begin="0" end="${requestScope.productos.size()}">
+                        <div class="card-producto">
+                            <img src="${producto.getRutaImg()}" alt="">
+                            <p class="nombre-album">${producto.getNombre()}</p>
+                            <p class="puntuacion">${producto.getEstrellas()}</p>
+                            <p class="detalles"><a href="../html/detallesProducto.html">Ver Detalles</a></p>
+                            <div class="agregar-a-carrito">Añadir A Carrito</div>
+                        </div>
+                    </c:forEach>
+                    
+                    <!-- <div class="card-producto">
                         <img src="../IMGS/imgsProductos/porqueLaDemora.jpg" alt="">
                         <p class="nombre-album">Por que La Demora</p>
                         <p class="puntuacion">4.5 Stars</p>
@@ -62,6 +63,7 @@
                         <p class="detalles"><a href="#">Ver Detalles</a></p>
                         <div class="agregar-a-carrito">Añadir A Carrito</div>
                     </div>
+                    -->
                 </div>
             </section>
         </main>

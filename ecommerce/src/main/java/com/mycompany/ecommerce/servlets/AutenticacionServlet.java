@@ -49,7 +49,7 @@ public class AutenticacionServlet extends HttpServlet {
         if(usuarioLogueado != null){
             HttpSession sesion = request.getSession(true);
             sesion.setAttribute(AuthFilter.SESSION_KEY, usuarioLogueado);
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
+            request.getRequestDispatcher("index").forward(request, response);
             return;
         }
         else{
