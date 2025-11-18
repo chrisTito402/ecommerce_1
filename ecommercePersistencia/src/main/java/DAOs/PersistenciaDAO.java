@@ -3,6 +3,11 @@ package DAOs;
 import IPersistencia.IProductoDAO;
 import IPersistencia.IUsuarioDAO;
 import entidades.Producto;
+
+import IPersistencia.IReseniasDAO;
+import IPersistencia.IUsuarioDAO;
+import entidades.Resenias;
+
 import entidades.Usuario;
 import java.util.List;
 
@@ -10,18 +15,22 @@ import java.util.List;
  *
  * @author janot
  */
-public class PersistenciaDAO implements IPersistencia.IPersistencia{
+public class PersistenciaDAO implements IPersistencia.IPersistencia {
+
     private final IUsuarioDAO USUARIODAO;
+    private final IReseniasDAO RESENIASDAO;
     private final IProductoDAO PRODUCTODAO;
 
     public PersistenciaDAO() {
         USUARIODAO = UsuarioMokitoDAO.getInstance();
         PRODUCTODAO = ProductoMokitoDAO.getInstance();
+        RESENIASDAO = ReseniasDAO.getInstance();
+
     }
-    
+
     @Override
     public Usuario consultarUsuario(String correo) {
-       return USUARIODAO.consultarUsuario(correo);
+        return USUARIODAO.consultarUsuario(correo);
     }
 
     @Override
@@ -33,5 +42,14 @@ public class PersistenciaDAO implements IPersistencia.IPersistencia{
     public List<Producto> consultarProductos() {
         return PRODUCTODAO.consultarProductos();
     }
-    
+
+    @Override
+    public List<Resenias> consultarResenias() {
+        return RESENIASDAO.consultarResenias();
+    }
+
+    @Override
+    public void eliminarResenia(int id) {
+        RESENIASDAO.eliminarResenia(id);
+    }
 }
