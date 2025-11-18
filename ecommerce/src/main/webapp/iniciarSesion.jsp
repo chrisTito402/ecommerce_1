@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/iniciarSesion.css">
+        <title>Iniciar Sesion</title>
+    </head>
+    <body>
+        <main>
+            <section id="seccion-formulario">
+                <a href="../html/index.html"><img src="../imgs/Vinylia.png" alt=""></a>
+                <h2>Inicio de Sesion</h2>
+                <form action="">
+                    <div class="correo">
+                        <label for="">Correo Electronico</label>
+                        <input type="email">
+                    </div>
+                    <div class="contraseña">
+                        <label for="">Contraseña</label>
+                        <input type="password">
+                    </div>
+                    <div class="iniciar-sesion">
+                        <input type="button" value="Iniciar Sesion">
+                    </div>
+                </form>
+                <a href="../html/registrarte.html">Registrarte</a>
+            </section>
+        </main>
+    </body>
+</html>

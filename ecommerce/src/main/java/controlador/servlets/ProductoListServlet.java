@@ -1,4 +1,4 @@
-package modelo.servlets;
+package controlador.servlets;
 
 import jakarta.servlet.ServletConfig;
 import java.io.IOException;
