@@ -1,0 +1,107 @@
+/* 
+    Created on : 11 nov 2025, 01:41:15
+    Author     : janot
+*/
+@import url("global.css");
+
+body{
+    background-color: var(--bg-color);
+    font-family: var(--font);
+}
+
+img{
+    display: block;
+    width: 200px;
+    margin: auto;
+}
+
+#seccion-formulario{
+    margin: 3% auto auto auto;
+    width: 40%;
+    background-color: var(--bg-color-card);
+    border: 4px solid var(--bg-color-card);
+    border-radius: 15px;
+}
+
+#seccion-formulario > h2{
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+
+#seccion-formulario > form{
+    margin-top: 30px;
+}
+
+.correo > label{
+    display: block;
+    width: 70%;
+    margin: auto;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.correo > input{
+    display: block;
+    width: 70%;
+    margin: auto;
+    height: 30px;
+    border-radius: 10px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.contraseña > label{
+    display: block;
+    width: 70%;
+    margin: auto;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.contraseña > input{
+    display: block;
+    width: 70%;
+    height: 30px;
+    border-radius: 10px;
+    margin: auto;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.iniciar-sesion > input{
+    display: block;
+    width: 45%;
+    height: 50px;
+    margin: 30px auto auto auto;
+    background-color: var(--color-azul-grisiento);
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.iniciar-sesion > input:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#seccion-formulario > a{
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: var(--color-azul-grisiento);
+}
+
+#seccion-formulario > a:hover{
+    transform: scale(1.1);
+    color: var(--bg-color-nav);
+}
+
+#mensaje-error{
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: red;
+}

@@ -16,8 +16,8 @@
                         <label for="">Correo Electronico</label>
                         <input type="email">
                     </div>
-                    <div class="contraseña">
-                        <label for="">Contraseña</label>
+                    <div class="contraseÃ±a">
+                        <label for="">ContraseÃ±a</label>
                         <input type="password">
                     </div>
                     <div class="iniciar-sesion">
