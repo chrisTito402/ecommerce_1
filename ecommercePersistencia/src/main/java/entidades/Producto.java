@@ -1,22 +1,35 @@
 package entidades;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Table;
 
 /**
  *
  * @author daniel
  */
 @Entity
+@Table(name = "Productos")
 public class Producto implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    @Column(name = "nombre", unique = true, nullable = false, length = 200)
+    private String nombre;
+
+    public Producto() {
+    }
+
+    public Producto(String nombre) {
+        this.nombre = nombre;
+    }
 
     public Long getId() {
         return id;
