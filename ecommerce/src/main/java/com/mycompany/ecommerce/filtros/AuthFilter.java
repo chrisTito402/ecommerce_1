@@ -34,12 +34,9 @@ public class AuthFilter implements Filter {
     
     public AuthFilter() {
         PATH_PUBLICOS = new LinkedList<>();
-        PATH_PUBLICOS.add("iniciarSesion.jsp");
         PATH_PUBLICOS.add("autenticacion");
-        PATH_PUBLICOS.add("registrarte.jsp");
         PATH_PUBLICOS.add("iniciarSesion");
         PATH_PUBLICOS.add("registrarte");
-        PATH_PUBLICOS.add("index.jsp");
         PATH_PUBLICOS.add("index");
     }    
     
