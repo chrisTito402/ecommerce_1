@@ -56,6 +56,7 @@ public class ModificarUsuario extends HttpServlet {
             if(esValido){
                 UsuarioDTO usuarioDTO = new UsuarioDTO(nombre, telefono, direccion, correo, password);
                 session.setAttribute(AuthFilter.SESSION_KEY, usuarioDTO);
+                usuarioBO.modificarUsuario(usuarioDTO);
             }
             request.getRequestDispatcher("/perfil").forward(request, response);
         }
