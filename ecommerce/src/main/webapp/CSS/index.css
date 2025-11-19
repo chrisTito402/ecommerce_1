@@ -133,6 +133,11 @@ nav > ul{
     font-size: 25px;
 }
 
+.agregar-a-carrito > a{
+    text-decoration: none;
+    color: var(--bg-color-card);
+}
+
 .agregar-a-carrito:hover{
     transform: scale(1.1);
     cursor: pointer;

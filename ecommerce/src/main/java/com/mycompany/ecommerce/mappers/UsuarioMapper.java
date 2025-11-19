@@ -18,12 +18,16 @@ public class UsuarioMapper {
     }
     
     public UsuarioDTO toDTO(Usuario usuario){
-        return new UsuarioDTO(
+        UsuarioDTO usuarioDTO = new UsuarioDTO(
                 usuario.getNombre(), 
                 usuario.getTelefono(), 
                 usuario.getDireccion(), 
                 usuario.getCorreo(), 
                 usuario.getContraseña());
+        
+        usuarioDTO.setCarrito(usuario.getCarrito());
+        
+        return usuarioDTO;
     }
     
 }

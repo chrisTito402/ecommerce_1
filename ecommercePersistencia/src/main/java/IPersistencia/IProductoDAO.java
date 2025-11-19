@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface IProductoDAO {
     public List<Producto> consultarProductos();
+    
+    public Producto consultarProducto(int idProducto);
 }

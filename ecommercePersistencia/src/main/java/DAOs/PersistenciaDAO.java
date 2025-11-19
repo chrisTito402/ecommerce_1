@@ -57,4 +57,9 @@ public class PersistenciaDAO implements IPersistencia.IPersistencia {
     public void editarUsuario(Usuario usuario) {
         USUARIODAO.editarUsuario(usuario);
     }
+
+    @Override
+    public Producto consultarProducto(int idProducto) {
+        return PRODUCTODAO.consultarProducto(idProducto);
+    }
 }

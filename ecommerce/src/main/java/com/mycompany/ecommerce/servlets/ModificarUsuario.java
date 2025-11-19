@@ -54,7 +54,9 @@ public class ModificarUsuario extends HttpServlet {
         
         if(session != null){
             if(esValido){
+                UsuarioDTO usuarioSinModificar = (UsuarioDTO) session.getAttribute(AuthFilter.SESSION_KEY);
                 UsuarioDTO usuarioDTO = new UsuarioDTO(nombre, telefono, direccion, correo, password);
+                usuarioDTO.setCarrito(usuarioSinModificar.getCarrito());
                 session.setAttribute(AuthFilter.SESSION_KEY, usuarioDTO);
                 usuarioBO.modificarUsuario(usuarioDTO);
             }

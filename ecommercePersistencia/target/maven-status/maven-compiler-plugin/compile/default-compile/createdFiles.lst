@@ -1,12 +1,13 @@
-IPersistencia\IReseniasDAO.class
 IPersistencia\IPersistencia.class
+IPersistencia\IProductoDAO.class
+DAOs\PersistenciaDAO.class
+DAOs\ReseniasDAO.class
+IPersistencia\IReseniasDAO.class
 IPersistencia\IUsuarioDAO.class
 entidades\Resenias.class
 DAOs\ProductoMokitoDAO.class
-IPersistencia\IProductoDAO.class
 entidades\Producto.class
 DAOs\UsuarioMokitoDAO.class
 prueba\main.class
-DAOs\PersistenciaDAO.class
-DAOs\ReseniasDAO.class
+entidades\Carrito.class
 entidades\Usuario.class

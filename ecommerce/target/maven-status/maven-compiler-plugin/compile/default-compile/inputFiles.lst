@@ -9,9 +9,11 @@ C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommer
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\EliminarReseniaServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\CerrarSesionServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\ModificarUsuario.java
+C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\CarritoServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\filtros\LogFilter.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\JakartaRestConfiguration.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\mappers\UsuarioMapper.java
+C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\AgregarProductoAlCarritoServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\IniciarSesionServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\ReseniasServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\dtos\UsuarioDTO.java

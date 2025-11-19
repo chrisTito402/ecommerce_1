@@ -37,4 +37,16 @@ public class ProductoMokitoDAO implements IProductoDAO{
         return listaProductos;
     }
 
+    @Override
+    public Producto consultarProducto(int idProducto) {
+        Producto productoABuscar = null;
+        for (Producto producto: listaProductos) {
+            if (producto.getIdProducto() == idProducto) {
+                productoABuscar = producto;
+            }
+        }
+        
+        return productoABuscar;
+    }
+
 }

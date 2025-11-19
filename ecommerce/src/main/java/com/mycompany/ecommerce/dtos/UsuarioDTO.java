@@ -1,5 +1,8 @@
 package com.mycompany.ecommerce.dtos;
 
+import entidades.Carrito;
+import entidades.Producto;
+
 /**
  *
  * @author janot
@@ -10,6 +13,7 @@ public class UsuarioDTO {
     private String direccion;
     private String correo;
     private String contraseña;
+    private Carrito carrito;
 
     public UsuarioDTO(String nombre, String telefono, String direccion, String correo, String contraseña) {
         this.nombre = nombre;
@@ -37,5 +41,17 @@ public class UsuarioDTO {
 
     public String getContraseña() {
         return contraseña;
+    }
+
+    public Carrito getCarrito() {
+        return carrito;
+    }
+
+    public void setCarrito(Carrito carrito) {
+        this.carrito = carrito;
+    }
+    
+    public void agregarProductoAlCarrito(Producto producto){
+        carrito.agregarProducto(producto);
     }
 }

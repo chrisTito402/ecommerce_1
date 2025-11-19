@@ -29,4 +29,10 @@ public class ProductoBO {
         }
         return listaProductoDTO;
     }
+    
+    public ProductoDTO consultarProducto(int idProducto){
+        ProductoMapper productoMapper = new ProductoMapper();
+        Producto producto = persistencia.consultarProducto(idProducto);
+        return productoMapper.toDTO(producto);
+    }
 }

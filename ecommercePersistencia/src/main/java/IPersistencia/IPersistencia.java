@@ -25,5 +25,7 @@ public interface IPersistencia {
 
     public void eliminarResenia(int id);
     
+    public Producto consultarProducto(int idProducto);
+    
 
 }

@@ -10,6 +10,7 @@ public class Usuario {
     private String direccion;
     private String correo;
     private String contraseña;
+    private Carrito carrito;
 
     public Usuario() {
     }
@@ -20,6 +21,7 @@ public class Usuario {
         this.direccion = direccion;
         this.correo = correo;
         this.contraseña = contraseña;
+        this.carrito = new Carrito();
     }
 
     public String getNombre() {
@@ -60,6 +62,14 @@ public class Usuario {
 
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
+    }
+
+    public Carrito getCarrito() {
+        return carrito;
+    }
+
+    public void setCarrito(Carrito carrito) {
+        this.carrito = carrito;
     }
 
     @Override

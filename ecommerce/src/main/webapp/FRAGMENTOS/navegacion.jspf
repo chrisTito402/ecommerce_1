@@ -11,7 +11,20 @@
             <li class="nav-item"><a href="../html/catalogo.html">Catalogo</a></li>
             <li class="nav-item"><a href="/index"><img src="IMGS/Vinylia.png" alt=""></a></li>
             <div class="nav-item-container nav-item">
-            <li class="nav-item"><a href="../html/carrito.html"><i class="fa-solid fa-cart-shopping"> 3</a></i></li>
+            <li class="nav-item">
+                <a href="/carrito.jsp">
+                    <i class="fa-solid fa-cart-shopping"> 
+                        <c:choose>
+                            <c:when test="${sessionScope.usuario == null}">
+                                0
+                            </c:when>
+                            <c:otherwise>
+                                ${sessionScope.usuario.getCarrito().obtenerCarrito().size()}
+                            </c:otherwise>
+                        </c:choose>
+                    </i>
+                </a>
+            </li>
             <c:choose>
                 <c:when test="${sessionScope.usuario == null}">
                     <li class="nav-item"><a href="/iniciarSesion" id="iniciarSesion">Iniciar Sesion</a></li>

@@ -31,7 +31,7 @@
                             <p class="nombre-album">${producto.getNombre()}</p>
                             <p class="puntuacion">${producto.getEstrellas()}</p>
                             <p class="detalles"><a href="../html/detallesProducto.html">Ver Detalles</a></p>
-                            <div class="agregar-a-carrito">Añadir A Carrito</div>
+                            <div class="agregar-a-carrito"><a href="/agregarProducto?idProducto=${producto.getIdProducto()}">Añadir A Carrito</a></div>
                         </div>
                     </c:forEach>
                     
