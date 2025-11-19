@@ -1,7 +1,0 @@
-definiciones\IProductoDAO.class
-entidades\Producto.class
-excepciones\PersistenciaException.class
-implementaciones\ProductoDAO.class
-conexion\Conexion.class
-entidades\FichaDetalladaProducto.class
-itson\org\ecommercepersistencia\EcommercePersistencia.class
