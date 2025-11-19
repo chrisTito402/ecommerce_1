@@ -38,6 +38,7 @@ public class AuthFilter implements Filter {
         PATH_PUBLICOS.add("iniciarSesion");
         PATH_PUBLICOS.add("registrarte");
         PATH_PUBLICOS.add("index");
+        PATH_PUBLICOS.add("catalogo");
     }    
     
     private void doBeforeProcessing(ServletRequest request, ServletResponse response)

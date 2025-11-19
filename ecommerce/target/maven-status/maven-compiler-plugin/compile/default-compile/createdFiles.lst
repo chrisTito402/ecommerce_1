@@ -7,6 +7,7 @@ com\mycompany\ecommerce\servlets\IniciarSesionServlet.class
 com\mycompany\ecommerce\servlets\AutenticacionServlet.class
 com\mycompany\ecommerce\dtos\UsuarioDTO.class
 com\mycompany\ecommerce\servlets\EliminarReseniaServlet.class
+com\mycompany\ecommerce\servlets\CatalogoServlet.class
 com\mycompany\ecommerce\filtros\NoJSPFilter.class
 com\mycompany\ecommerce\negocio\ProductoBO.class
 com\mycompany\ecommerce\dtos\ProductoDTO.class

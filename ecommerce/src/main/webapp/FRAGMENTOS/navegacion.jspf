@@ -8,7 +8,7 @@
 <header>
     <nav>
         <ul>
-            <li class="nav-item"><a href="../html/catalogo.html">Catalogo</a></li>
+            <li class="nav-item"><a href="/catalogo">Catalogo</a></li>
             <li class="nav-item"><a href="/index"><img src="IMGS/Vinylia.png" alt=""></a></li>
             <div class="nav-item-container nav-item">
             <li class="nav-item">

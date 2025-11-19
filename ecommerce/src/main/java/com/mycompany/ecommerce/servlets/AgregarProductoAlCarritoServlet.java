@@ -59,8 +59,15 @@ public class AgregarProductoAlCarritoServlet extends HttpServlet {
                 session.setAttribute(AuthFilter.SESSION_KEY, usuarioDTO);
             }
             
+            String origen = request.getHeader("Referer");
+
+            if (origen != null && origen.contains("/catalogo")) {
+                request.getRequestDispatcher("/catalogo").forward(request, response);
+            } else {
+                request.getRequestDispatcher("/index").forward(request, response);
+            }
+
             
-            request.getRequestDispatcher("/index").forward(request, response);
         }
     }
 
