@@ -1,5 +1,6 @@
 package com.mycompany.ecommerce.servlets;
 
+import com.mycompany.ecommerce.filtros.AuthFilter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -42,8 +43,8 @@ public class PerfilServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession sesion = request.getSession(false);
-        if(sesion != null){
+        HttpSession session = request.getSession(false);
+        if(session.getAttribute(AuthFilter.SESSION_KEY_USUARIO) != null){
             request.getRequestDispatcher("/perfil.jsp").forward(request, response);
         }
         else{

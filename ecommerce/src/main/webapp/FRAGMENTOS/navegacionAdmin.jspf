@@ -1,0 +1,18 @@
+<%-- 
+    Document   : navegacionAdmin
+    Created on : 19 nov 2025, 19:40:13
+    Author     : janot
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<header>
+    <nav>
+        <ul>
+            <li class="nav-item nav-item-usuarios"><a href="/gestionarUsuarios">Usuarios</a></li>
+            <li class="nav-item nav-item-productos"><a href="#">Productos</a></li>
+            <li class="nav-item nav-item-img"><a href="/panelAdministrador"><img src="IMGS/Vinylia.png" alt=""></a><span>Panel de Administrador<br><a href="/cerrarSesionAdmin" id="cerrar-sesion">Cerrar Sesion</a></span></li>
+            <li class="nav-item nav-item-historial-pagos"><a href="#">Historial Pagos</a></li>
+        </ul>
+    </nav>
+</header>

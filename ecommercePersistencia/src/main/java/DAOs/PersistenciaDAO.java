@@ -62,4 +62,9 @@ public class PersistenciaDAO implements IPersistencia.IPersistencia {
     public Producto consultarProducto(int idProducto) {
         return PRODUCTODAO.consultarProducto(idProducto);
     }
+
+    @Override
+    public List<Usuario> consultarTodosLosUsuarios() {
+        return USUARIODAO.consultarTodosLosUsuarios();
+    }
 }

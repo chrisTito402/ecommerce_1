@@ -8,11 +8,15 @@ com\mycompany\ecommerce\servlets\AutenticacionServlet.class
 com\mycompany\ecommerce\dtos\UsuarioDTO.class
 com\mycompany\ecommerce\servlets\EliminarReseniaServlet.class
 com\mycompany\ecommerce\servlets\CatalogoServlet.class
+com\mycompany\ecommerce\servlets\IniciarSesionAdminServlet.class
 com\mycompany\ecommerce\filtros\NoJSPFilter.class
+com\mycompany\ecommerce\servlets\GestionarUsuariosServlet.class
+com\mycompany\ecommerce\servlets\PanelAdminServlet.class
 com\mycompany\ecommerce\negocio\ProductoBO.class
 com\mycompany\ecommerce\dtos\ProductoDTO.class
 com\mycompany\ecommerce\mappers\ProductoMapper.class
 com\mycompany\ecommerce\JakartaRestConfiguration.class
+com\mycompany\ecommerce\servlets\CerrarSesionAdminServlet.class
 com\mycompany\ecommerce\servlets\CerrarSesionServlet.class
 com\mycompany\ecommerce\filtros\LogFilter.class
 com\mycompany\ecommerce\servlets\AgregarProductoAlCarritoServlet.class

@@ -24,7 +24,7 @@ import java.util.List;
 public class AuthFilter implements Filter {
     
     private static final boolean debug = true;
-    public static final String SESSION_KEY = "usuario";
+    public static final String SESSION_KEY_USUARIO = "usuario";
     private final List<String> PATH_PUBLICOS;
 
     // The filter configuration object we are associated with.  If
@@ -39,6 +39,10 @@ public class AuthFilter implements Filter {
         PATH_PUBLICOS.add("registrarte");
         PATH_PUBLICOS.add("index");
         PATH_PUBLICOS.add("catalogo");
+        PATH_PUBLICOS.add("admin");
+        PATH_PUBLICOS.add("panelAdministrador");
+        PATH_PUBLICOS.add("gestionarUsuarios");
+        PATH_PUBLICOS.add("cerrarSesionAdmin");
     }    
     
     private void doBeforeProcessing(ServletRequest request, ServletResponse response)
@@ -80,7 +84,7 @@ public class AuthFilter implements Filter {
     
     private boolean isUsuarioLogueado(HttpServletRequest request){
         HttpSession sesion = request.getSession(false);
-        boolean estaLogueado = (sesion != null && sesion.getAttribute(SESSION_KEY) != null);
+        boolean estaLogueado = (sesion != null && sesion.getAttribute(SESSION_KEY_USUARIO) != null);
         return estaLogueado;
     }
     
@@ -112,13 +116,13 @@ public class AuthFilter implements Filter {
             //Se verifica si la url es publica
             boolean isUrlPublica = this.isPathPublico(path);
             //Se verifica si el usuario esta logueado
-            boolean isUsuarioLogueado = this.isUsuarioLogueado(requestOriginal);
+            boolean isUsuarioLogueado = this.isUsuarioLogueado(requestOriginal);    
             //Si la url es publica y el usuario no esta logueado, se redireccionara a iniciarSesion.jsp
             if(!isUrlPublica && !isUsuarioLogueado){
                 request.getRequestDispatcher("iniciarSesion").forward(request, response);
                 return;
             }
-
+            
             chain.doFilter(request, response);
         } catch (Throwable t) {
             // If an exception is thrown somewhere down the filter chain,

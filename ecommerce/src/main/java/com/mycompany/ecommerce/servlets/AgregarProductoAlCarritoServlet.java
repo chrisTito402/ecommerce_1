@@ -48,15 +48,15 @@ public class AgregarProductoAlCarritoServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession(false);
         
-        if(session != null){
+        if(session.getAttribute(AuthFilter.SESSION_KEY_USUARIO) != null){
             if(request.getParameter("idProducto") != null){
                 ProductoMapper productoMapper = new ProductoMapper();
-                UsuarioDTO usuarioDTO = (UsuarioDTO) session.getAttribute(AuthFilter.SESSION_KEY);
+                UsuarioDTO usuarioDTO = (UsuarioDTO) session.getAttribute(AuthFilter.SESSION_KEY_USUARIO);
                 String id = request.getParameter("idProducto");
                 ProductoDTO productoDTO = productoBO.consultarProducto(Integer.parseInt(id));
                 Producto producto = productoMapper.toEntity(productoDTO);
                 usuarioDTO.agregarProductoAlCarrito(producto);
-                session.setAttribute(AuthFilter.SESSION_KEY, usuarioDTO);
+                session.setAttribute(AuthFilter.SESSION_KEY_USUARIO, usuarioDTO);
             }
             
             String origen = request.getHeader("Referer");

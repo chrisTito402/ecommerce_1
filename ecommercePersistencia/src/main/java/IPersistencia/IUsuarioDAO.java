@@ -1,6 +1,7 @@
 package IPersistencia;
 
 import entidades.Usuario;
+import java.util.List;
 
 /**
  *
@@ -8,6 +9,8 @@ import entidades.Usuario;
  */
 public interface IUsuarioDAO {
     public Usuario consultarUsuario(String correo);
+    
+    public List<Usuario> consultarTodosLosUsuarios();
     
     public void registrarUsuario(Usuario usuario);
     

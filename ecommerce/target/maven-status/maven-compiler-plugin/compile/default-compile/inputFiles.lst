@@ -2,18 +2,21 @@ C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommer
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\CatalogoServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\EliminarReseniaServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\ModificarUsuario.java
+C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\GestionarUsuariosServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\JakartaRestConfiguration.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\AgregarProductoAlCarritoServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\IniciarSesionServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\PerfilServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\IndexServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\negocio\AutenticacionBO.java
+C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\CerrarSesionAdminServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\RegistrarteServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\AutenticacionServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\mappers\ProductoMapper.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\dtos\ProductoDTO.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\negocio\ReseniasBO.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\resources\JakartaEE10Resource.java
+C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\IniciarSesionAdminServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\filtros\AuthFilter.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\negocio\ProductoBO.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\CerrarSesionServlet.java
@@ -23,3 +26,4 @@ C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommer
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\ReseniasServlet.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\dtos\UsuarioDTO.java
 C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\negocio\UsuarioBO.java
+C:\Users\janot\Desktop\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\PanelAdminServlet.java

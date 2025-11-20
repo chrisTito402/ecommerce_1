@@ -1,5 +1,6 @@
 package com.mycompany.ecommerce.servlets;
 
+import com.mycompany.ecommerce.filtros.AuthFilter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -28,8 +29,8 @@ public class CerrarSesionServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession sesion = request.getSession(false);
-        if(sesion != null){
+        HttpSession session = request.getSession(false);
+        if(session.getAttribute(AuthFilter.SESSION_KEY_USUARIO) != null){
             request.getSession().invalidate();
             request.getRequestDispatcher("/index").forward(request, response);
         }

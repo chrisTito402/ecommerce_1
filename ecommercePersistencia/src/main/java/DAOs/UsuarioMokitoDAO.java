@@ -63,5 +63,10 @@ public class UsuarioMokitoDAO implements IUsuarioDAO{
             index++;
         }
     }
+
+    @Override
+    public List<Usuario> consultarTodosLosUsuarios() {
+        return listaUsuarios;
+    }
     
 }

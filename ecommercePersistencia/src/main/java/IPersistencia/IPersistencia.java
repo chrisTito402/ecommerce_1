@@ -13,6 +13,8 @@ import java.util.List;
 public interface IPersistencia {
 
     public Usuario consultarUsuario(String correo);
+    
+    public List<Usuario> consultarTodosLosUsuarios();
 
     public void registrarUsuario(Usuario usuario);
 

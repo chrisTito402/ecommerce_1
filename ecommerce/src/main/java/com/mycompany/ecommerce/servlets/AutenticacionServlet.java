@@ -48,7 +48,7 @@ public class AutenticacionServlet extends HttpServlet {
         UsuarioDTO usuarioLogueado = this.autenticacionBO.iniciarSesion(correo, password);
         if(usuarioLogueado != null){
             HttpSession sesion = request.getSession(true);
-            sesion.setAttribute(AuthFilter.SESSION_KEY, usuarioLogueado);
+            sesion.setAttribute(AuthFilter.SESSION_KEY_USUARIO, usuarioLogueado);
             request.getRequestDispatcher("index").forward(request, response);
             return;
         }
