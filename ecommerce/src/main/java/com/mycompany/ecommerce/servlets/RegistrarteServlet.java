@@ -74,7 +74,7 @@ public class RegistrarteServlet extends HttpServlet {
         
         boolean esValido = validacionDatos(request);
         if(esValido){
-            UsuarioDTO usuarioDTO = new UsuarioDTO(nombre, telefono, direccion, correo, password);
+            UsuarioDTO usuarioDTO = new UsuarioDTO(100,nombre, telefono, direccion, correo, password);
             autenticacionBO.registrarte(usuarioDTO);
             request.getRequestDispatcher("/iniciarSesion.jsp").forward(request, response);
         }

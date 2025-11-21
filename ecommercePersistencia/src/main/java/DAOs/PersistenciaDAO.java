@@ -1,12 +1,13 @@
 package DAOs;
 
+import IPersistencia.IFichaDetalladaProductoDAO;
 import IPersistencia.IProductoDAO;
-import IPersistencia.IUsuarioDAO;
 import entidades.Producto;
 
 import IPersistencia.IReseniasDAO;
 import IPersistencia.IUsuarioDAO;
-import entidades.Resenias;
+import entidades.FichaDetalladaProducto;
+import entidades.Resenia;
 
 import entidades.Usuario;
 import java.util.List;
@@ -20,12 +21,13 @@ public class PersistenciaDAO implements IPersistencia.IPersistencia {
     private final IUsuarioDAO USUARIODAO;
     private final IReseniasDAO RESENIASDAO;
     private final IProductoDAO PRODUCTODAO;
+    private final IFichaDetalladaProductoDAO FICHADETALLADADAO;
 
     public PersistenciaDAO() {
         USUARIODAO = UsuarioMokitoDAO.getInstance();
         PRODUCTODAO = ProductoMokitoDAO.getInstance();
         RESENIASDAO = ReseniasDAO.getInstance();
-
+        FICHADETALLADADAO = FichaDetalladaProductoMokitoDAO.getInstance();
     }
 
     @Override
@@ -44,7 +46,7 @@ public class PersistenciaDAO implements IPersistencia.IPersistencia {
     }
 
     @Override
-    public List<Resenias> consultarResenias() {
+    public List<Resenia> consultarResenias() {
         return RESENIASDAO.consultarResenias();
     }
 
@@ -66,5 +68,20 @@ public class PersistenciaDAO implements IPersistencia.IPersistencia {
     @Override
     public List<Usuario> consultarTodosLosUsuarios() {
         return USUARIODAO.consultarTodosLosUsuarios();
+    }
+
+    @Override
+    public List<Resenia> consultarReseniasDeProducto(int idProducto) {
+        return RESENIASDAO.consultarReseniasPorProducto(idProducto);
+    }
+
+    @Override
+    public FichaDetalladaProducto consultarFichaDetalladaDeProducto(int idProducto) {
+        return FICHADETALLADADAO.consultarFichaDetalladaDeProducto(idProducto);
+    }
+
+    @Override
+    public void agregarResenia(Resenia resenia) {
+        RESENIASDAO.agregarResenia(resenia);
     }
 }

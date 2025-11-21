@@ -5,6 +5,7 @@ package entidades;
  * @author janot
  */
 public class Usuario {
+    private int idUsuario;
     private String nombre;
     private String telefono;
     private String direccion;
@@ -15,7 +16,8 @@ public class Usuario {
     public Usuario() {
     }
     
-    public Usuario(String nombre, String telefono, String direccion, String correo, String contraseña) {
+    public Usuario(int idUsuario, String nombre, String telefono, String direccion, String correo, String contraseña) {
+        this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.telefono = telefono;
         this.direccion = direccion;
@@ -24,6 +26,14 @@ public class Usuario {
         this.carrito = new Carrito();
     }
 
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+    
     public String getNombre() {
         return nombre;
     }

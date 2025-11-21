@@ -43,6 +43,7 @@ public class AuthFilter implements Filter {
         PATH_PUBLICOS.add("panelAdministrador");
         PATH_PUBLICOS.add("gestionarUsuarios");
         PATH_PUBLICOS.add("cerrarSesionAdmin");
+        PATH_PUBLICOS.add("detallesProducto");
     }    
     
     private void doBeforeProcessing(ServletRequest request, ServletResponse response)

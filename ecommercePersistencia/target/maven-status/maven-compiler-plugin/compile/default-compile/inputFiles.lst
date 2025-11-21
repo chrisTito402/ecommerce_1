@@ -7,7 +7,10 @@ C:\Users\janot\Desktop\ecommerce_1\ecommercePersistencia\src\main\java\IPersiste
 C:\Users\janot\Desktop\ecommerce_1\ecommercePersistencia\src\main\java\DAOs\PersistenciaDAO.java
 C:\Users\janot\Desktop\ecommerce_1\ecommercePersistencia\src\main\java\DAOs\ReseniasDAO.java
 C:\Users\janot\Desktop\ecommerce_1\ecommercePersistencia\src\main\java\DAOs\UsuarioMokitoDAO.java
-C:\Users\janot\Desktop\ecommerce_1\ecommercePersistencia\src\main\java\entidades\Resenias.java
+C:\Users\janot\Desktop\ecommerce_1\ecommercePersistencia\src\main\java\entidades\Resenia.java
+C:\Users\janot\Desktop\ecommerce_1\ecommercePersistencia\src\main\java\IPersistencia\IFichaDetalladaProductoDAO.java
 C:\Users\janot\Desktop\ecommerce_1\ecommercePersistencia\src\main\java\IPersistencia\IReseniasDAO.java
 C:\Users\janot\Desktop\ecommerce_1\ecommercePersistencia\src\main\java\entidades\Carrito.java
+C:\Users\janot\Desktop\ecommerce_1\ecommercePersistencia\src\main\java\entidades\FichaDetalladaProducto.java
 C:\Users\janot\Desktop\ecommerce_1\ecommercePersistencia\src\main\java\IPersistencia\IPersistencia.java
+C:\Users\janot\Desktop\ecommerce_1\ecommercePersistencia\src\main\java\DAOs\FichaDetalladaProductoMokitoDAO.java

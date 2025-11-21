@@ -1,10 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package IPersistencia;
 
-import entidades.Resenias;
+import entidades.Resenia;
 import java.util.List;
 
 /**
@@ -13,8 +9,9 @@ import java.util.List;
  */
 public interface IReseniasDAO {
 
-    List<Resenias> consultarResenias();
-    
+    public void agregarResenia(Resenia resenia);
+    List<Resenia> consultarResenias();
+    List<Resenia> consultarReseniasPorProducto(int idProducto);
     void eliminarResenia(int id);
 
 }

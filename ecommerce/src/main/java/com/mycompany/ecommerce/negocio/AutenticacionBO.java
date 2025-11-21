@@ -28,7 +28,7 @@ public class AutenticacionBO {
             }
             
             if(usuario.getContraseña().equals(contraseña)){
-                UsuarioDTO usuarioDTO = new UsuarioDTO(usuario.getNombre(), usuario.getTelefono(), usuario.getDireccion(), usuario.getCorreo(), usuario.getContraseña());
+                UsuarioDTO usuarioDTO = new UsuarioDTO(usuario.getIdUsuario(),usuario.getNombre(), usuario.getTelefono(), usuario.getDireccion(), usuario.getCorreo(), usuario.getContraseña());
                 usuarioDTO.setCarrito(usuario.getCarrito());
                 return usuarioDTO;
             }

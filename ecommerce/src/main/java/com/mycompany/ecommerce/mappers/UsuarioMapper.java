@@ -10,6 +10,7 @@ import entidades.Usuario;
 public class UsuarioMapper {
     public Usuario toEntity(UsuarioDTO usuarioDTO){
         return new Usuario(
+                usuarioDTO.getIdUsuario(),
                 usuarioDTO.getNombre(), 
                 usuarioDTO.getTelefono(), 
                 usuarioDTO.getDireccion(), 
@@ -19,6 +20,7 @@ public class UsuarioMapper {
     
     public UsuarioDTO toDTO(Usuario usuario){
         UsuarioDTO usuarioDTO = new UsuarioDTO(
+                usuario.getIdUsuario(),
                 usuario.getNombre(), 
                 usuario.getTelefono(), 
                 usuario.getDireccion(), 

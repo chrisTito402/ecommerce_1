@@ -30,7 +30,7 @@
                             <img src="${producto.getRutaImg()}" alt="">
                             <p class="nombre-album">${producto.getNombre()}</p>
                             <p class="puntuacion">${producto.getEstrellas()}</p>
-                            <p class="detalles"><a href="../html/detallesProducto.html">Ver Detalles</a></p>
+                            <p class="detalles"><a href="/detallesProducto?idProducto=${producto.getIdProducto()}">Ver Detalles</a></p>
                             <div class="agregar-a-carrito"><a href="/agregarProducto?idProducto=${producto.getIdProducto()}">Añadir A Carrito</a></div>
                         </div>
                     </c:forEach>

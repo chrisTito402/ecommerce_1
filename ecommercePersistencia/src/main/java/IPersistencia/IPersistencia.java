@@ -1,8 +1,9 @@
 package IPersistencia;
 
 
+import entidades.FichaDetalladaProducto;
 import entidades.Producto;
-import entidades.Resenias;
+import entidades.Resenia;
 import entidades.Usuario;
 import java.util.List;
 
@@ -22,12 +23,16 @@ public interface IPersistencia {
     
     public List<Producto> consultarProductos();
 
-
-    public List<Resenias> consultarResenias();
+    public List<Resenia> consultarReseniasDeProducto(int idProducto);
+    
+    public List<Resenia> consultarResenias();
 
     public void eliminarResenia(int id);
     
     public Producto consultarProducto(int idProducto);
     
-
+    public FichaDetalladaProducto consultarFichaDetalladaDeProducto(int idProducto);
+    
+    public void agregarResenia(Resenia resenia);
+    
 }

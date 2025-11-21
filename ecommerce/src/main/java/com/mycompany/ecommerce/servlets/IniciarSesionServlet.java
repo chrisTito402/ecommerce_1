@@ -47,7 +47,10 @@ public class IniciarSesionServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        //Redireccionar a la pagina jsp
+        this.getServletContext()
+            .getRequestDispatcher("/iniciarSesion.jsp")
+            .forward(request, response);
     }
 
 }
