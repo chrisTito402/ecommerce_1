@@ -84,4 +84,20 @@ public class PersistenciaDAO implements IPersistencia.IPersistencia {
     public void agregarResenia(Resenia resenia) {
         RESENIASDAO.agregarResenia(resenia);
     }
+
+    @Override
+    public void eliminarProducto(int idProducto) {
+        PRODUCTODAO.elimianarProducto(idProducto);
+    }
+
+    @Override
+    public void crearProducto(Producto producto) {
+        PRODUCTODAO.crearProducto(producto);
+     }
+
+    @Override
+    public void editarProducto(Producto producto) {
+        PRODUCTODAO.editarProducto(producto);
+       }
+    
 }

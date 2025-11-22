@@ -35,4 +35,9 @@ public interface IPersistencia {
     
     public void agregarResenia(Resenia resenia);
     
+    public void eliminarProducto(int idProducto);
+    
+    public void crearProducto(Producto producto);
+    
+    public void editarProducto(Producto producto);
 }

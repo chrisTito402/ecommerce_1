@@ -1,5 +1,6 @@
 com\mycompany\ecommerce\filtros\AuthFilter.class
 com\mycompany\ecommerce\mappers\ReseniaMapper.class
+com\mycompany\ecommerce\servlets\EditarProductoServlet.class
 com\mycompany\ecommerce\dtos\ReseniaDTO.class
 com\mycompany\ecommerce\servlets\CarritoServlet.class
 com\mycompany\ecommerce\negocio\AutenticacionBO.class
@@ -10,6 +11,7 @@ com\mycompany\ecommerce\servlets\AutenticacionServlet.class
 com\mycompany\ecommerce\servlets\DetallesProductoServlet.class
 com\mycompany\ecommerce\dtos\FichaDetalladaProductoDTO.class
 com\mycompany\ecommerce\dtos\UsuarioDTO.class
+com\mycompany\ecommerce\servlets\EliminarProductoServlet.class
 com\mycompany\ecommerce\servlets\EliminarReseniaServlet.class
 com\mycompany\ecommerce\servlets\CatalogoServlet.class
 com\mycompany\ecommerce\servlets\IniciarSesionAdminServlet.class
@@ -18,6 +20,7 @@ com\mycompany\ecommerce\servlets\GestionarUsuariosServlet.class
 com\mycompany\ecommerce\servlets\PanelAdminServlet.class
 com\mycompany\ecommerce\negocio\ProductoBO.class
 com\mycompany\ecommerce\dtos\ProductoDTO.class
+com\mycompany\ecommerce\servlets\CrearProductoServlet.class
 com\mycompany\ecommerce\servlets\PublicarComentarioServlet.class
 com\mycompany\ecommerce\mappers\ProductoMapper.class
 com\mycompany\ecommerce\JakartaRestConfiguration.class
@@ -33,3 +36,4 @@ com\mycompany\ecommerce\negocio\UsuarioBO.class
 com\mycompany\ecommerce\mappers\FichaDetalladaMapper.class
 com\mycompany\ecommerce\resources\JakartaEE10Resource.class
 com\mycompany\ecommerce\servlets\ModificarUsuario.class
+com\mycompany\ecommerce\servlets\AdminProductosServlet.class

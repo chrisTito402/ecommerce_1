@@ -57,9 +57,16 @@ public class ReseniasBO {
         }
     }
     
-    public List<Resenia> consultarResenias() {
+    public List<ReseniaDTO> consultarResenias() {
         try {
-            return persistencia.consultarResenias();
+            List<Resenia> resenia = persistencia.consultarResenias();
+            List<ReseniaDTO> reseniasDTO = new ArrayList<>();
+            
+            for (Resenia r : resenia){
+                reseniasDTO.add(reseniaMapper.toDTO(r));
+            }
+            return reseniasDTO;
+            
         } catch (Exception e) {
             LOGGER.severe(e.getMessage());
             return null;
