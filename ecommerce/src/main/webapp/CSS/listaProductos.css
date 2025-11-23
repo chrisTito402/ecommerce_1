@@ -1,0 +1,64 @@
+/* 
+    Created on : 23 nov 2025, 12:25:06 p.m.
+    Author     : Angel
+*/
+@import url("global.css");
+
+body{
+    background-color: var(--bg-color);
+    font-family: var(--font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: var(--color-azul-grisiento);
+}
+
+.rectangulo-centro {
+    margin: auto;
+    width: 50%;
+    border-radius: 10px;
+    background-color: var(--bg-color-card);
+    color: white;
+    text-align: center;
+}
+
+.rectangulo-centro > .ordenar > table > tbody > tr > td > form > button {
+    font-size: smaller;
+    height: 40%;
+    width: 58%;
+    margin-top: 5px;
+    border-radius: 5px;
+    color: var(--bg-color-card);
+    background-color: var(--color-azul-grisiento);
+}
+
+.ordenar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: auto;
+    width: 70%;
+    text-align: left;
+}
+
+.ordenar > h1 {
+    text-align: left;
+}
+
+.opcionesAbajo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+}

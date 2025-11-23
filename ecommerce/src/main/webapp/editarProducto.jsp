@@ -10,55 +10,51 @@
 
 <html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="CSS/editarProducto.css"/>
         <title>Editar Producto</title>
     </head>
     <body>
+        <div class="rectangulo-centro">
+            <h2>Editar Producto</h2>
+            <form action="editarProducto" method="post">
 
-        <h2>Editar Producto</h2>
+                <div class="ordenar">
+                    <input type="hidden" name="idProducto" value="${producto.idProducto}">
 
-        <form action="editarProducto" method="post">
+                    <label>Nombre:</label>
+                    <input type="text" name="nombre" value="${producto.nombre}" required>
 
-            <input type="hidden" name="idProducto" value="${producto.idProducto}">
+                    <label>Ruta imagen:</label>
+                    <input type="text" name="rutaImg" value="${producto.rutaImg}" required>
 
-            <label>Nombre:</label>
-            <input type="text" name="nombre" value="${producto.nombre}" required>
-            <br>
+                    <label>Precio:</label>
+                    <input type="number" name="precio" value="${producto.precio}" step="0.01" required>
 
-            <label>Ruta imagen:</label>
-            <input type="text" name="rutaImg" value="${producto.rutaImg}" required>
-            <br>
+                    <label>Categorías:</label>
 
-            <label>Precio:</label>
-            <input type="number" name="precio" value="${producto.precio}" step="0.01" required>
-            <br>
+                    <c:set var="cats" value="" />
 
-            <label>Categorías:</label>
+                    <c:forEach var="c" items="${producto.categorias}" varStatus="st">
+                        <c:choose>
+                            <c:when test="${st.first}">
+                                <!-- Primera categoría: se coloca sin coma -->
+                                <c:set var="cats" value="${c}" />
+                            </c:when>
+                            <c:otherwise>
+                                <!-- Siguientes categorías: se agrega coma y espacio -->
+                                <c:set var="cats" value="${cats}, ${c}" />
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
 
-            <c:set var="cats" value="" />
+                    <input type="text" name="categorias" value="${cats}" required>
+                </div>
 
-            <c:forEach var="c" items="${producto.categorias}" varStatus="st">
-                <c:choose>
-                    <c:when test="${st.first}">
-                        <!-- Primera categoría: se coloca sin coma -->
-                        <c:set var="cats" value="${c}" />
-                    </c:when>
-                    <c:otherwise>
-                        <!-- Siguientes categorías: se agrega coma y espacio -->
-                        <c:set var="cats" value="${cats}, ${c}" />
-                    </c:otherwise>
-                </c:choose>
-            </c:forEach>
+                <button type="submit">Guardar Cambios</button>
 
-            <input type="text" name="categorias" value="${cats}" required>
-
-
-            <br><br>
-
-            <button type="submit">Guardar Cambios</button>
-        </form>
-
-        <br>
-        <a href="adminProductos">Volver</a>
-
+            </form>
+            <a href="adminProductos">Volver</a>
+        </div>
     </body>
 </html>>
