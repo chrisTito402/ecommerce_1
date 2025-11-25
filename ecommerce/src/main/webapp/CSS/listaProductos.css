@@ -70,21 +70,21 @@ a:hover {
 /* Tabla responsiva */
 .table-responsive {
     width: 100%;
-    overflow-x: auto; /* scroll horizontal solo si es necesario */
+    overflow-x: auto; /* Scroll horizontal solo si es necesario */
 }
 
 /* Tabla */
 .rectangulo-centro table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: auto; /* ajusta las columnas automáticamente */
+    table-layout: auto; /* Ajusta las columnas automáticamente */
 }
 
 .rectangulo-centro table th,
 .rectangulo-centro table td {
     padding: 8px;
     word-break: break-word;
-    white-space: nowrap; /* evita saltos de línea dentro de la celda */
+    white-space: nowrap; /* Evita saltos de línea dentro de la celda */
 }
 
 /* Imagen */
@@ -96,8 +96,8 @@ a:hover {
 
 /* Botón dentro de Acciones */
 .rectangulo-centro table button {
-    width: 100%; /* se ajusta al ancho de la celda */
-    max-width: 100px; /* no crece demasiado */
+    width: 100%;
+    max-width: 60%;
     padding: 5px;
     font-size: 0.9rem;
     border-radius: 5px;
