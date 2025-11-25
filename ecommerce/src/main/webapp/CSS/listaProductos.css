@@ -26,6 +26,9 @@ a:hover {
 .rectangulo-centro {
     margin: auto;
     width: 50%;
+    max-width: 900px;
+    min-width: 320px;
+    padding: 20px;
     border-radius: 10px;
     background-color: var(--bg-color-card);
     color: white;
@@ -33,22 +36,20 @@ a:hover {
 }
 
 .rectangulo-centro > .ordenar > table > tbody > tr > td > form > button {
-    font-size: smaller;
-    height: 40%;
-    width: 58%;
-    margin-top: 5px;
+    font-size: 0.9rem;
+    padding: 6px;
     border-radius: 5px;
     color: var(--bg-color-card);
     background-color: var(--color-azul-grisiento);
+    width: 100%;
+    min-width: 80px;
 }
 
 .ordenar {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin: auto;
-    width: 70%;
-    text-align: left;
+    width: 100%;
 }
 
 .ordenar > h1 {
@@ -59,6 +60,89 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Permite saltar a otra línea */
     margin: auto;
     width: 100%;
+    gap: 10px;
+}
+
+/*  Reponsiva */
+/* Tabla responsiva */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto; /* scroll horizontal solo si es necesario */
+}
+
+/* Tabla */
+.rectangulo-centro table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto; /* ajusta las columnas automáticamente */
+}
+
+.rectangulo-centro table th,
+.rectangulo-centro table td {
+    padding: 8px;
+    word-break: break-word;
+    white-space: nowrap; /* evita saltos de línea dentro de la celda */
+}
+
+/* Imagen */
+.rectangulo-centro table img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+/* Botón dentro de Acciones */
+.rectangulo-centro table button {
+    width: 100%; /* se ajusta al ancho de la celda */
+    max-width: 100px; /* no crece demasiado */
+    padding: 5px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    color: var(--bg-color-card);
+    background-color: var(--color-azul-grisiento);
+}
+
+/* Responsive: tablets */
+@media (max-width: 768px) {
+    .rectangulo-centro {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .rectangulo-centro table img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Responsive: móviles */
+@media (max-width: 480px) {
+    .rectangulo-centro {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .rectangulo-centro table th,
+    .rectangulo-centro table td {
+        padding: 6px;
+        font-size: 0.8rem;
+    }
+
+    .rectangulo-centro table img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* La tabla ahora desplaza horizontalmente si es necesario */
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    .opcionesAbajo {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
