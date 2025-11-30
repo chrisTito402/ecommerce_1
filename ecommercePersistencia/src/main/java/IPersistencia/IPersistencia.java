@@ -1,10 +1,7 @@
 package IPersistencia;
 
 
-import entidades.FichaDetalladaProducto;
-import entidades.Producto;
-import entidades.Resenia;
-import entidades.Usuario;
+import entidades.*;
 import java.util.List;
 
 /**

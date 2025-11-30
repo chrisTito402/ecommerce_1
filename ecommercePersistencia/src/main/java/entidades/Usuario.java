@@ -1,39 +1,48 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package entidades;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import java.io.Serializable;
 
 /**
  *
- * @author janot
+ * @author chris
  */
-public class Usuario {
-    private int idUsuario;
+@Entity
+@Table(name = "usuarios" )
+public class Usuario implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column(nullable = false, length = 100)
     private String nombre;
+
+    @Column(nullable = false, length = 20)
     private String telefono;
+
+    @Column(nullable = false, length = 200)
     private String direccion;
+
+    @Column(nullable = false, length = 120, unique = true)
     private String correo;
+
+    @Column(name = "password", nullable = false, length = 120)
     private String contraseña;
-    private Carrito carrito;
 
-    public Usuario() {
-    }
-    
-    public Usuario(int idUsuario, String nombre, String telefono, String direccion, String correo, String contraseña) {
-        this.idUsuario = idUsuario;
-        this.nombre = nombre;
-        this.telefono = telefono;
-        this.direccion = direccion;
-        this.correo = correo;
-        this.contraseña = contraseña;
-        this.carrito = new Carrito();
-    }
-
-    public int getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
-    }
-    
     public String getNombre() {
         return nombre;
     }
@@ -74,18 +83,37 @@ public class Usuario {
         this.contraseña = contraseña;
     }
 
-    public Carrito getCarrito() {
-        return carrito;
+    public Long getId() {
+        return id;
     }
 
-    public void setCarrito(Carrito carrito) {
-        this.carrito = carrito;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Usuario)) {
+            return false;
+        }
+        Usuario other = (Usuario) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
     }
 
     @Override
     public String toString() {
-        return "Usuario{" + "nombre=" + nombre + ", telefono=" + telefono + ", direccion=" + direccion + ", correo=" + correo + ", contrase\u00f1a=" + contraseña + '}';
+        return "Usuario{" + "id=" + id + ", nombre=" + nombre + ", telefono=" + telefono + ", direccion=" + direccion + ", correo=" + correo + ", contrase\u00f1a=" + contraseña + '}';
     }
 
-    
 }

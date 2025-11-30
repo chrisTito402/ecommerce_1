@@ -9,14 +9,20 @@ import entidades.FichaDetalladaProducto;
  * @author janot
  */
 public class FichaDetalladaMapper {
-    
-    public FichaDetalladaProductoDTO toDTO(FichaDetalladaProducto fichaDetalladaProducto){
-        ProductoDTO productoDTO = new ProductoMapper().toDTO(fichaDetalladaProducto.getProducto());
-        
-        return new FichaDetalladaProductoDTO(fichaDetalladaProducto.getIdFichaDetalladaProducto(), 
-                productoDTO, 
-                fichaDetalladaProducto.getExistencias(),
-                fichaDetalladaProducto.getDescripcion());
-        
+
+    public FichaDetalladaProductoDTO toDTO(FichaDetalladaProducto ficha) {
+        if (ficha == null) {
+            return null;
+        }
+
+        ProductoMapper productoMapper = new ProductoMapper();
+        ProductoDTO productoDTO = productoMapper.toDTO(ficha.getProducto());
+
+        return new FichaDetalladaProductoDTO(
+                ficha.getId().intValue(),
+                productoDTO,
+                ficha.getExistencias(),
+                ficha.getDescripcion()
+        );
     }
 }

@@ -2,14 +2,15 @@ package DAOs;
 
 import IPersistencia.IFichaDetalladaProductoDAO;
 import IPersistencia.IProductoDAO;
-import entidades.Producto;
+import entidades.*;
 
 import IPersistencia.IReseniasDAO;
 import IPersistencia.IUsuarioDAO;
-import entidades.FichaDetalladaProducto;
-import entidades.Resenia;
 
-import entidades.Usuario;
+import implementaciones.FichaDetalladaDAO;
+import implementaciones.ProductoDAO;
+import implementaciones.ReseniasDAO;
+import implementaciones.UsuariosDAO;
 import java.util.List;
 
 /**
@@ -24,10 +25,15 @@ public class PersistenciaDAO implements IPersistencia.IPersistencia {
     private final IFichaDetalladaProductoDAO FICHADETALLADADAO;
 
     public PersistenciaDAO() {
-        USUARIODAO = UsuarioMokitoDAO.getInstance();
-        PRODUCTODAO = ProductoMokitoDAO.getInstance();
-        RESENIASDAO = ReseniasDAO.getInstance();
-        FICHADETALLADADAO = FichaDetalladaProductoMokitoDAO.getInstance();
+        //USUARIODAO = UsuarioMokitoDAO.getInstance();
+        //PRODUCTODAO = ProductoMokitoDAO.getInstance();
+        //RESENIASDAO = ReseniasDAO.getInstance();
+        //FICHADETALLADADAO = FichaDetalladaProductoMokitoDAO.getInstance();
+        
+        PRODUCTODAO = new ProductoDAO();
+        USUARIODAO = new UsuariosDAO();
+        FICHADETALLADADAO = new FichaDetalladaDAO();
+        RESENIASDAO = new ReseniasDAO();
     }
 
     @Override

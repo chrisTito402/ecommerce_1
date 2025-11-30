@@ -8,11 +8,30 @@ import entidades.Producto;
  * @author janot
  */
 public class ProductoMapper {
-    public ProductoDTO toDTO(Producto producto){
-        return new ProductoDTO(producto.getIdProducto(), producto.getNombre(), producto.getRutaImg(), producto.getPrecio(), producto.getEstrellas(), producto.getCategorias());
+
+    public ProductoDTO toDTO(Producto producto) {
+        ProductoDTO dto = new ProductoDTO();
+        
+        dto.setIdProducto(producto.getId().intValue());
+        dto.setNombre(producto.getNombre());
+        dto.setRutaImg(producto.getRutaImg());
+        dto.setPrecio(producto.getPrecio());
+        dto.setEstrellas(producto.getEstrellas());
+        dto.setCategorias(producto.getCategorias());
+
+        return dto;
     }
-    
-    public Producto toEntity(ProductoDTO productoDTO){
-        return new Producto(productoDTO.getIdProducto(), productoDTO.getNombre(), productoDTO.getRutaImg(), productoDTO.getPrecio(), productoDTO.getEstrellas(), productoDTO.getCategorias());
+
+    public Producto toEntity(ProductoDTO dto) {
+        Producto producto = new Producto();
+        
+        producto.setId((long) dto.getIdProducto());
+        producto.setNombre(dto.getNombre());
+        producto.setRutaImg(dto.getRutaImg());
+        producto.setPrecio(dto.getPrecio());
+        producto.setEstrellas(dto.getEstrellas());
+        producto.setCategorias(dto.getCategorias());
+
+        return producto;
     }
 }

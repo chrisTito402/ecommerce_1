@@ -3,6 +3,7 @@ package com.mycompany.ecommerce.negocio;
 import IPersistencia.IPersistencia;
 import com.mycompany.ecommerce.dtos.UsuarioDTO;
 import com.mycompany.ecommerce.mappers.UsuarioMapper;
+import entidades.Carrito;
 import entidades.Usuario;
 import java.util.logging.Logger;
 
@@ -28,8 +29,8 @@ public class AutenticacionBO {
             }
             
             if(usuario.getContraseña().equals(contraseña)){
-                UsuarioDTO usuarioDTO = new UsuarioDTO(usuario.getIdUsuario(),usuario.getNombre(), usuario.getTelefono(), usuario.getDireccion(), usuario.getCorreo(), usuario.getContraseña());
-                usuarioDTO.setCarrito(usuario.getCarrito());
+                UsuarioDTO usuarioDTO = new UsuarioDTO(usuario.getId().intValue(),usuario.getNombre(), usuario.getTelefono(), usuario.getDireccion(), usuario.getCorreo(), usuario.getContraseña());
+                usuarioDTO.setCarrito(new Carrito());
                 return usuarioDTO;
             }
             

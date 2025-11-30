@@ -8,28 +8,31 @@ import entidades.Usuario;
  * @author janot
  */
 public class UsuarioMapper {
-    public Usuario toEntity(UsuarioDTO usuarioDTO){
-        return new Usuario(
-                usuarioDTO.getIdUsuario(),
-                usuarioDTO.getNombre(), 
-                usuarioDTO.getTelefono(), 
-                usuarioDTO.getDireccion(), 
-                usuarioDTO.getCorreo(), 
-                usuarioDTO.getContraseña());
+
+    public UsuarioDTO toDTO(Usuario usuario) {
+        UsuarioDTO dto = new UsuarioDTO();
+
+        dto.setIdUsuario(usuario.getId().intValue());
+        dto.setNombre(usuario.getNombre());
+        dto.setTelefono(usuario.getTelefono());
+        dto.setDireccion(usuario.getDireccion());
+        dto.setCorreo(usuario.getCorreo());
+        dto.setContraseña(usuario.getContraseña());
+
+        return dto;
     }
-    
-    public UsuarioDTO toDTO(Usuario usuario){
-        UsuarioDTO usuarioDTO = new UsuarioDTO(
-                usuario.getIdUsuario(),
-                usuario.getNombre(), 
-                usuario.getTelefono(), 
-                usuario.getDireccion(), 
-                usuario.getCorreo(), 
-                usuario.getContraseña());
-        
-        usuarioDTO.setCarrito(usuario.getCarrito());
-        
-        return usuarioDTO;
+
+    public Usuario toEntity(UsuarioDTO dto) {
+        Usuario usuario = new Usuario();
+
+        usuario.setId((long) dto.getIdUsuario());
+        usuario.setNombre(dto.getNombre());
+        usuario.setTelefono(dto.getTelefono());
+        usuario.setDireccion(dto.getDireccion());
+        usuario.setCorreo(dto.getCorreo());
+        usuario.setContraseña(dto.getContraseña());
+
+        return usuario;
     }
-    
+
 }

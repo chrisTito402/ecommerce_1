@@ -1,14 +1,12 @@
-package com.mycompany.ecommerce.dtos;
+package entidadesFalse;
 
 import entidades.Carrito;
-import entidades.Producto;
 
 /**
  *
  * @author janot
  */
-public class UsuarioDTO {
-
+public class Usuario {
     private int idUsuario;
     private String nombre;
     private String telefono;
@@ -17,17 +15,17 @@ public class UsuarioDTO {
     private String contraseña;
     private Carrito carrito;
 
-    public UsuarioDTO() {
+    public Usuario() {
     }
-
-    public UsuarioDTO(int idUsuario, String nombre, String telefono, String direccion, String correo, String contraseña) {
+    
+    public Usuario(int idUsuario, String nombre, String telefono, String direccion, String correo, String contraseña) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.telefono = telefono;
         this.direccion = direccion;
         this.correo = correo;
         this.contraseña = contraseña;
-        this.carrito = new Carrito(); // <- INICIALÍZALO
+        this.carrito = new Carrito();
     }
 
     public int getIdUsuario() {
@@ -37,7 +35,7 @@ public class UsuarioDTO {
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
     }
-
+    
     public String getNombre() {
         return nombre;
     }
@@ -86,7 +84,10 @@ public class UsuarioDTO {
         this.carrito = carrito;
     }
 
-    public void agregarProductoAlCarrito(Producto producto) {
-        carrito.agregarProducto(producto);
+    @Override
+    public String toString() {
+        return "Usuario{" + "nombre=" + nombre + ", telefono=" + telefono + ", direccion=" + direccion + ", correo=" + correo + ", contrase\u00f1a=" + contraseña + '}';
     }
+
+    
 }

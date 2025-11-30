@@ -1,5 +1,6 @@
 package entidades;
 
+import entidades.Producto;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,8 +24,8 @@ public class Carrito {
     
     public void eliminarProducto(int idProducto){
         for (int i = 0; i < listaProductos.size(); i++) {
-            if(listaProductos.get(i).getIdProducto() == idProducto){
-                listaProductos.remove(i);
+            if(listaProductos.get(i).getId().intValue()== idProducto){
+                listaProductos.remove(i);   
             }
         }
     }

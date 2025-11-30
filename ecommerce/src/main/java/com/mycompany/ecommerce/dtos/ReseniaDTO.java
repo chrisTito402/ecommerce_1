@@ -5,12 +5,14 @@ package com.mycompany.ecommerce.dtos;
  * @author janot
  */
 public class ReseniaDTO {
-    private int idResenia;
+ private int idResenia;
     private UsuarioDTO usuarioDTO;
     private ProductoDTO productoDTO;
     private String comentario;
-    
     private int rating;
+
+    public ReseniaDTO() {
+    }
 
     public ReseniaDTO(int idResenia, UsuarioDTO usuarioDTO, ProductoDTO productoDTO, String comentario, int rating) {
         this.idResenia = idResenia;

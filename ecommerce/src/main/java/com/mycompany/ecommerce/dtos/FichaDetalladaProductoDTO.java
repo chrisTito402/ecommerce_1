@@ -5,14 +5,14 @@ package com.mycompany.ecommerce.dtos;
  * @author janot
  */
 public class FichaDetalladaProductoDTO {
-    int idFichaDetalladaProducto;
-    ProductoDTO productoDTO;
-    int existencias;
-    String descripcion;
+    private int idFichaDetalladaProducto;
+    private ProductoDTO productoDTO;
+    private int existencias;
+    private String descripcion;
 
-    public FichaDetalladaProductoDTO(int idFichaDetalladaProducto, ProductoDTO producto, int existencias, String descripcion) {
-        this.idFichaDetalladaProducto = idFichaDetalladaProducto;
-        this.productoDTO = producto;
+    public FichaDetalladaProductoDTO(int id, ProductoDTO productoDTO, int existencias, String descripcion) {
+        this.idFichaDetalladaProducto = id;
+        this.productoDTO = productoDTO;
         this.existencias = existencias;
         this.descripcion = descripcion;
     }
