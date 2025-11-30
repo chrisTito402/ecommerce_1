@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
+import java.security.MessageDigest;
 
 /**
  *
@@ -45,7 +46,9 @@ public class AutenticacionServlet extends HttpServlet {
         String correo = request.getParameter("correo");
         String password = request.getParameter("password");
         
-        UsuarioDTO usuarioLogueado = this.autenticacionBO.iniciarSesion(correo, password);
+        String passwordHash = hashPassword(password);
+        
+        UsuarioDTO usuarioLogueado = this.autenticacionBO.iniciarSesion(correo, passwordHash);
         if(usuarioLogueado != null){
             HttpSession sesion = request.getSession(true);
             sesion.setAttribute(AuthFilter.SESSION_KEY_USUARIO, usuarioLogueado);
@@ -69,5 +72,19 @@ public class AutenticacionServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+    
+    private String hashPassword(String password) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] hash = md.digest(password.getBytes("UTF-8"));
 
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : hash) {
+                hexString.append(String.format("%02x", b));
+            }
+            return hexString.toString();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

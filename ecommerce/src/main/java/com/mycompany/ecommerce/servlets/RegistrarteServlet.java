@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-
+import java.security.MessageDigest;
 
 /**
  *
@@ -23,15 +23,14 @@ import java.io.PrintWriter;
 public class RegistrarteServlet extends HttpServlet {
 
     private AutenticacionBO autenticacionBO;
-    
+
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
         IPersistencia persistencia = new PersistenciaDAO();
         this.autenticacionBO = new AutenticacionBO(persistencia);
     }
-    
-    
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -63,7 +62,7 @@ public class RegistrarteServlet extends HttpServlet {
         String direccion = request.getParameter("direccion");
         String correo = request.getParameter("correo");
         String password = request.getParameter("password");
-        
+
         //Esto es por si se refresca la pagina por que faltaron datos vacios, no se borren los datos que ya estan llenados
         request.setAttribute("nombre", nombre);
         request.setAttribute("telefono", telefono);
@@ -71,51 +70,63 @@ public class RegistrarteServlet extends HttpServlet {
         request.setAttribute("correo", correo);
         request.setAttribute("password", password);
 
-        
         boolean esValido = validacionDatos(request);
-        if(esValido){
-            UsuarioDTO usuarioDTO = new UsuarioDTO(100,nombre, telefono, direccion, correo, password);
+        if (esValido) {
+            String passwordHash = hashPassword(password);
+            UsuarioDTO usuarioDTO = new UsuarioDTO(100, nombre, telefono, direccion, correo, passwordHash);
             autenticacionBO.registrarte(usuarioDTO);
             request.getRequestDispatcher("/iniciarSesion.jsp").forward(request, response);
-        }
-        else{
+        } else {
             request.getRequestDispatcher("/registrarte.jsp").forward(request, response);
         }
-        
     }
 
     private boolean validacionDatos(HttpServletRequest request) {
-       boolean esValidado = true;
+        boolean esValidado = true;
 
-       String nombre = request.getParameter("nombre");
-       String telefono = request.getParameter("telefono");
-       String direccion = request.getParameter("direccion");
-       String correo = request.getParameter("correo");
-       String password = request.getParameter("password");
+        String nombre = request.getParameter("nombre");
+        String telefono = request.getParameter("telefono");
+        String direccion = request.getParameter("direccion");
+        String correo = request.getParameter("correo");
+        String password = request.getParameter("password");
 
-       if (nombre == null || nombre.trim().isEmpty()) {
-           request.setAttribute("mensajeNombre", "*El nombre está vacío");
-           esValidado = false;
-       }
-       if (telefono == null || telefono.trim().isEmpty()) {
-           request.setAttribute("mensajeTelefono", "*El teléfono está vacío");
-           esValidado = false;
-       }
-       if (direccion == null || direccion.trim().isEmpty()) {
-           request.setAttribute("mensajeDireccion", "*La dirección está vacía");
-           esValidado = false;
-       }
-       if (correo == null || correo.trim().isEmpty()) {
-           request.setAttribute("mensajeCorreo", "*El correo está vacío");
-           esValidado = false;
-       }
-       if (password == null || password.trim().isEmpty()) {
-           request.setAttribute("mensajePassword", "*La contraseña está vacía");
-           esValidado = false;
-       }
+        if (nombre == null || nombre.trim().isEmpty()) {
+            request.setAttribute("mensajeNombre", "*El nombre está vacío");
+            esValidado = false;
+        }
+        if (telefono == null || telefono.trim().isEmpty()) {
+            request.setAttribute("mensajeTelefono", "*El teléfono está vacío");
+            esValidado = false;
+        }
+        if (direccion == null || direccion.trim().isEmpty()) {
+            request.setAttribute("mensajeDireccion", "*La dirección está vacía");
+            esValidado = false;
+        }
+        if (correo == null || correo.trim().isEmpty()) {
+            request.setAttribute("mensajeCorreo", "*El correo está vacío");
+            esValidado = false;
+        }
+        if (password == null || password.trim().isEmpty()) {
+            request.setAttribute("mensajePassword", "*La contraseña está vacía");
+            esValidado = false;
+        }
 
-       return esValidado;
-   }
+        return esValidado;
+    }
+
+    private String hashPassword(String password) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] hash = md.digest(password.getBytes("UTF-8"));
+
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : hash) {
+                hexString.append(String.format("%02x", b));
+            }
+            return hexString.toString();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 }
-
