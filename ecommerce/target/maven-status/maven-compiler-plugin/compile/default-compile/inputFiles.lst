@@ -3,6 +3,7 @@ C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycom
 C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\EliminarReseniaServlet.java
 C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\RegistrarteServlet.java
 C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\dtos\FichaDetalladaProductoDTO.java
+C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\rest\AuthResource.java
 C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\negocio\ReseniasBO.java
 C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\filtros\AuthFilter.java
 C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\resources\JakartaEE10Resource.java
@@ -10,6 +11,7 @@ C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycom
 C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\filtros\LogFilter.java
 C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\negocio\ProductoBO.java
 C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\CatalogoServlet.java
+C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\rest\AbstractFacade.java
 C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\mappers\ReseniaMapper.java
 C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\ModificarUsuario.java
 C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\negocio\AutenticacionBO.java
@@ -29,6 +31,8 @@ C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycom
 C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\PanelAdminServlet.java
 C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\mappers\ProductoMapper.java
 C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\dtos\UsuarioDTO.java
+C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\rest\ApplicationConfig.java
+C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\rest\UsuarioFacadeREST.java
 C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\AutenticacionServlet.java
 C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\AdminProductosServlet.java
 C:\Users\Knocmare\Documents\GitHub\ecommerce_1\ecommerce\src\main\java\com\mycompany\ecommerce\servlets\IndexServlet.java

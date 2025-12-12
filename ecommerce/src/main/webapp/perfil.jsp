@@ -13,14 +13,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link rel="stylesheet" href="CSS/perfil.css"/>
-        <title>JSP Page</title>
+        <script src="JS/perfil.js"></script>
+        <title>Perfil</title>
     </head>
     <body>
         <%@include file="FRAGMENTOS/navegacion.jspf" %>
         <main>
             <section>
                 <div class="rectangulo-centro">
-                    <form action="${pageContext.request.contextPath}/modificar" method="post">
+                    <form id="perfilForm">
                         <h1>Tu Perfil</h1>
                         <h3 class="perfil">
                             Nombre Completo

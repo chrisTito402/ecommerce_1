@@ -12,31 +12,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/iniciarSesion.css">
-    <title>Iniciar Sesion</title>
+    <title>Iniciar Sesión</title>
 </head>
 <body>
     <main>
         <section id="seccion-formulario">
             <a href="/index"><img src="../IMGS/Vinylia.png" alt=""></a>
-            <h2>Inicio de Sesion</h2>
-            <form action="/autenticacion" method="post">
+            <h2>Inicio de Sesión</h2>
+            <form id="loginForm">
                 <div class="correo">
                     <label for="">Correo Electronico</label>
-                    <input type="email" name="correo">
+                    <input type="email" name="correo" id="correo">
                 </div>
                 <div class="contraseña">
                     <label for="">Contraseña</label>
-                    <input type="password" name="password">
+                    <input type="password" name="password" id="password">
                 </div>
                 <div class="iniciar-sesion">
                     <input type="submit" value="Iniciar Sesion">
                 </div>
             </form>
-            <c:if test="${mensaje != null}">
-                <span id="mensaje-error">${mensaje}</span>
-            </c:if>
+            <span id="mensaje-error"></span>
             <a href="/registrarte">Registrarte</a>
         </section>
     </main>
+    <script src="JS/iniciarSesion.js"></script>
 </body>
 </html>
