@@ -7,6 +7,7 @@ import java.util.List;
  * @author janot
  */
 public class ProductoDTO {
+
     private int idProducto;
     private String nombre;
     private String rutaImg;
@@ -22,8 +23,9 @@ public class ProductoDTO {
         this.nombre = nombre;
         this.rutaImg = rutaImg;
         this.precio = precio;
-        this.estrellas = estrellas;
         this.categorias = categorias;
+        this.estrellas = estrellas;
+
     }
 
     public int getIdProducto() {
