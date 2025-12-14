@@ -12,8 +12,8 @@ public interface IUsuarioDAO {
     
     public List<Usuario> consultarTodosLosUsuarios();
     
-    public void registrarUsuario(Usuario usuario);
+    public Usuario registrarUsuario(Usuario usuario);
     
-    public void editarUsuario(Usuario usuario);
+    public Usuario editarUsuario(Usuario usuario);
     
 }

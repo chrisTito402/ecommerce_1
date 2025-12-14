@@ -4,14 +4,11 @@
  */
 package entidades;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
@@ -25,7 +22,7 @@ public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false, length = 100)
@@ -42,6 +39,26 @@ public class Usuario implements Serializable {
 
     @Column(name = "password", nullable = false, length = 120)
     private String contraseña;
+
+    public Usuario() {
+    }
+
+    public Usuario(Long id, String nombre, String telefono, String direccion, String correo, String contraseña) {
+        this.id = id;
+        this.nombre = nombre;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.correo = correo;
+        this.contraseña = contraseña;
+    }
+
+    public Usuario(String nombre, String telefono, String direccion, String correo, String contraseña) {
+        this.nombre = nombre;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.correo = correo;
+        this.contraseña = contraseña;
+    }
 
     public String getNombre() {
         return nombre;

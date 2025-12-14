@@ -5,6 +5,7 @@ import com.mycompany.ecommerce.dtos.UsuarioDTO;
 import com.mycompany.ecommerce.mappers.UsuarioMapper;
 import entidades.Carrito;
 import entidades.Usuario;
+import java.security.MessageDigest;
 import java.util.logging.Logger;
 
 
@@ -28,7 +29,7 @@ public class AutenticacionBO {
                 throw new IllegalStateException("El usuario no existe");
             }
             
-            if(usuario.getContraseña().equals(contraseña)){
+            if(usuario.getContraseña().equals(this.hashPassword(contraseña))){
                 UsuarioDTO usuarioDTO = new UsuarioDTO(usuario.getId().intValue(),usuario.getNombre(), usuario.getTelefono(), usuario.getDireccion(), usuario.getCorreo(), usuario.getContraseña());
                 usuarioDTO.setCarrito(new Carrito());
                 return usuarioDTO;
@@ -41,15 +42,31 @@ public class AutenticacionBO {
         return null;
     }
     
-    public void registrarte(UsuarioDTO usuarioDTO){
+    public UsuarioDTO registrarte(UsuarioDTO usuarioDTO){
         if(usuarioDTO == null){
             throw new IllegalStateException("Los datos estan vacios");
         }
         
         UsuarioMapper usuarioMapper = new UsuarioMapper();
-        Usuario usuario = usuarioMapper.toEntity(usuarioDTO);
+        Usuario usuarioNuevo = usuarioMapper.toEntity(usuarioDTO);
         
-        persistencia.registrarUsuario(usuario);
+        Usuario usuario = persistencia.registrarUsuario(usuarioNuevo);
+        return usuarioMapper.toDTO(usuario);
+    }
+    
+    private String hashPassword(String password) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] hash = md.digest(password.getBytes("UTF-8"));
+
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : hash) {
+                hexString.append(String.format("%02x", b));
+            }
+            return hexString.toString();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
     
 }

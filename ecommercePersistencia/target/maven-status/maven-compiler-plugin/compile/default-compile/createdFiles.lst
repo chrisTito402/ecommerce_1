@@ -11,6 +11,7 @@ Conexion\Conexion.class
 IPersistencia\IReseniasDAO.class
 IPersistencia\IUsuarioDAO.class
 entidades\Producto.class
+prueba\main.class
 entidades\Carrito.class
 entidadesFalse\Producto.class
 entidadesFalse\Resenia.class

@@ -49,12 +49,14 @@ public class UsuariosDAO implements IPersistencia.IUsuarioDAO {
     }
 
     @Override
-    public void registrarUsuario(Usuario usuario) {
+    public Usuario registrarUsuario(Usuario usuario) {
         EntityManager em = Conexion.crearConexion();
         try {
             em.getTransaction().begin();
             em.persist(usuario);
             em.getTransaction().commit();
+            
+            return usuario;
         } catch (Exception e) {
             em.getTransaction().rollback();
             throw new RuntimeException("Error al registrar usuario: " + e.getMessage());
@@ -64,12 +66,14 @@ public class UsuariosDAO implements IPersistencia.IUsuarioDAO {
     }
 
     @Override
-    public void editarUsuario(Usuario usuario) {
+    public Usuario editarUsuario(Usuario usuario) {
         EntityManager em = Conexion.crearConexion();
         try {
             em.getTransaction().begin();
             em.merge(usuario);
             em.getTransaction().commit();
+            
+            return usuario;
         } catch (Exception e) {
             em.getTransaction().rollback();
             throw new RuntimeException("Error al editar usuario: " + e.getMessage());

@@ -42,8 +42,8 @@ public class PersistenciaDAO implements IPersistencia.IPersistencia {
     }
 
     @Override
-    public void registrarUsuario(Usuario usuario) {
-        USUARIODAO.registrarUsuario(usuario);
+    public Usuario registrarUsuario(Usuario usuario) {
+        return USUARIODAO.registrarUsuario(usuario);
     }
 
     @Override
@@ -62,8 +62,8 @@ public class PersistenciaDAO implements IPersistencia.IPersistencia {
     }
 
     @Override
-    public void editarUsuario(Usuario usuario) {
-        USUARIODAO.editarUsuario(usuario);
+    public Usuario editarUsuario(Usuario usuario) {
+        return USUARIODAO.editarUsuario(usuario);
     }
 
     @Override

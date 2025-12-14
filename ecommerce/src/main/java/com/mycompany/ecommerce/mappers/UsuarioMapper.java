@@ -1,6 +1,7 @@
 package com.mycompany.ecommerce.mappers;
 
 import com.mycompany.ecommerce.dtos.UsuarioDTO;
+import com.mycompany.ecommerce.dtos.UsuarioNuevoDTO;
 import entidades.Usuario;
 
 /**
@@ -35,4 +36,16 @@ public class UsuarioMapper {
         return usuario;
     }
 
+    public Usuario nuevoDtoToEntity(UsuarioNuevoDTO usuarioNuevo) {
+        Usuario usuario = new Usuario();
+        
+        usuario.setNombre(usuarioNuevo.getNombre());
+        usuario.setTelefono(usuarioNuevo.getTelefono());
+        usuario.setDireccion(usuarioNuevo.getDireccion());
+        usuario.setCorreo(usuarioNuevo.getCorreo());
+        usuario.setContraseña(usuarioNuevo.getContraseña());
+        
+        return usuario;
+    }
+    
 }

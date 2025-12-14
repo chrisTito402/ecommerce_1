@@ -12,6 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/iniciarSesion.css">
+    <script src="./JS/iniciarSesion2.js"></script>
     <title>Iniciar Sesión</title>
 </head>
 <body>
@@ -29,13 +30,12 @@
                     <input type="password" name="password" id="password">
                 </div>
                 <div class="iniciar-sesion">
-                    <input type="submit" value="Iniciar Sesion">
+                    <input type="button" value="Iniciar Sesion" id="btn-iniciarSesion">
                 </div>
             </form>
             <span id="mensaje-error"></span>
             <a href="/registrarte">Registrarte</a>
         </section>
     </main>
-    <script src="JS/iniciarSesion.js"></script>
 </body>
 </html>

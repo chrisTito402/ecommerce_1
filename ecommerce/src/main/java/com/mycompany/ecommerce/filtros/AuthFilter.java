@@ -76,7 +76,8 @@ public class AuthFilter implements Filter {
             path.endsWith(".jpg") ||
             path.endsWith(".jpeg")||
             path.endsWith(".gif") ||
-            path.endsWith(".ico")) {
+            path.endsWith(".ico") ||
+            path.contains("/api")) {
             return true;
         }
         

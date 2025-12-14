@@ -29,4 +29,4 @@ const app = () => {
     init();
 };
 
-app();
+//app();
