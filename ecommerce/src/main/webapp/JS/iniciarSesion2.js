@@ -3,6 +3,7 @@ window.onload = () => {
     const inpCorreo = document.getElementById("correo");
     const inpPassword = document.getElementById("password");
     const btnIniciarSesion = document.getElementById("btn-iniciarSesion");
+    const spnError = document.getElementById("mensaje-error");
 
     const init = () => {
         btnIniciarSesion.onclick = iniciarSesion;
@@ -34,6 +35,7 @@ window.onload = () => {
             console.log("El usuario inicio sesión.");
             window.location.replace("/index");
         }).catch(err => {
+            spnError.innerHTML = "Error al iniciar sesión"
             console.error(err);
         });
     };
