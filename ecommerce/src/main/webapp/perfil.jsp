@@ -61,7 +61,8 @@
                         <div class="centro-botton">
                             <a href="#">Ver Historial</a>
                             <input type="submit" value="Modificar">
-                            <a class="cerrar-sesion" href="/cerrarSesion">Cerrar Sesión</a>
+                            <a class="cerrar-sesion" href="/cerrarSesion" id="btn-cerrarSesion">Cerrar Sesión</a>
+                            <span id="mensaje-error"></span>
                         </div>
                     </form>
                 </div> 

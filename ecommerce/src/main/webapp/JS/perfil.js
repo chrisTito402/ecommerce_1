@@ -1,32 +1,35 @@
-const app = () => {
-
-    const logout = async () => {
-        try {
-            const res = await fetch('/ecommerce-1.0-SNAPSHOT/api/auth/logout', {
-                method: 'POST',
-                credentials: 'include'
-            });
-
-            if(res.ok){
-                window.location.href = '/index';
-            } else {
-                alert('Error al cerrar sesión');
-            }
-        } catch(err) {
-            console.error(err);
-            alert('Error de conexión');
-        }
-    };
+window.onload = () => {
+    const host = "http://localhost:8080/api";
+    const btnCerrarSesion = document.getElementById("btn-cerrarSesion");
+    const spnError = document.getElementById("mensaje-error");
 
     const init = () => {
-        const perfilForm = document.getElementById("perfilForm");
-        perfilForm.addEventListener("click", (e) => {
-            e.preventDefault();
-            logout();
+        btnCerrarSesion.onclick = cerrarSesion;
+    };
+
+    const cerrarSesion = () => {
+        fetch(
+            host + "/auth/logout",
+            {
+                method: "POST",
+                credentials: "include"
+            }
+        )
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Error al cerrar sesión.");
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Sesión cerrada");
+            window.location.replace("/index");
+        })
+        .catch(err => {
+            spnError.innerHTML = "Error al cerrar sesión";
+            console.error(err);
         });
     };
 
     init();
 };
-
-//app();

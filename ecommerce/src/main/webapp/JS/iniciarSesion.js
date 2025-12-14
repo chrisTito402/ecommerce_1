@@ -1,50 +1,44 @@
-const app = () => {
-
-    const mostrarError = (mensaje) => {
-        document.getElementById("mensaje-error").textContent = mensaje;
-    };
-
-    const login = async (correo, password) => {
-        try {
-            const res = await fetch('/ecommerce-1.0-SNAPSHOT/api/auth/login', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                credentials: 'include',
-                body: JSON.stringify({ correo, password })
-            });
-
-            const data = await res.json();
-
-            if (!res.ok) {
-                mostrarError(data.error);
-                return false;
-            }
-
-            return true; // Login correcto
-        } catch(err) {
-            mostrarError("Error de conexión");
-            console.error(err);
-            return false;
-        }
-    };
+window.onload = () => {
+    const host = "http://localhost:8080/api";
+    const inpCorreo = document.getElementById("correo");
+    const inpPassword = document.getElementById("password");
+    const btnIniciarSesion = document.getElementById("btn-iniciarSesion");
+    const spnError = document.getElementById("mensaje-error");
 
     const init = () => {
-        const loginForm = document.getElementById("loginForm");
+        btnIniciarSesion.onclick = iniciarSesion;
+    };
 
-        loginForm.addEventListener("submit", async (e) => {
-            e.preventDefault();
+    const iniciarSesion = () => {
+        const correo = inpCorreo.value;
+        const contrasenia = inpPassword.value;
+        const usuario = {
+            correo: correo,
+            contrasenia: contrasenia
+        };
 
-            const correo = document.getElementById("correo").value;
-            const password = document.getElementById("password").value;
-
-            const exito = await login(correo, password);
-            if(exito){
-                window.location.href = '/perfil.jsp';
+        fetch(
+            host + "/usuario",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(usuario)
             }
+        ).then(response => {
+            if (!response.ok) {
+                throw new Error("Error al iniciar sesión.");
+            }
+            return response.json();
+        }).then(usuarioDTO => {
+            console.log("El usuario inicio sesión.");
+            window.location.replace("/index");
+        }).catch(err => {
+            spnError.innerHTML = "Error al iniciar sesión"
+            console.error(err);
         });
     };
 
     init();
 };
-
-//app();
