@@ -75,4 +75,10 @@ public class ProductoDTO {
     public void setCategorias(List<String> categorias) {
         this.categorias = categorias;
     }
+
+    @Override
+    public String toString() {
+        return "ProductoDTO{" + "idProducto=" + idProducto + ", nombre=" + nombre + ", rutaImg=" + rutaImg + ", precio=" + precio + ", estrellas=" + estrellas + ", categorias=" + categorias + '}';
+    }
+    
 }

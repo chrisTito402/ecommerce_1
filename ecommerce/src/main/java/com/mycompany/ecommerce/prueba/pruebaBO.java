@@ -2,8 +2,11 @@ package com.mycompany.ecommerce.prueba;
 
 import DAOs.PersistenciaDAO;
 import IPersistencia.IPersistencia;
+import com.mycompany.ecommerce.dtos.ProductoDTO;
 import com.mycompany.ecommerce.dtos.UsuarioDTO;
 import com.mycompany.ecommerce.negocio.AutenticacionBO;
+import com.mycompany.ecommerce.negocio.ProductoBO;
+import java.util.List;
 
 /**
  *
@@ -12,9 +15,9 @@ import com.mycompany.ecommerce.negocio.AutenticacionBO;
 public class pruebaBO {
     public static void main(String[] args) {
         IPersistencia persistencia = new PersistenciaDAO();
-        AutenticacionBO aBo = new AutenticacionBO(persistencia);
-        UsuarioDTO usuario = aBo.iniciarSesion("a@gmail.com", "a");
-        System.out.println(usuario.getNombre());
+        ProductoBO productosBO = new ProductoBO(persistencia);
+        List<ProductoDTO> productosDTO = productosBO.consultarProductos();
+        System.out.println(productosDTO);
         
     }
 }

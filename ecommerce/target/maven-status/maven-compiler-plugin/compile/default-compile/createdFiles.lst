@@ -1,4 +1,5 @@
 com\mycompany\ecommerce\filtros\AuthFilter.class
+com\mycompany\ecommerce\ProductoResource.class
 com\mycompany\ecommerce\mappers\ReseniaMapper.class
 com\mycompany\ecommerce\dtos\IniciarSesionDTO.class
 com\mycompany\ecommerce\rest\AbstractFacade.class

@@ -17,6 +17,7 @@ public class JakartaRestConfiguration extends Application {
         // servidor para que se consideren y se puedan invocar
         final HashSet<Class<?>> classes = new HashSet<>();
         classes.add(UsuarioResource.class);
+        classes.add(ProductoResource.class);
         return classes;
     }
 }

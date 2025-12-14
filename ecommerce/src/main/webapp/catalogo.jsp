@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="CSS/index.css">
         <link rel="stylesheet" href="CSS/catalogo.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <script src="./JS/catalogo.js"></script>
         <title>JSP Page</title>
     </head>
     <body>
@@ -42,16 +43,7 @@
             </section>
 
             <section id="seccion-trending">
-                <div class="container-productos">
-                    <c:forEach items="${requestScope.productos}" var="producto" begin="0" end="${requestScope.productos.size()}">
-                        <div class="card-producto">
-                            <img src="${producto.getRutaImg()}" alt="">
-                            <p class="nombre-album">${producto.getNombre()}</p>
-                            <p class="puntuacion">${producto.getEstrellas()}</p>
-                            <p class="detalles"><a href="/detallesProducto?idProducto=${producto.getIdProducto()}">Ver Detalles</a></p>
-                            <div class="agregar-a-carrito"><a href="/agregarProducto?idProducto=${producto.getIdProducto()}">Añadir A Carrito</a></div>
-                        </div>
-                    </c:forEach>
+                <div class="container-productos" id="container-productos">
                 </div>
             </section>
         </main>
