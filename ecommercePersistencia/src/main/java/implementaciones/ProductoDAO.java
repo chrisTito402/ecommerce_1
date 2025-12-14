@@ -26,7 +26,7 @@ public class ProductoDAO implements IProductoDAO {
     }
 
     @Override
-    public Producto consultarProducto(int idProducto) {
+    public Producto consultarProducto(long idProducto) {
         EntityManager em = Conexion.Conexion.crearConexion();
         Producto producto = em.find(Producto.class, idProducto);
         em.close();
@@ -34,7 +34,7 @@ public class ProductoDAO implements IProductoDAO {
     }
 
     @Override
-    public void elimianarProducto(int idProducto) {
+    public void elimianarProducto(long idProducto) {
         EntityManager em = Conexion.Conexion.crearConexion();
         try {
             em.getTransaction().begin();

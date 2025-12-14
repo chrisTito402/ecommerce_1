@@ -10,9 +10,9 @@ import java.util.List;
 public interface IProductoDAO {
     public List<Producto> consultarProductos();
     
-    public Producto consultarProducto(int idProducto);
+    public Producto consultarProducto(long idProducto);
     
-    public void elimianarProducto(int idProducto);
+    public void elimianarProducto(long idProducto);
     
     public void crearProducto(Producto producto);
     

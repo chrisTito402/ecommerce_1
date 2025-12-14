@@ -8,7 +8,7 @@ const app = () => {
             });
 
             if(res.ok){
-                window.location.href = '/index.jsp';
+                window.location.href = '/index';
             } else {
                 alert('Error al cerrar sesión');
             }

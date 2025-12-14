@@ -15,5 +15,6 @@ public class pruebaBO {
         AutenticacionBO aBo = new AutenticacionBO(persistencia);
         UsuarioDTO usuario = aBo.iniciarSesion("a@gmail.com", "a");
         System.out.println(usuario.getNombre());
+        
     }
 }
