@@ -51,6 +51,7 @@
                 <div class="tuComentario">
                     <form>
                         <input id="textfield" type="text" placeholder="Escribe tu opinión..." name="comentario">
+                        <input id="inp-rating" type="number" placeholder="Rating..." name="rating">
                         <input id="boton" type="button" value="Publicar"></input>
                     </form>
                 </div>

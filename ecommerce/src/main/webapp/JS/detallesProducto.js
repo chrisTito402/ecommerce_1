@@ -7,6 +7,7 @@ window.onload = () => {
     const tablaResenias = document.getElementById("tabla-resenias");
     const inpResenia = document.getElementById("textfield");
     const inpPublicarResenia = document.getElementById("boton");
+    const inpRating = document.getElementById("inp-rating");
     let fichaProductoDetallada;
     let idProducto;
     let resenias = [];
@@ -21,7 +22,7 @@ window.onload = () => {
     const publicarResenia = () => {
         const nuevaResenia = {
             idProducto: idProducto,
-            rating: 2,
+            rating: inpRating.value,
             comentario: inpResenia.value
         };
 
