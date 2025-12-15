@@ -1,13 +1,17 @@
 package DAOs;
 
+import IPersistencia.ICarritoDAO;
 import IPersistencia.IFichaDetalladaProductoDAO;
+import IPersistencia.IPedidosDAO;
 import IPersistencia.IProductoDAO;
 import entidades.*;
 
 import IPersistencia.IReseniasDAO;
 import IPersistencia.IUsuarioDAO;
+import implementaciones.CarritoDAO;
 
 import implementaciones.FichaDetalladaDAO;
+import implementaciones.PedidosDAO;
 import implementaciones.ProductoDAO;
 import implementaciones.ReseniasDAO;
 import implementaciones.UsuariosDAO;
@@ -23,6 +27,8 @@ public class PersistenciaDAO implements IPersistencia.IPersistencia {
     private final IReseniasDAO RESENIASDAO;
     private final IProductoDAO PRODUCTODAO;
     private final IFichaDetalladaProductoDAO FICHADETALLADADAO;
+    private final IPedidosDAO PEDIDOSDAO;
+    private final ICarritoDAO CARRITODAO; // NUEVO ATRIBUTO
 
     public PersistenciaDAO() {
         //USUARIODAO = UsuarioMokitoDAO.getInstance();
@@ -34,6 +40,8 @@ public class PersistenciaDAO implements IPersistencia.IPersistencia {
         USUARIODAO = new UsuariosDAO();
         FICHADETALLADADAO = new FichaDetalladaDAO();
         RESENIASDAO = new ReseniasDAO();
+        PEDIDOSDAO = new PedidosDAO();
+        CARRITODAO = new CarritoDAO();
     }
 
     @Override
@@ -55,12 +63,12 @@ public class PersistenciaDAO implements IPersistencia.IPersistencia {
     public List<Producto> consultarProductos(String nombre) {
         return PRODUCTODAO.consultarProductos(nombre);
     }
-    
+
     @Override
     public List<Producto> consultarProductosPorCategoria(String categoria) {
         return PRODUCTODAO.consultarProductosPorCategoria(categoria);
     }
-    
+
     @Override
     public List<Resenia> consultarResenias() {
         return RESENIASDAO.consultarResenias();
@@ -127,4 +135,21 @@ public class PersistenciaDAO implements IPersistencia.IPersistencia {
         USUARIODAO.actualizarUsuario(usuario);
     }
 
+    @Override
+    public List<Pedido> consultarPedidosPorUsuario(Long idUsuario) {
+        return PEDIDOSDAO.consultarPedidosPorUsuario(idUsuario);
+    }
+
+    @Override
+    public Pedido consultarPedido(Long idPedido) {
+        return PEDIDOSDAO.consultarPedido(idPedido);
+    }
+    
+    public Carrito1 guardarOActualizarCarrito(Carrito1 carrito) {
+        return CARRITODAO.guardarOActualizarCarrito(carrito);
+    }
+    
+    public Carrito1 consultarProductoEnCarrito(Long idUsuario, Long idProducto) {
+        return CARRITODAO.consultarProductoEnCarrito(idUsuario, idProducto);
+    }
 }

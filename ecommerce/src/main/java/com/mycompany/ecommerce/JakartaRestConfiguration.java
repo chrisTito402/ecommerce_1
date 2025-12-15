@@ -1,5 +1,7 @@
 package com.mycompany.ecommerce;
 
+import com.mycompany.ecommerce.rest.CarritoResource;
+import com.mycompany.ecommerce.rest.PedidoResource;
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
 import java.util.HashSet;
@@ -9,15 +11,17 @@ import java.util.Set;
  * Configures Jakarta RESTful Web Services for the application.
  * @author Juneau
  */
-@ApplicationPath("resources")
+@ApplicationPath("api") 
 public class JakartaRestConfiguration extends Application {
     @Override
     public Set<Class<?>> getClasses() {
-        // se añaden las clases Resource a la lista del
-        // servidor para que se consideren y se puedan invocar
         final HashSet<Class<?>> classes = new HashSet<>();
+        
         classes.add(UsuarioResource.class);
         classes.add(ProductoResource.class);
+        classes.add(CarritoResource.class); 
+        classes.add(PedidoResource.class); 
+        
         return classes;
     }
 }

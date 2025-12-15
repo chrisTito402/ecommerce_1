@@ -45,4 +45,8 @@ public interface IPersistencia {
     public Usuario buscarUsuarioPorId(Long id);
     
     public void actualizarUsuario(Usuario usuario);
+    
+    public List<Pedido> consultarPedidosPorUsuario(Long idUsuario);
+    
+    public Pedido consultarPedido(Long idPedido);
 }

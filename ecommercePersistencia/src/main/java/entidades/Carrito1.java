@@ -11,7 +11,7 @@ import jakarta.persistence.*;
 @NamedQueries({
     @NamedQuery(
         name = "Carrito.findByUsuario",
-        query = "SELECT c FROM Carrito c WHERE c.usuario.id = :id_usuario"
+        query = "SELECT c FROM Carrito1 c WHERE c.usuario.id = :id_usuario"
     )
 })
 public class Carrito1 {
