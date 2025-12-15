@@ -16,11 +16,11 @@ import jakarta.persistence.EntityManager;
 public class FichaDetalladaDAO implements IFichaDetalladaProductoDAO {
 
     @Override
-    public FichaDetalladaProducto consultarFichaDetalladaDeProducto(int idProducto) {
+    public FichaDetalladaProducto consultarFichaDetalladaDeProducto(long idProducto) {
         EntityManager em = Conexion.crearConexion();
         try {
             return em.createQuery(
-                    "SELECT f FROM FichaDetalladaProducto f WHERE f.producto.idProducto = :id",
+                    "SELECT f FROM FichaDetalladaProducto f WHERE f.producto.id = :id",
                     FichaDetalladaProducto.class
             )
                     .setParameter("id", idProducto)

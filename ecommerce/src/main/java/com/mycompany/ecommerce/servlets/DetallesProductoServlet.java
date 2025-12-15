@@ -36,8 +36,6 @@ public class DetallesProductoServlet extends HttpServlet {
         this.reseniaBO = new ReseniasBO(persistencia);
         this.fichaDetalladaBO = new FichaDetalladaProductoBO(persistencia);
     }
-    
-
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -51,18 +49,19 @@ public class DetallesProductoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        if(request.getParameter("idProducto") != null){
-            int idProducto = Integer.parseInt(request.getParameter("idProducto"));
-            FichaDetalladaProductoDTO fichaDetallada = fichaDetalladaBO.consultarFichaDetalladaProducto(idProducto);
-            List<ReseniaDTO> listaReseniasDTO = reseniaBO.consultarReseniasPorProducto(idProducto);
-            request.setAttribute("fichaDetallada", fichaDetallada);
-            request.setAttribute("resenias", listaReseniasDTO);
-            request.getRequestDispatcher("/detallesProducto.jsp").forward(request, response);
-        }
-        else{
-            request.getRequestDispatcher("/index").forward(request, response);
-        }
+
+//        if(request.getParameter("idProducto") != null){
+//            int idProducto = Integer.parseInt(request.getParameter("idProducto"));
+//            FichaDetalladaProductoDTO fichaDetallada = fichaDetalladaBO.consultarFichaDetalladaProducto(idProducto);
+//            List<ReseniaDTO> listaReseniasDTO = reseniaBO.consultarReseniasPorProducto(idProducto);
+//            request.setAttribute("fichaDetallada", fichaDetallada);
+//            request.setAttribute("resenias", listaReseniasDTO);
+//            request.getRequestDispatcher("/detallesProducto.jsp").forward(request, response);
+//        }
+//        else{
+//            request.getRequestDispatcher("/index").forward(request, response);
+//        }
+        request.getRequestDispatcher("/detallesProducto.jsp").forward(request, response);
     }
 
 }

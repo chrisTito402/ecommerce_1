@@ -13,18 +13,19 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="CSS/detallesProducto.css"/>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <script src="./JS/detallesProducto.js"></script>
         <title>JSP Page</title>
     </head>
     <body>
         <%@include file="FRAGMENTOS/navegacion.jspf"%>
         <main>
             <section id="seccion-producto" class="ordenar">
-                <div class="rectangulo-centro">
-                    <img src="${requestScope.fichaDetallada.getProductoDTO().getRutaImg()}" alt="Portada">
-                    <h2>${requestScope.fichaDetallada.getProductoDTO().getEstrellas()} Stars</h2>
+                <div class="rectangulo-centro" id="div-rectangulo-centro">
+                    <img src="${requestScope.fichaDetallada.getProductoDTO().getRutaImg()}" id="img-ficha" alt="Portada">
+                    <h2 id="estrellas-ficha">${requestScope.fichaDetallada.getProductoDTO().getEstrellas()} Stars</h2>
                     <div>
-                        <h1>${requestScope.fichaDetallada.getProductoDTO().getNombre()}</h1>
-                        <p>${requestScope.fichaDetallada.getDescripcion()}</p>
+                        <h1 id="nombre-ficha">${requestScope.fichaDetallada.getProductoDTO().getNombre()}</h1>
+                        <p id="descripcion-ficha">${requestScope.fichaDetallada.getDescripcion()}</p>
                     </div>
                 </div>
             </section>
