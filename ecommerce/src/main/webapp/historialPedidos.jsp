@@ -19,7 +19,7 @@
         <%@include file="FRAGMENTOS/navegacion.jspf"%>
         <main>
             <section>
-                <div class="rectangulo-centro">
+                <div class="rectangulo-centro" id="rectangulo-centro">
                     <h1>Historial de Pedidos</h1>
                     <section class="lista-productos">
                         <c:forEach items="${sessionScope.usuario.getCarrito().obtenerCarrito()}" var="producto" begin="0" end="${sessionScope.usuario.getCarrito().obtenerCarrito().size()}">

@@ -14,7 +14,7 @@ window.onload = () => {
     const cargarPedidos = () => {
         pedidos.forEach(pedido => {
             pedido.detallesPedido.forEach(detalle => {
-
+                const divProducto = document.createElement("div");
             });
         });
     };

@@ -83,6 +83,7 @@ public class Carrito1Resource {
             @Context HttpServletRequest request
     ) {
         UsuarioDTO usuario = (UsuarioDTO) request.getSession().getAttribute(AuthFilter.SESSION_KEY_USUARIO);
+        usuario.getCarrito().setTotal(usuario.getCarrito().getTotal() - producto.getPrecio());
         usuario.getCarrito().obtenerCarrito().removeIf(p -> p.getIdProducto() == producto.getIdProducto());
     }
 }

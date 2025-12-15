@@ -57,6 +57,7 @@ public class PedidosResource {
         
         pedidosBO.crearPedido(pedido);
         usuario.getCarrito().obtenerCarrito().clear();
+        usuario.getCarrito().setTotal(0);
     }
 
 }

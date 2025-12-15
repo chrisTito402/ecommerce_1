@@ -14,6 +14,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.Path;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.core.MediaType;
@@ -44,6 +45,12 @@ public class UsuarioResource {
     public UsuarioResource() {
     }
 
+    @DELETE
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void postJson(@Context HttpServletRequest request) {
+        request.getSession().setAttribute(AuthFilter.SESSION_KEY_USUARIO, null);
+    }
+    
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
