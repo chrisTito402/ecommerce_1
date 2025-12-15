@@ -2,16 +2,24 @@ package com.mycompany.ecommerce;
 
 import DAOs.PersistenciaDAO;
 import IPersistencia.IPersistencia;
+import com.mycompany.ecommerce.dtos.FichaDetalladaProductoDTO;
 import com.mycompany.ecommerce.dtos.ProductoDTO;
+import com.mycompany.ecommerce.dtos.ReseniaDTO;
+import com.mycompany.ecommerce.dtos.ReseniaNuevaDTO;
+import com.mycompany.ecommerce.dtos.UsuarioDTO;
+import com.mycompany.ecommerce.filtros.AuthFilter;
+import com.mycompany.ecommerce.negocio.FichaDetalladaProductoBO;
 import com.mycompany.ecommerce.negocio.ProductoBO;
+import com.mycompany.ecommerce.negocio.ReseniasBO;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.UriInfo;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.ws.rs.POST;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.core.MediaType;
 import java.util.List;
@@ -26,10 +34,14 @@ import java.util.List;
 public class ProductoResource {
 
     private static final ProductoBO productoBO;
+    private static final FichaDetalladaProductoBO fichaBO;
+    private static final ReseniasBO reseniasBO;
     
     static {
         IPersistencia persistencia = new PersistenciaDAO();
         productoBO = new ProductoBO(persistencia);
+        fichaBO = new FichaDetalladaProductoBO(persistencia);
+        reseniasBO = new ReseniasBO(persistencia);
     }
     
     @Context
@@ -67,8 +79,43 @@ public class ProductoResource {
         return productosDTO;
     }
     
-    @PUT
+    @GET
+    @Path("fichaProducto/{idProducto}")
+    @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public void putJson(String content) {
+    public FichaDetalladaProductoDTO getFichaDetalladaJson(
+            @PathParam("idProducto") int idProducto
+    ) {
+        FichaDetalladaProductoDTO fichaDTO = fichaBO.consultarFichaDetalladaProducto(idProducto);
+        return fichaDTO;
     }
+    
+    @GET
+    @Path("resenias/{idProducto}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public List<ReseniaDTO> getReseniasJson(
+            @PathParam("idProducto") int idProducto
+    ) {
+        List<ReseniaDTO> reseniasDTO = reseniasBO.consultarReseniasPorProducto(idProducto);
+        return reseniasDTO;
+    }
+    
+    @POST
+    @Path("resenias")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ReseniaDTO postJson(ReseniaNuevaDTO reseniaNueva, @Context HttpServletRequest request) {
+        ReseniaDTO resenia = new ReseniaDTO();
+        resenia.setComentario(reseniaNueva.getComentario());
+        resenia.setRating(reseniaNueva.getRating());
+        UsuarioDTO usuario = (UsuarioDTO) request.getSession().getAttribute(AuthFilter.SESSION_KEY_USUARIO);
+        resenia.setUsuarioDTO(usuario);
+        ProductoDTO producto = productoBO.consultarProducto(reseniaNueva.getIdProducto());
+        resenia.setProductoDTO(producto);
+        
+        ReseniaDTO reseniaRegistrada = reseniasBO.agregarResenia(resenia);
+        return reseniaRegistrada;
+    }
+    
 }

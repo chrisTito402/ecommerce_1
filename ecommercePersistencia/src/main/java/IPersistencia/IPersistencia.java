@@ -34,7 +34,7 @@ public interface IPersistencia {
     
     public FichaDetalladaProducto consultarFichaDetalladaDeProducto(int idProducto);
     
-    public void agregarResenia(Resenia resenia);
+    public Resenia agregarResenia(Resenia resenia);
     
     public void eliminarProducto(int idProducto);
     

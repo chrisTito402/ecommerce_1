@@ -32,5 +32,10 @@ public class FichaDetalladaProductoDTO {
     public String getDescripcion() {
         return descripcion;
     }
+
+    @Override
+    public String toString() {
+        return "FichaDetalladaProductoDTO{" + "idFichaDetalladaProducto=" + idFichaDetalladaProducto + ", productoDTO=" + productoDTO + ", existencias=" + existencias + ", descripcion=" + descripcion + '}';
+    }
     
 }

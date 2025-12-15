@@ -17,12 +17,14 @@ import java.util.List;
 public class ReseniasDAO implements IReseniasDAO {
 
     @Override
-    public void agregarResenia(Resenia resenia) {
+    public Resenia agregarResenia(Resenia resenia) {
         EntityManager em = Conexion.crearConexion();
         try {
             em.getTransaction().begin();
             em.persist(resenia);
             em.getTransaction().commit();
+            
+            return resenia;
         } catch (Exception ex) {
             em.getTransaction().rollback();
             throw new RuntimeException("Error al agregar reseña: " + ex.getMessage());

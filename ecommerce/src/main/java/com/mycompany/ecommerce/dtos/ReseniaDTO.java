@@ -41,4 +41,30 @@ public class ReseniaDTO {
     public int getRating() {
         return rating;
     }
+
+    public void setIdResenia(int idResenia) {
+        this.idResenia = idResenia;
+    }
+
+    public void setUsuarioDTO(UsuarioDTO usuarioDTO) {
+        this.usuarioDTO = usuarioDTO;
+    }
+
+    public void setProductoDTO(ProductoDTO productoDTO) {
+        this.productoDTO = productoDTO;
+    }
+
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    @Override
+    public String toString() {
+        return "ReseniaDTO{" + "idResenia=" + idResenia + ", usuarioDTO=" + usuarioDTO + ", productoDTO=" + productoDTO + ", comentario=" + comentario + ", rating=" + rating + '}';
+    }
+    
 }

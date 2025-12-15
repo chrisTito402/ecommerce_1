@@ -24,6 +24,7 @@ com\mycompany\ecommerce\mappers\UsuarioMapper.class
 com\mycompany\ecommerce\servlets\ComprarServlet$ErrorResponse.class
 com\mycompany\ecommerce\rest\PedidoResource.class
 com\mycompany\ecommerce\mappers\FichaDetalladaMapper.class
+com\mycompany\ecommerce\dtos\ReseniaNuevaDTO.class
 com\mycompany\ecommerce\servlets\ModificarUsuario.class
 com\mycompany\ecommerce\servlets\CarritoServlet$ErrorResponse.class
 com\mycompany\ecommerce\respuestas\RespuestaAPI$ErrorResponse.class

@@ -8,6 +8,6 @@ import entidades.FichaDetalladaProducto;
  */
 public interface IFichaDetalladaProductoDAO {
     
-    public FichaDetalladaProducto consultarFichaDetalladaDeProducto(int idProducto);
+    public FichaDetalladaProducto consultarFichaDetalladaDeProducto(long idProducto);
     
 }

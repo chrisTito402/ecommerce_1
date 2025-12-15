@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface IReseniasDAO {
 
-    public void agregarResenia(Resenia resenia);
+    public Resenia agregarResenia(Resenia resenia);
     List<Resenia> consultarResenias();
     List<Resenia> consultarReseniasPorProducto(int idProducto);
     void eliminarResenia(int id);

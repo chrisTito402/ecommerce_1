@@ -15,7 +15,6 @@ window.onload = () => {
         obtenerProductos();
     };
 
-
     const buscarProductosCategoria = (event) => {
         const btn = event.target;
 
@@ -79,6 +78,22 @@ window.onload = () => {
         });
     };
 
+    const abrirDetallasProducto = (producto) => {
+        fetch(
+            host + "/producto/fichaProducto/" + producto.idProducto,
+            {
+                method: "POST"
+            }
+        ).then(response => {
+            if (!response.ok) {
+                throw new Error("Error al abrir Detalles Producto.");
+            }
+            window.location.replace("/detallesProducto");
+        }).catch(err => {
+            console.error(err);
+        });
+    };
+
     const clearDivList = () => {
         divProductos.innerHTML = "";
     };
@@ -107,6 +122,9 @@ window.onload = () => {
             const aDetalles = document.createElement("a");
             aDetalles.setAttribute("href", "/detallesProducto?idProducto=" + producto.idProducto);
             aDetalles.innerHTML = "Ver Detalles";
+            //aDetalles.addEventListener("click", function(event) {
+            //    abrirDetallasProducto(producto);
+            //});
 
             const aAgregarCarrito = document.createElement("a");
             aAgregarCarrito.setAttribute("href", "/agregarProducto?idProducto=" + producto.idProducto);
