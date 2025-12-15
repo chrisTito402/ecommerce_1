@@ -1,41 +1,65 @@
 package entidades;
 
-import entidades.Producto;
-import java.util.ArrayList;
-import java.util.List;
+import jakarta.persistence.*;
 
 /**
  *
  * @author janot
  */
+@Entity
+@Table(name = "carrito")
+@NamedQueries({
+    @NamedQuery(
+        name = "Carrito.findByUsuario",
+        query = "SELECT c FROM Carrito c WHERE c.usuario.id = :id_usuario"
+    )
+})
 public class Carrito {
-    private List<Producto> listaProductos;
-    private double total;
 
-    public Carrito() {
-        listaProductos = new ArrayList<>();
-        total = 0.0;
-    }
-    
-    public void agregarProducto(Producto producto){
-        total += producto.getPrecio();
-        listaProductos.add(producto);
-    }
-    
-    public void eliminarProducto(int idProducto){
-        for (int i = 0; i < listaProductos.size(); i++) {
-            if(listaProductos.get(i).getId().intValue()== idProducto){
-                listaProductos.remove(i);   
-            }
-        }
-    }
-    
-    public List<Producto> obtenerCarrito(){
-        return listaProductos;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
+
+    @ManyToOne
+    @JoinColumn(name = "id_producto")
+    private Producto producto;
+
+    private int cantidad;
+
+    public Long getId() {
+        return id;
     }
 
-    public double getTotal() {
-        return total;
+    public void setId(Long id) {
+        this.id = id;
     }
 
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
 }
+
