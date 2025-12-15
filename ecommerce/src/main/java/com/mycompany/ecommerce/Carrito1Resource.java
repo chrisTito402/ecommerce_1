@@ -16,6 +16,7 @@ import jakarta.enterprise.context.RequestScoped;
 import jakarta.security.auth.message.config.AuthConfig;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.core.MediaType;
@@ -73,5 +74,15 @@ public class Carrito1Resource {
         
         ProductoDTO producto = productoBO.consultarProducto(idProducto);
         usuario.getCarrito().agregarProducto(producto);
+    }
+    
+    @DELETE
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void deleteJson(
+            ProductoDTO producto,
+            @Context HttpServletRequest request
+    ) {
+        UsuarioDTO usuario = (UsuarioDTO) request.getSession().getAttribute(AuthFilter.SESSION_KEY_USUARIO);
+        usuario.getCarrito().obtenerCarrito().removeIf(p -> p.getIdProducto() == producto.getIdProducto());
     }
 }

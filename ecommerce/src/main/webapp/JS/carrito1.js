@@ -16,6 +16,27 @@ window.onload = () => {
         obtenerResumenCompra();
     };
 
+    const eliminarProductoCarrito = (producto) => {
+        fetch(
+            host + "/carrito1",
+            {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(producto)
+            }
+        ).then(response => {
+            if (!response.ok) {
+                throw new Error("Error al eliminar Producto de Carrito.");
+            }
+            obtenerProductosCarrito();
+            obtenerResumenCompra();
+        }).catch(err => {
+            console.error(err);
+        });
+    };
+
     const añadirProducto = () => {
         fetch(
             host + "/carrito1/" + idProducto,
@@ -99,6 +120,10 @@ window.onload = () => {
             divProducto.appendChild(img);
             divProducto.appendChild(divInfo);
             divProducto.appendChild(btnEliminar);
+
+            btnEliminar.onclick = () => {
+                eliminarProductoCarrito(producto);
+            };
 
             sectionProductos.appendChild(divProducto);
         });

@@ -7,6 +7,7 @@ C:\Users\danit\OneDrive\Documentos\GitHub\ecommerce_1\ecommercePersistencia\src\
 C:\Users\danit\OneDrive\Documentos\GitHub\ecommerce_1\ecommercePersistencia\src\main\java\entidades\Carrito.java
 C:\Users\danit\OneDrive\Documentos\GitHub\ecommerce_1\ecommercePersistencia\src\main\java\entidades\Carrito1.java
 C:\Users\danit\OneDrive\Documentos\GitHub\ecommerce_1\ecommercePersistencia\src\main\java\entidades\FichaDetalladaProducto.java
+C:\Users\danit\OneDrive\Documentos\GitHub\ecommerce_1\ecommercePersistencia\src\main\java\entidades\Pedido.java
 C:\Users\danit\OneDrive\Documentos\GitHub\ecommerce_1\ecommercePersistencia\src\main\java\entidades\Producto.java
 C:\Users\danit\OneDrive\Documentos\GitHub\ecommerce_1\ecommercePersistencia\src\main\java\entidades\Resenia.java
 C:\Users\danit\OneDrive\Documentos\GitHub\ecommerce_1\ecommercePersistencia\src\main\java\entidades\Usuario.java
@@ -15,10 +16,12 @@ C:\Users\danit\OneDrive\Documentos\GitHub\ecommerce_1\ecommercePersistencia\src\
 C:\Users\danit\OneDrive\Documentos\GitHub\ecommerce_1\ecommercePersistencia\src\main\java\entidadesFalse\Resenia.java
 C:\Users\danit\OneDrive\Documentos\GitHub\ecommerce_1\ecommercePersistencia\src\main\java\entidadesFalse\Usuario.java
 C:\Users\danit\OneDrive\Documentos\GitHub\ecommerce_1\ecommercePersistencia\src\main\java\implementaciones\FichaDetalladaDAO.java
+C:\Users\danit\OneDrive\Documentos\GitHub\ecommerce_1\ecommercePersistencia\src\main\java\implementaciones\PedidosDAO.java
 C:\Users\danit\OneDrive\Documentos\GitHub\ecommerce_1\ecommercePersistencia\src\main\java\implementaciones\ProductoDAO.java
 C:\Users\danit\OneDrive\Documentos\GitHub\ecommerce_1\ecommercePersistencia\src\main\java\implementaciones\ReseniasDAO.java
 C:\Users\danit\OneDrive\Documentos\GitHub\ecommerce_1\ecommercePersistencia\src\main\java\implementaciones\UsuariosDAO.java
 C:\Users\danit\OneDrive\Documentos\GitHub\ecommerce_1\ecommercePersistencia\src\main\java\IPersistencia\IFichaDetalladaProductoDAO.java
+C:\Users\danit\OneDrive\Documentos\GitHub\ecommerce_1\ecommercePersistencia\src\main\java\IPersistencia\IPedidosDAO.java
 C:\Users\danit\OneDrive\Documentos\GitHub\ecommerce_1\ecommercePersistencia\src\main\java\IPersistencia\IPersistencia.java
 C:\Users\danit\OneDrive\Documentos\GitHub\ecommerce_1\ecommercePersistencia\src\main\java\IPersistencia\IProductoDAO.java
 C:\Users\danit\OneDrive\Documentos\GitHub\ecommerce_1\ecommercePersistencia\src\main\java\IPersistencia\IReseniasDAO.java
