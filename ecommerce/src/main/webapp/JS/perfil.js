@@ -22,7 +22,7 @@ const app = () => {
         const password = form.password.value;
         const confirmPassword = form.confirmPassword.value;
 
-    // Si uno está lleno, ambos deben coincidir
+        // Si uno está lleno, ambos deben coincidir
         if (password || confirmPassword) {
             if (password !== confirmPassword) {
                 spnError.textContent = "Las contraseñas no coinciden";
@@ -43,13 +43,12 @@ const app = () => {
                     }
             );
 
-
-
             if (!res.ok) {
                 throw new Error("Error al actualizar perfil");
             }
 
             const actualizado = await res.json();
+            location.reload();
             alert("Perfil actualizado correctamente");
 
         } catch (error) {
@@ -69,7 +68,6 @@ const app = () => {
                 method: "POST",
                 credentials: "include"
             });
-
 
             if (!res.ok) {
                 throw new Error("Error al cerrar sesión");
