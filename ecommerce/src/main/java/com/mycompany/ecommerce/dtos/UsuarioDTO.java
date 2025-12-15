@@ -1,8 +1,5 @@
 package com.mycompany.ecommerce.dtos;
 
-import entidades.Carrito;
-import entidades.Producto;
-
 /**
  *
  * @author janot
@@ -86,7 +83,7 @@ public class UsuarioDTO {
         this.carrito = carrito;
     }
 
-//    public void agregarProductoAlCarrito(Producto producto) {
-//        carrito.agregarProducto(producto);
-//    }
+    public void agregarProductoAlCarrito(ProductoDTO producto) {
+        carrito.agregarProducto(producto);
+    }
 }

@@ -13,6 +13,7 @@ com\mycompany\ecommerce\dtos\EditarPerfilDTO.class
 com\mycompany\ecommerce\JakartaRestConfiguration.class
 com\mycompany\ecommerce\servlets\AgregarProductoAlCarritoServlet.class
 com\mycompany\ecommerce\mappers\UsuarioMapper.class
+com\mycompany\ecommerce\dtos\Carrito.class
 com\mycompany\ecommerce\mappers\FichaDetalladaMapper.class
 com\mycompany\ecommerce\dtos\ReseniaNuevaDTO.class
 com\mycompany\ecommerce\servlets\ModificarUsuario.class
@@ -43,8 +44,10 @@ com\mycompany\ecommerce\servlets\CerrarSesionAdminServlet.class
 com\mycompany\ecommerce\servlets\CerrarSesionServlet.class
 com\mycompany\ecommerce\negocio\FichaDetalladaProductoBO.class
 com\mycompany\ecommerce\filtros\LogFilter.class
+com\mycompany\ecommerce\dtos\ResumenCompraDTO.class
 com\mycompany\ecommerce\servlets\PerfilServlet.class
 com\mycompany\ecommerce\negocio\ReseniasBO.class
 com\mycompany\ecommerce\negocio\UsuarioBO.class
 com\mycompany\ecommerce\resources\JakartaEE10Resource.class
 com\mycompany\ecommerce\UsuarioResource.class
+com\mycompany\ecommerce\Carrito1Resource.class

@@ -48,27 +48,26 @@ public class AgregarProductoAlCarritoServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession(false);
         
-        if(session.getAttribute(AuthFilter.SESSION_KEY_USUARIO) != null){
-            if(request.getParameter("idProducto") != null){
-                ProductoMapper productoMapper = new ProductoMapper();
-                UsuarioDTO usuarioDTO = (UsuarioDTO) session.getAttribute(AuthFilter.SESSION_KEY_USUARIO);
-                String id = request.getParameter("idProducto");
-                ProductoDTO productoDTO = productoBO.consultarProducto(Integer.parseInt(id));
-                Producto producto = productoMapper.toEntity(productoDTO);
-//                usuarioDTO.agregarProductoAlCarrito(producto);
-                session.setAttribute(AuthFilter.SESSION_KEY_USUARIO, usuarioDTO);
-            }
-            
-            String origen = request.getHeader("Referer");
-
-            if (origen != null && origen.contains("/catalogo")) {
-                request.getRequestDispatcher("/catalogo").forward(request, response);
-            } else {
-                request.getRequestDispatcher("/index").forward(request, response);
-            }
-
-            
-        }
+//        if(session.getAttribute(AuthFilter.SESSION_KEY_USUARIO) != null){
+//            if(request.getParameter("idProducto") != null){
+//                ProductoMapper productoMapper = new ProductoMapper();
+//                UsuarioDTO usuarioDTO = (UsuarioDTO) session.getAttribute(AuthFilter.SESSION_KEY_USUARIO);
+//                String id = request.getParameter("idProducto");
+//                ProductoDTO productoDTO = productoBO.consultarProducto(Integer.parseInt(id));
+//                Producto producto = productoMapper.toEntity(productoDTO);
+////                usuarioDTO.agregarProductoAlCarrito(producto);
+//                session.setAttribute(AuthFilter.SESSION_KEY_USUARIO, usuarioDTO);
+//            }
+//            
+//            String origen = request.getHeader("Referer");
+//
+//            if (origen != null && origen.contains("/catalogo")) {
+//                request.getRequestDispatcher("/catalogo").forward(request, response);
+//            } else {
+//                request.getRequestDispatcher("/index").forward(request, response);
+//            }        
+//        }
+         request.getRequestDispatcher("/carrito.jsp").forward(request, response);
     }
 
     /**

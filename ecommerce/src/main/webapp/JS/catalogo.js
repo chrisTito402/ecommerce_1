@@ -94,6 +94,21 @@ window.onload = () => {
         });
     };
 
+    const añadirProductoACarrito = (producto) => {
+        fetch(
+            host + "/carrito1/" + producto.idProducto,
+            {
+                method: "POST"
+            }
+        ).then(response => {
+            if (!response.ok) {
+                throw new Error("Error al añadir el Producto al Carrito.");
+            }
+        }).catch(err => {
+            console.error(err);
+        });
+    };
+
     const clearDivList = () => {
         divProductos.innerHTML = "";
     };
@@ -127,7 +142,10 @@ window.onload = () => {
             //});
 
             const aAgregarCarrito = document.createElement("a");
-            aAgregarCarrito.setAttribute("href", "/agregarProducto?idProducto=" + producto.idProducto);
+            aAgregarCarrito.setAttribute("href", "/agregarProducto");
+            aAgregarCarrito.addEventListener("click", () => {
+                añadirProductoACarrito(producto);
+            });
             aAgregarCarrito.innerHTML = "Agregar A Carrito";
 
             pDetalles.appendChild(aDetalles);

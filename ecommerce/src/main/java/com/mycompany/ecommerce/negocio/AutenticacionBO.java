@@ -1,10 +1,10 @@
 package com.mycompany.ecommerce.negocio;
 
 import IPersistencia.IPersistencia;
+import com.mycompany.ecommerce.dtos.Carrito;
 import com.mycompany.ecommerce.dtos.EditarPerfilDTO;
 import com.mycompany.ecommerce.dtos.UsuarioDTO;
 import com.mycompany.ecommerce.mappers.UsuarioMapper;
-import entidades.Carrito;
 import entidades.Usuario;
 import java.security.MessageDigest;
 import java.util.logging.Logger;

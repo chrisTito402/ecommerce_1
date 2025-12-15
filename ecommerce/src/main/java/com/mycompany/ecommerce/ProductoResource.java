@@ -101,6 +101,17 @@ public class ProductoResource {
         return reseniasDTO;
     }
     
+    @GET
+    @Path("{idProducto}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ProductoDTO getJson(
+            @PathParam("idProducto") int idProducto
+    ) {
+        ProductoDTO producto = productoBO.consultarProducto(idProducto);
+        return producto;
+    }
+    
     @POST
     @Path("resenias")
     @Produces(MediaType.APPLICATION_JSON)

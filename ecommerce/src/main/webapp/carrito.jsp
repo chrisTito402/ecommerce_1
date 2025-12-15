@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="CSS/carrito.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-        <script src="./JS/carrito.js"></script>
+        <script src="./JS/carrito1.js"></script>
         <title>Vinylia - Carrito</title>
     </head>
 
@@ -22,7 +22,7 @@
         <!-- CONTENIDO PRINCIPAL -->
         <main id="contenedor-carrito">
             <!-- Lista de productos -->
-            <section class="lista-productos">
+            <section id="lista-productos" class="lista-productos">
                 <c:forEach items="${sessionScope.usuario.getCarrito().obtenerCarrito()}" var="producto" begin="0" end="${sessionScope.usuario.getCarrito().obtenerCarrito().size()}">
                     <div class="producto">
                         <img src="${producto.getRutaImg()}" alt="${producto.getNombre()}">
@@ -39,14 +39,14 @@
             </section>
             <!-- Resumen compra -->
             <aside class="resumen-compra">
-                <h2>Total</h2>
+                <h2 id="total">Total</h2>
                 <c:forEach items="${sessionScope.usuario.getCarrito().obtenerCarrito()}" var="producto" begin="0" end="${sessionScope.usuario.getCarrito().obtenerCarrito().size()}">
                     <p>${producto.getNombre()}<strong>$${producto.getPrecio()}</strong></p>
                 </c:forEach>
                 <hr>
-                <p>Subtotal: <strong>$${sessionScope.usuario.getCarrito().getTotal()}</strong></p>
-                <p>Envío: <strong>$50</strong></p>
-                <p><strong>Total: $${sessionScope.usuario.getCarrito().getTotal()}</strong></p>
+                <p>Subtotal: <strong id="stg-subtotal">$${sessionScope.usuario.getCarrito().getTotal()}</strong></p>
+                <p>Envío: <strong id="stg-envio">$50</strong></p>
+                <p><strong id="stg-total">Total: $${sessionScope.usuario.getCarrito().getTotal()}</strong></p>
                 <button id="btnCompra">Realizar Compra</button>
             </aside>
         </main>
