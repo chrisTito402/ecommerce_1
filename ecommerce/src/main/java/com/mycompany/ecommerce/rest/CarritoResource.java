@@ -3,6 +3,7 @@ package com.mycompany.ecommerce.rest;
 import com.mycompany.ecommerce.dtos.CarritoDTO;
 import com.mycompany.ecommerce.dtos.ProductoDTO;
 import entidades.Carrito;
+import entidades.Carrito1;
 import entidades.Producto;
 import entidades.Usuario;
 import jakarta.persistence.EntityManager;
@@ -40,9 +41,9 @@ public class CarritoResource {
 
         Long usuarioId = (Long) session.getAttribute("id_usuario");
 
-        TypedQuery<Carrito> query = em.createQuery(
+        TypedQuery<Carrito1> query = em.createQuery(
             "SELECT c FROM Carrito c WHERE c.usuario.id = :id_usuario",
-            Carrito.class
+            Carrito1.class
         );
         query.setParameter("id_usuario", usuarioId);
 
@@ -72,20 +73,20 @@ public class CarritoResource {
         Producto producto = em.find(Producto.class, dto.getIdProducto());
 
         // Validar si ya existe
-        TypedQuery<Carrito> query = em.createQuery(
+        TypedQuery<Carrito1> query = em.createQuery(
             "SELECT c FROM Carrito c WHERE c.usuario.id = :id_usuario AND c.producto.id = :id_producto",
-            Carrito.class
+            Carrito1.class
         );
         query.setParameter("id_usuario", usuarioId);
         query.setParameter("id_producto", dto.getIdProducto());
 
-        Carrito carrito;
+        Carrito1 carrito;
         try {
             carrito = query.getSingleResult();
             carrito.setCantidad(carrito.getCantidad() + 1);
             em.merge(carrito);
         } catch (NoResultException e) {
-            carrito = new Carrito();
+            carrito = new Carrito1();
             carrito.setUsuario(usuario);
             carrito.setProducto(producto);
             carrito.setCantidad(1);
@@ -107,14 +108,14 @@ public class CarritoResource {
 
         Long usuarioId = (Long) session.getAttribute("id_usuario");
 
-        TypedQuery<Carrito> query = em.createQuery(
+        TypedQuery<Carrito1> query = em.createQuery(
             "SELECT c FROM Carrito c WHERE c.usuario.id = :id_usuario AND c.producto.id = :id_producto",
-            Carrito.class
+            Carrito1.class
         );
         query.setParameter("id_usuario", usuarioId);
         query.setParameter("id_producto", idProducto);
 
-        Carrito carrito = query.getSingleResult();
+        Carrito1 carrito = query.getSingleResult();
         em.remove(carrito);
 
         return Response.ok().build();
