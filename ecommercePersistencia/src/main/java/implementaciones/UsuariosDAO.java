@@ -55,7 +55,7 @@ public class UsuariosDAO implements IPersistencia.IUsuarioDAO {
             em.getTransaction().begin();
             em.persist(usuario);
             em.getTransaction().commit();
-            
+
             return usuario;
         } catch (Exception e) {
             em.getTransaction().rollback();
@@ -72,7 +72,7 @@ public class UsuariosDAO implements IPersistencia.IUsuarioDAO {
             em.getTransaction().begin();
             em.merge(usuario);
             em.getTransaction().commit();
-            
+
             return usuario;
         } catch (Exception e) {
             em.getTransaction().rollback();
@@ -80,6 +80,48 @@ public class UsuariosDAO implements IPersistencia.IUsuarioDAO {
         } finally {
             em.close();
         }
+    }
+
+    /**
+     * Método que consulta a los usuarios pero por su ID exclusivo a la base de
+     * datos
+     *
+     * @param id del usuario
+     * @return Usuario encontrado
+     */
+    @Override
+    public Usuario consultarUsuarioPorId(Long id) {
+        EntityManager em = Conexion.crearConexion();
+        try {
+            return em.find(Usuario.class, id);
+        } finally {
+            em.close();
+        }
+    }
+
+    /**
+     * Metodo para actualizar un usuario
+     *
+     * @param usuario
+     * @return usuario actualizado
+     */
+    @Override
+    public Usuario actualizarUsuario(Usuario usuario) {
+        EntityManager em = Conexion.crearConexion();
+        try {
+            em.getTransaction().begin();
+            Usuario usuarioActualizado = em.merge(usuario);
+            em.getTransaction().commit();
+            return usuarioActualizado;
+        } catch (Exception e) {
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
+            throw new RuntimeException("Error al actualizar el usuario.");
+        } finally {
+            em.close();
+        }
+
     }
 
 }

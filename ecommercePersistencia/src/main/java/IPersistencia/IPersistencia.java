@@ -37,4 +37,8 @@ public interface IPersistencia {
     public void crearProducto(Producto producto);
     
     public void editarProducto(Producto producto);
+    
+    public Usuario buscarUsuarioPorId(Long id);
+    
+    public void actualizarUsuario(Usuario usuario);
 }

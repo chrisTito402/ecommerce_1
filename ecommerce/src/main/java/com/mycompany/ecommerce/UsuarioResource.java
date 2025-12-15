@@ -2,6 +2,7 @@ package com.mycompany.ecommerce;
 
 import DAOs.PersistenciaDAO;
 import IPersistencia.IPersistencia;
+import com.mycompany.ecommerce.dtos.EditarPerfilDTO;
 import com.mycompany.ecommerce.dtos.IniciarSesionDTO;
 import com.mycompany.ecommerce.dtos.UsuarioDTO;
 import com.mycompany.ecommerce.filtros.AuthFilter;
@@ -14,7 +15,9 @@ import jakarta.ws.rs.Path;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 
 /**
  * REST Web Service
@@ -26,12 +29,12 @@ import jakarta.ws.rs.core.MediaType;
 public class UsuarioResource {
 
     private static final AutenticacionBO autenticacionBO;
-    
+
     static {
         IPersistencia persistencia = new PersistenciaDAO();
         autenticacionBO = new AutenticacionBO(persistencia);
     }
-    
+
     @Context
     private UriInfo context;
 
@@ -46,15 +49,40 @@ public class UsuarioResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public UsuarioDTO postJson(IniciarSesionDTO usuarioRegistrado, @Context HttpServletRequest request) {
         UsuarioDTO usuarioDTO = autenticacionBO.iniciarSesion(
-                usuarioRegistrado.getCorreo(), 
+                usuarioRegistrado.getCorreo(),
                 usuarioRegistrado.getContrasenia()
         );
-        
+
         if (usuarioDTO != null) {
             request.getSession(true).setAttribute(AuthFilter.SESSION_KEY_USUARIO, usuarioDTO);
         }
-        
+
         return usuarioDTO;
     }
-    
+
+    @PUT
+    @Path("perfil")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response editarPerfil(
+            EditarPerfilDTO dto,
+            @Context HttpServletRequest request) {
+
+        UsuarioDTO usuarioSesion
+                = (UsuarioDTO) request.getSession()
+                        .getAttribute(AuthFilter.SESSION_KEY_USUARIO);
+
+        if (usuarioSesion == null) {
+            return Response.status(Response.Status.UNAUTHORIZED).build();
+        }
+
+        UsuarioDTO actualizado = autenticacionBO.editarPerfil(
+                usuarioSesion.getIdUsuario(), dto);
+
+        request.getSession().setAttribute(
+                AuthFilter.SESSION_KEY_USUARIO, actualizado);
+
+        return Response.ok(actualizado).build();
+    }
+
 }

@@ -9,7 +9,7 @@ import entidades.Producto;
  */
 public class UsuarioDTO {
 
-    private int idUsuario;
+    private Long idUsuario;
     private String nombre;
     private String telefono;
     private String direccion;
@@ -20,7 +20,7 @@ public class UsuarioDTO {
     public UsuarioDTO() {
     }
 
-    public UsuarioDTO(int idUsuario, String nombre, String telefono, String direccion, String correo, String contraseña) {
+    public UsuarioDTO(Long idUsuario, String nombre, String telefono, String direccion, String correo, String contraseña) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.telefono = telefono;
@@ -30,11 +30,11 @@ public class UsuarioDTO {
         this.carrito = new Carrito(); // <- INICIALÍZALO
     }
 
-    public int getIdUsuario() {
+    public Long getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(int idUsuario) {
+    public void setIdUsuario(Long idUsuario) {
         this.idUsuario = idUsuario;
     }
 
