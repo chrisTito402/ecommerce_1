@@ -11,9 +11,48 @@ window.onload = () => {
     let resumenCompra;
 
     const init = () => {
+        btnCompra.onclick = realizarCompra;
+
         añadirProducto();
         obtenerProductosCarrito();
         obtenerResumenCompra();
+    };
+
+    const realizarCompra = () => {
+        let productosCompra = [];
+        productos.forEach(p => {
+            let detalle = {
+                producto: p,
+                cantidad: 1
+            };
+            productosCompra.push(detalle);
+        });
+
+        const pedidoNuevo = {
+            detallesPedido: productosCompra,
+            total: resumenCompra.total
+        };
+        
+        console.log(pedidoNuevo);
+
+        fetch(
+            host + "/pedidos",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(pedidoNuevo)
+            }
+        ).then(response => {
+            if (!response.ok) {
+                throw new Error("Error al registrar compra.");
+            }
+
+            window.location.replace("/index.jsp");
+        }).catch(err => {
+            console.error(err);
+        });
     };
 
     const eliminarProductoCarrito = (producto) => {

@@ -6,13 +6,19 @@
     <class>entidades.FichaDetalladaProducto</class>
     <class>entidades.Producto</class>
     <class>entidades.Resenia</class>
+    <class>entidades.DetallesPedido</class>
+    <class>entidades.Pedido</class>
+    
     <properties>
       <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ecommerce?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
       <property name="jakarta.persistence.jdbc.user" value="root"/>
       <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
       <property name="jakarta.persistence.jdbc.password" value="itson"/>
+      
       <property name="eclipselink.ddl-generation" value="none"/>
-      <property name="eclipselink.ddl-generation.output-mode" value="database"/>
+      
+      <property name="jakarta.persistence.schema-generation.database.action" value="none"/>
+
       <property name="eclipselink.logging.level.sql" value="FINE"/>
     </properties>
   </persistence-unit>

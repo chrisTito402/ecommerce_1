@@ -1,6 +1,7 @@
 package DAOs;
 
 import IPersistencia.IFichaDetalladaProductoDAO;
+import IPersistencia.IPedidosDAO;
 import IPersistencia.IProductoDAO;
 import entidades.*;
 
@@ -8,6 +9,7 @@ import IPersistencia.IReseniasDAO;
 import IPersistencia.IUsuarioDAO;
 
 import implementaciones.FichaDetalladaDAO;
+import implementaciones.PedidosDAO;
 import implementaciones.ProductoDAO;
 import implementaciones.ReseniasDAO;
 import implementaciones.UsuariosDAO;
@@ -23,6 +25,7 @@ public class PersistenciaDAO implements IPersistencia.IPersistencia {
     private final IReseniasDAO RESENIASDAO;
     private final IProductoDAO PRODUCTODAO;
     private final IFichaDetalladaProductoDAO FICHADETALLADADAO;
+    private final IPedidosDAO PEDIDOS_DAO;
 
     public PersistenciaDAO() {
         //USUARIODAO = UsuarioMokitoDAO.getInstance();
@@ -34,6 +37,7 @@ public class PersistenciaDAO implements IPersistencia.IPersistencia {
         USUARIODAO = new UsuariosDAO();
         FICHADETALLADADAO = new FichaDetalladaDAO();
         RESENIASDAO = new ReseniasDAO();
+        PEDIDOS_DAO = new PedidosDAO();
     }
 
     @Override
@@ -125,6 +129,26 @@ public class PersistenciaDAO implements IPersistencia.IPersistencia {
     @Override
     public void actualizarUsuario(Usuario usuario) {
         USUARIODAO.actualizarUsuario(usuario);
+    }
+
+    @Override
+    public Pedido crearPedido(Pedido pedido) {
+        return PEDIDOS_DAO.crearPedido(pedido);
+    }
+
+    @Override
+    public List<Pedido> consultarPedidosPorUsuario(Long idUsuario) {
+        return PEDIDOS_DAO.consultarPedidosPorUsuario(idUsuario);
+    }
+
+    @Override
+    public Pedido consultarPedido(Long idPedido) {
+        return PEDIDOS_DAO.consultarPedido(idPedido);
+    }
+
+    @Override
+    public List<DetallesPedido> cosultarDetallesPedidoPorPedido(Long idPedido) {
+        return PEDIDOS_DAO.cosultarDetallesPedidoPorPedido(idPedido);
     }
 
 }

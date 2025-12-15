@@ -6,11 +6,13 @@ com\mycompany\ecommerce\dtos\ReseniaDTO.class
 com\mycompany\ecommerce\servlets\RegistrarteServlet.class
 com\mycompany\ecommerce\dtos\FichaDetalladaProductoDTO.class
 com\mycompany\ecommerce\dtos\UsuarioDTO.class
+com\mycompany\ecommerce\mappers\PedidoMapper.class
 com\mycompany\ecommerce\servlets\EliminarReseniaServlet.class
 com\mycompany\ecommerce\prueba\pruebaBO.class
 com\mycompany\ecommerce\negocio\ProductoBO.class
 com\mycompany\ecommerce\dtos\EditarPerfilDTO.class
 com\mycompany\ecommerce\JakartaRestConfiguration.class
+com\mycompany\ecommerce\negocio\PedidosBO.class
 com\mycompany\ecommerce\servlets\AgregarProductoAlCarritoServlet.class
 com\mycompany\ecommerce\mappers\UsuarioMapper.class
 com\mycompany\ecommerce\dtos\Carrito.class
@@ -19,7 +21,9 @@ com\mycompany\ecommerce\dtos\ReseniaNuevaDTO.class
 com\mycompany\ecommerce\servlets\ModificarUsuario.class
 com\mycompany\ecommerce\servlets\AdminProductosServlet.class
 com\mycompany\ecommerce\dtos\CarritoDTO.class
+com\mycompany\ecommerce\mappers\DetallesPedidoMapper.class
 com\mycompany\ecommerce\ProductoResource.class
+com\mycompany\ecommerce\PedidosResource.class
 com\mycompany\ecommerce\mappers\ReseniaMapper.class
 com\mycompany\ecommerce\servlets\EditarProductoServlet.class
 com\mycompany\ecommerce\servlets\CarritoServlet.class
@@ -51,3 +55,5 @@ com\mycompany\ecommerce\negocio\UsuarioBO.class
 com\mycompany\ecommerce\resources\JakartaEE10Resource.class
 com\mycompany\ecommerce\UsuarioResource.class
 com\mycompany\ecommerce\Carrito1Resource.class
+com\mycompany\ecommerce\dtos\DetallesPedidosDTO.class
+com\mycompany\ecommerce\dtos\PedidoDTO.class

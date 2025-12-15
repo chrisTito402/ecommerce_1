@@ -19,6 +19,7 @@ public class JakartaRestConfiguration extends Application {
         classes.add(UsuarioResource.class);
         classes.add(ProductoResource.class);
         classes.add(Carrito1Resource.class);
+        classes.add(PedidosResource.class);
         return classes;
     }
 }
