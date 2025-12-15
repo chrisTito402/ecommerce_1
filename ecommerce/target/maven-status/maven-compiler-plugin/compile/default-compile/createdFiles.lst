@@ -14,6 +14,7 @@ com\mycompany\ecommerce\JakartaRestConfiguration.class
 com\mycompany\ecommerce\servlets\AgregarProductoAlCarritoServlet.class
 com\mycompany\ecommerce\mappers\UsuarioMapper.class
 com\mycompany\ecommerce\mappers\FichaDetalladaMapper.class
+com\mycompany\ecommerce\dtos\ReseniaNuevaDTO.class
 com\mycompany\ecommerce\servlets\ModificarUsuario.class
 com\mycompany\ecommerce\servlets\AdminProductosServlet.class
 com\mycompany\ecommerce\dtos\CarritoDTO.class

@@ -34,9 +34,10 @@ public class ReseniasBO {
         this.persistencia = persistencia;
     }
     
-    public void agregarResenia(ReseniaDTO reseniaDTO){
+    public ReseniaDTO agregarResenia(ReseniaDTO reseniaDTO){
         Resenia resenia = reseniaMapper.toEntity(reseniaDTO);
-        persistencia.agregarResenia(resenia);
+        Resenia reseniaRegistrada = persistencia.agregarResenia(resenia);
+        return reseniaMapper.toDTO(reseniaRegistrada);
     }
 
     public List<ReseniaDTO> consultarReseniasPorProducto(int idProducto){

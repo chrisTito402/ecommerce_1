@@ -49,9 +49,9 @@
                     </table>
                 </div>
                 <div class="tuComentario">
-                    <form action="/publicarComentario?idProducto=${requestScope.fichaDetallada.getProductoDTO().getIdProducto()}" method="post">
+                    <form>
                         <input id="textfield" type="text" placeholder="Escribe tu opinión..." name="comentario">
-                        <input id="boton" type="submit" value="Publicar"></input>
+                        <input id="boton" type="button" value="Publicar"></input>
                     </form>
                 </div>
             </section>

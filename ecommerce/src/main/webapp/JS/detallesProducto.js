@@ -5,13 +5,45 @@ window.onload = () => {
     const nombreFicha = document.getElementById("nombre-ficha");
     const descripcionFicha = document.getElementById("descripcion-ficha");
     const tablaResenias = document.getElementById("tabla-resenias");
+    const inpResenia = document.getElementById("textfield");
+    const inpPublicarResenia = document.getElementById("boton");
     let fichaProductoDetallada;
     let idProducto;
     let resenias = [];
 
     const init = () => {
+        inpPublicarResenia.onclick = publicarResenia;
+
         obtenerFichaDetallada();
         obtenerResenias();
+    };
+
+    const publicarResenia = () => {
+        const nuevaResenia = {
+            idProducto: idProducto,
+            rating: 2,
+            comentario: inpResenia.value
+        };
+
+        fetch(
+            host + "/producto/resenias",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(nuevaResenia)
+            }
+        ).then(response => {
+            if (!response.ok) {
+                throw new Error("Error al registrar Reseña.");
+            }
+            return response.json();
+        }).then(reseniaDTO => {
+            obtenerResenias();
+        }).catch(err => {
+            console.error(err);
+        });
     };
 
     const obtenerResenias = () => {

@@ -97,8 +97,8 @@ public class PersistenciaDAO implements IPersistencia.IPersistencia {
     }
 
     @Override
-    public void agregarResenia(Resenia resenia) {
-        RESENIASDAO.agregarResenia(resenia);
+    public Resenia agregarResenia(Resenia resenia) {
+        return RESENIASDAO.agregarResenia(resenia);
     }
 
     @Override
