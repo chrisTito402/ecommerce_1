@@ -91,5 +91,19 @@ public class UsuarioResource {
 
         return Response.ok(actualizado).build();
     }
+    
+    @POST
+    @Path("cerrarSesion")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response cerrarSesion(@Context HttpServletRequest request) {
+        
+        var sesion = request.getSession(false);
+
+        if (sesion != null) {
+            sesion.invalidate();
+        }
+
+        return Response.ok().build();
+    }
 
 }

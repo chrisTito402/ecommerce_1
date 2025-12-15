@@ -64,7 +64,7 @@ const app = () => {
         const spnError = document.getElementById("mensaje-error");
 
         try {
-            fetch("/api/auth/logout", {
+            const res = await fetch("/api/usuario/cerrarSesion", {
                 method: "POST",
                 credentials: "include"
             });
