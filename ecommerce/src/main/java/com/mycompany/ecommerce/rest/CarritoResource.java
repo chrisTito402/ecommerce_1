@@ -2,7 +2,6 @@ package com.mycompany.ecommerce.rest;
 
 import com.mycompany.ecommerce.dtos.CarritoDTO;
 import com.mycompany.ecommerce.dtos.ProductoDTO;
-import entidades.Carrito;
 import entidades.Carrito1;
 import entidades.Producto;
 import entidades.Usuario;

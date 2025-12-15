@@ -10,6 +10,7 @@ entidades\FichaDetalladaProducto.class
 Conexion\Conexion.class
 IPersistencia\IReseniasDAO.class
 IPersistencia\IUsuarioDAO.class
+entidades\Carrito1.class
 entidades\Producto.class
 prueba\main.class
 entidades\Carrito.class
