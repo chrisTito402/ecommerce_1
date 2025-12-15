@@ -1,7 +1,6 @@
 window.onload = () => {
     const host = "http://localhost:8080/api/carrito";
-
-    // Botones eliminar
+    
     const botonesEliminar = document.querySelectorAll(".btn-eliminar");
     const btnCompra = document.getElementById("btnCompra");
 
