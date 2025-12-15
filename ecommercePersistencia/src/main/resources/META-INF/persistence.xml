@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="3.1" xmlns="https://jakarta.ee/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_1.xsd">
-    <persistence-unit name="ConexionPU" transaction-type="RESOURCE_LOCAL">
-        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-        
-        <class>entidades.Usuario</class>
-        <class>entidades.FichaDetalladaProducto</class>
-        <class>entidades.Producto</class>
-        <class>entidades.Resenia</class>
-        <class>entidades.Carrito1</class>        
-        <class>entidades.Pedido</class>          
-        <class>entidades.DetallePedido</class>   
-        <properties>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ecommerce?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
-            <property name="jakarta.persistence.jdbc.user" value="root"/>
-            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="jakarta.persistence.jdbc.password" value=""/>
-            
-            <property name="jakarta.persistence.schema-generation.database.action" value="update"/>
-            
-            <property name="eclipselink.logging.level.sql" value="FINE"/>
-            <property name="eclipselink.log-parameters" value="true"/>
-        </properties>
-    </persistence-unit>
+<persistence version="3.1" xmlns="https://jakarta.ee/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+  <persistence-unit name="ConexionPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>entidades.Usuario</class>
+    <class>entidades.FichaDetalladaProducto</class>
+    <class>entidades.Producto</class>
+    <class>entidades.Resenia</class>
+    <properties>
+      <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ecommerce?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
+      <property name="jakarta.persistence.jdbc.user" value="root"/>
+      <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="jakarta.persistence.jdbc.password" value="itson"/>
+      <property name="eclipselink.ddl-generation" value="none"/>
+      <property name="eclipselink.ddl-generation.output-mode" value="database"/>
+      <property name="eclipselink.logging.level.sql" value="FINE"/>
+    </properties>
+  </persistence-unit>
 </persistence>

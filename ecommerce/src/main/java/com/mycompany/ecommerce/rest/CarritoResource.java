@@ -1,124 +1,122 @@
 package com.mycompany.ecommerce.rest;
 
-import IPersistencia.ICarritoDAO;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.mycompany.ecommerce.dtos.UsuarioDTO;
-import implementaciones.CarritoDAO;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
+import com.mycompany.ecommerce.dtos.CarritoDTO;
+import com.mycompany.ecommerce.dtos.ProductoDTO;
+import entidades.Carrito1;
+import entidades.Producto;
+import entidades.Usuario;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.NoResultException;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
+import jakarta.servlet.http.*;
 import jakarta.ws.rs.*;
-import jakarta.ws.rs.core.Context;
-import jakarta.ws.rs.core.MediaType;
-import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.*;
 import java.util.List;
 
+/**
+ *
+ * @author Ángel
+ */
 @Path("carrito")
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public class CarritoResource {
 
-    private final ICarritoDAO carritoDAO = new CarritoDAO();
+    @PersistenceContext(unitName = "ecommerce")
+    private EntityManager em;
 
+    @Context
+    private HttpServletRequest request;
+
+    // Obtener carrito del usuario
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response consultarCarrito(@Context HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-        UsuarioDTO usuarioDTO = (session != null) ? (UsuarioDTO) session.getAttribute("usuario") : null;
-
-        if (usuarioDTO == null) {
-            return Response.status(Response.Status.UNAUTHORIZED)
-                    .entity("{\"error\": \"Debe iniciar sesión.\"}")
-                    .build();
-        }
-        try {
-            List items = carritoDAO.consultarArticulosCarritoPorUsuario(usuarioDTO.getIdUsuario());
-            return Response.ok(items).build();
-        } catch (Exception e) {
-            System.err.println("Error al consultar carrito: " + e.getMessage());
-            return Response.serverError()
-                    .entity("{\"error\": \"Error interno al consultar: " + e.getMessage() + "\"}")
-                    .build();
-        }
-    }
-
-    @GET
-    @Path("contador")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response obtenerContador(@Context HttpServletRequest request) {
+    public List<CarritoDTO> obtenerCarrito() {
 
         HttpSession session = request.getSession(false);
-        UsuarioDTO usuarioDTO = (session != null) ? (UsuarioDTO) session.getAttribute("usuario") : null;
-
-        if (usuarioDTO == null) {
-            return Response.ok("{\"cantidad\": 0}").build();
+        if (session == null) {
+            throw new WebApplicationException(Response.Status.UNAUTHORIZED);
         }
 
-        try {
-            Long cantidadTotal = carritoDAO.contarArticulosCarrito(usuarioDTO.getIdUsuario());
+        Long usuarioId = (Long) session.getAttribute("id_usuario");
 
-            return Response.ok("{\"cantidad\": " + cantidadTotal + "}").build();
-        } catch (Exception e) {
-            System.err.println("Error al obtener contador: " + e.getMessage());
-            return Response.serverError().entity("{\"error\": \"Error interno al obtener contador.\"}").build();
-        }
+        TypedQuery<Carrito1> query = em.createQuery(
+            "SELECT c FROM Carrito c WHERE c.usuario.id = :id_usuario",
+            Carrito1.class
+        );
+        query.setParameter("id_usuario", usuarioId);
+
+        return query.getResultList().stream().map(c -> {
+            CarritoDTO dto = new CarritoDTO();
+            dto.setIdProducto(c.getProducto().getId());
+            dto.setNombre(c.getProducto().getNombre());
+            dto.setRutaImg(c.getProducto().getRutaImg());
+            dto.setPrecio(c.getProducto().getPrecio());
+            dto.setCantidad(c.getCantidad());
+            return dto;
+        }).toList();
     }
 
+    // Agregar producto
     @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response agregarProducto(String jsonPayload, @Context HttpServletRequest request) {
+    public Response agregarProducto(ProductoDTO dto) {
 
         HttpSession session = request.getSession(false);
-        UsuarioDTO usuarioDTO = (session != null) ? (UsuarioDTO) session.getAttribute("usuario") : null;
-
-        if (usuarioDTO == null) {
-            return Response.status(Response.Status.UNAUTHORIZED)
-                    .entity("{\"error\": \"Debe iniciar sesión para agregar productos.\"}")
-                    .build();
+        if (session == null) {
+            return Response.status(Response.Status.UNAUTHORIZED).build();
         }
 
+        Long usuarioId = (Long) session.getAttribute("id_usuario");
+
+        Usuario usuario = em.find(Usuario.class, usuarioId);
+        Producto producto = em.find(Producto.class, dto.getIdProducto());
+
+        // Validar si ya existe
+        TypedQuery<Carrito1> query = em.createQuery(
+            "SELECT c FROM Carrito c WHERE c.usuario.id = :id_usuario AND c.producto.id = :id_producto",
+            Carrito1.class
+        );
+        query.setParameter("id_usuario", usuarioId);
+        query.setParameter("id_producto", dto.getIdProducto());
+
+        Carrito1 carrito;
         try {
-            Gson gson = new Gson();
-            JsonObject jsonObject = gson.fromJson(jsonPayload, JsonObject.class);
-
-            long idProducto = jsonObject.get("idProducto").getAsLong();
-
-            int cantidad = jsonObject.has("cantidad") ? jsonObject.get("cantidad").getAsInt() : 1;
-
-            carritoDAO.agregarOActualizarProducto(usuarioDTO.getIdUsuario(), idProducto, cantidad);
-
-            return Response.ok("{\"mensaje\": \"Producto añadido o actualizado con éxito\"}").build();
-
-        } catch (Exception e) {
-            System.err.println("Error al procesar solicitud POST /api/carrito: " + e.getMessage());
-
-            if (e instanceof com.google.gson.JsonSyntaxException || e.getMessage().contains("idProducto")) {
-                return Response.status(Response.Status.BAD_REQUEST)
-                        .entity("{\"error\": \"Faltan datos de producto o JSON mal formado.\"}")
-                        .build();
-            }
-
-            return Response.serverError()
-                    .entity("{\"error\": \"Fallo al añadir producto: " + e.getMessage() + "\"}")
-                    .build();
+            carrito = query.getSingleResult();
+            carrito.setCantidad(carrito.getCantidad() + 1);
+            em.merge(carrito);
+        } catch (NoResultException e) {
+            carrito = new Carrito1();
+            carrito.setUsuario(usuario);
+            carrito.setProducto(producto);
+            carrito.setCantidad(1);
+            em.persist(carrito);
         }
+
+        return Response.ok().build();
     }
 
+    // Eliminar producto
     @DELETE
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response eliminarItem(@QueryParam("idCarrito") Long idCarrito) {
-        if (idCarrito == null) {
-            return Response.status(Response.Status.BAD_REQUEST)
-                    .entity("{\"error\": \"ID de carrito faltante.\"}")
-                    .build();
+    @Path("{idProducto}")
+    public Response eliminarProducto(@PathParam("idProducto") int idProducto) {
+
+        HttpSession session = request.getSession(false);
+        if (session == null) {
+            return Response.status(Response.Status.UNAUTHORIZED).build();
         }
-        try {
-            carritoDAO.eliminarProductoDeCarrito(idCarrito);
-            return Response.ok("{\"mensaje\": \"Item eliminado con éxito\"}").build();
-        } catch (Exception e) {
-            System.err.println("Error al eliminar item: " + e.getMessage());
-            return Response.serverError()
-                    .entity("{\"error\": \"Error al eliminar: " + e.getMessage() + "\"}")
-                    .build();
-        }
+
+        Long usuarioId = (Long) session.getAttribute("id_usuario");
+
+        TypedQuery<Carrito1> query = em.createQuery(
+            "SELECT c FROM Carrito c WHERE c.usuario.id = :id_usuario AND c.producto.id = :id_producto",
+            Carrito1.class
+        );
+        query.setParameter("id_usuario", usuarioId);
+        query.setParameter("id_producto", idProducto);
+
+        Carrito1 carrito = query.getSingleResult();
+        em.remove(carrito);
+
+        return Response.ok().build();
     }
 }
