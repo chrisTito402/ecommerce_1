@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="CSS/carrito.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
         <script src="./JS/carrito.js"></script>
-        <title>Carrito</title>
+        <title>Vinylia - Carrito</title>
     </head>
 
     <%@include file="FRAGMENTOS/navegacion.jspf"%>

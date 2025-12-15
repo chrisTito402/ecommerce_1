@@ -13,11 +13,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="CSS/index.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <script src="./JS/index.js"></script>
         <title>Vinylia</title>
     </head>
     <body>
         <%@include file="FRAGMENTOS/navegacion.jspf"%>
-        
+
         <main>
             <section id="seccion-banner">
                 <img src="IMGS/banner.png" alt="">
@@ -31,10 +32,12 @@
                             <p class="nombre-album">${producto.getNombre()}</p>
                             <p class="puntuacion">${producto.getEstrellas()}</p>
                             <p class="detalles"><a href="/detallesProducto?idProducto=${producto.getIdProducto()}">Ver Detalles</a></p>
-                            <div class="agregar-a-carrito"><a href="/agregarProducto?idProducto=${producto.getIdProducto()}">Añadir A Carrito</a></div>
+                            <div class="agregar-a-carrito">
+                                <a href="#" class="btn-agregar" data-id="${producto.getIdProducto()}">Añadir A Carrito</a>
+                            </div>
                         </div>
                     </c:forEach>
-                    
+
                     <!-- <div class="card-producto">
                         <img src="../IMGS/imgsProductos/porqueLaDemora.jpg" alt="">
                         <p class="nombre-album">Por que La Demora</p>
