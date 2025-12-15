@@ -2,9 +2,62 @@ window.onload = () => {
     const host = "http://localhost:8080/api";
     let productos = [];
     const divProductos = document.getElementById("container-productos");
+    const inpBuscarProductoNombre = document.getElementById("inp-buscarProducto-nombre");
+    const btnBuscarProductoNombre = document.getElementById("btn-buscarProducto-nombre");
+    const btnsCategoria = document.getElementsByName("btn-categoria");
 
     const init = () => {
+        for (let i = 0; i < btnsCategoria.length; i++) {
+            let btn = btnsCategoria[i];
+            btn.onclick = buscarProductosCategoria;
+        }
+        btnBuscarProductoNombre.onclick = buscarProductosNombre;
         obtenerProductos();
+    };
+
+
+    const buscarProductosCategoria = (event) => {
+        const btn = event.target;
+
+        fetch(
+            host + "/producto/categoria/" + btn.innerHTML,
+            {
+                method: "GET"
+            }
+        ).then(response => {
+            if (!response.ok) {
+                throw new Error("Error al obtener productos por Categoría.");
+            }
+            return response.json();
+        }).then(productosDTO => {
+            productos = productosDTO;
+            cargarProductos();
+        }).catch(err => {
+            console.error(err);
+        });
+    };
+
+    const buscarProductosNombre = () => {
+        const productoBuscar = {
+            nombre: inpBuscarProductoNombre.value
+        };
+
+        fetch(
+            host + "/producto/nombre/" + productoBuscar.nombre,
+            {
+                method: "GET"
+            }
+        ).then(response => {
+            if (!response.ok) {
+                throw new Error("Error al consultar Productos por Nombre.");
+            }
+            return response.json();
+        }).then(productosDTO => {
+            productos = productosDTO;
+            cargarProductos();
+        }).catch(err => {
+            console.error(err);
+        });
     };
 
     const obtenerProductos = () => {
@@ -26,7 +79,12 @@ window.onload = () => {
         });
     };
 
+    const clearDivList = () => {
+        divProductos.innerHTML = "";
+    };
+
     const cargarProductos = () => {
+        clearDivList();
         productos.forEach(producto => {
             const div = document.createElement("div");
             const img = document.createElement("img");

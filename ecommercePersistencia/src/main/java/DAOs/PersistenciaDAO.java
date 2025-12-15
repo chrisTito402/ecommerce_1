@@ -52,6 +52,16 @@ public class PersistenciaDAO implements IPersistencia.IPersistencia {
     }
 
     @Override
+    public List<Producto> consultarProductos(String nombre) {
+        return PRODUCTODAO.consultarProductos(nombre);
+    }
+    
+    @Override
+    public List<Producto> consultarProductosPorCategoria(String categoria) {
+        return PRODUCTODAO.consultarProductosPorCategoria(categoria);
+    }
+    
+    @Override
     public List<Resenia> consultarResenias() {
         return RESENIASDAO.consultarResenias();
     }

@@ -86,7 +86,7 @@ public class UsuarioDTO {
         this.carrito = carrito;
     }
 
-    public void agregarProductoAlCarrito(Producto producto) {
-        carrito.agregarProducto(producto);
-    }
+//    public void agregarProductoAlCarrito(Producto producto) {
+//        carrito.agregarProducto(producto);
+//    }
 }

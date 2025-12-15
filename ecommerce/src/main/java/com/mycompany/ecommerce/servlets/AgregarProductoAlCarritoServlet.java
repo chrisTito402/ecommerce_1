@@ -55,7 +55,7 @@ public class AgregarProductoAlCarritoServlet extends HttpServlet {
                 String id = request.getParameter("idProducto");
                 ProductoDTO productoDTO = productoBO.consultarProducto(Integer.parseInt(id));
                 Producto producto = productoMapper.toEntity(productoDTO);
-                usuarioDTO.agregarProductoAlCarrito(producto);
+//                usuarioDTO.agregarProductoAlCarrito(producto);
                 session.setAttribute(AuthFilter.SESSION_KEY_USUARIO, usuarioDTO);
             }
             

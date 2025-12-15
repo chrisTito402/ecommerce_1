@@ -7,6 +7,7 @@ package implementaciones;
 import IPersistencia.IProductoDAO;
 import entidades.Producto;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import java.util.List;
 
 /**
@@ -24,7 +25,30 @@ public class ProductoDAO implements IProductoDAO {
         em.close();
         return productos;
     }
+    
+    @Override
+    public List<Producto> consultarProductos(String nombre) {
+        EntityManager em = Conexion.Conexion.crearConexion();
+        String jpql = "SELECT p FROM Producto p "
+                + "WHERE (:nombre IS NULL OR p.nombre LIKE CONCAT(:nombre, '%'))";
+        TypedQuery query = em.createQuery(jpql, Producto.class);
+        query.setParameter("nombre", nombre);
 
+        return query.getResultList();
+    }
+    
+    @Override
+    public List<Producto> consultarProductosPorCategoria(String categoria) {
+        EntityManager em = Conexion.Conexion.crearConexion();
+        String jpql = "SELECT p FROM Producto p "
+                + "JOIN p.categorias c "
+                + "WHERE c = :categoria";
+        TypedQuery query = em.createQuery(jpql, Producto.class);
+        query.setParameter("categoria", categoria);
+
+        return query.getResultList();
+    }
+    
     @Override
     public Producto consultarProducto(long idProducto) {
         EntityManager em = Conexion.Conexion.crearConexion();

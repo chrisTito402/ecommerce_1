@@ -22,23 +22,23 @@
             <!-- Categorías -->
             <section id="seccion-categorias">
                 <div class="categorias">
-                    <button>ROCK</button>
-                    <button>BACHATA</button>
-                    <button>ELECTRÓNICA</button>
-                    <button>CORRIDOS</button>
-                    <button>POP</button>
-                    <button>METAL</button>
-                    <button>JAZZ</button>
-                    <button>COUNTRY</button>
-                    <button>SALSA</button>
+                    <button name="btn-categoria">ROCK</button>
+                    <button name="btn-categoria">BACHATA</button>
+                    <button name="btn-categoria">ELECTRÓNICA</button>
+                    <button name="btn-categoria">CORRIDOS</button>
+                    <button name="btn-categoria">POP</button>
+                    <button name="btn-categoria">METAL</button>
+                    <button name="btn-categoria">JAZZ</button>
+                    <button name="btn-categoria">COUNTRY</button>
+                    <button name="btn-categoria">SALSA</button>
                 </div>
             </section>
 
             <!-- Buscador -->
             <section id="seccion-busqueda">
                 <div class="buscador">
-                    <input type="text" placeholder="Buscar álbum o artista...">
-                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input type="text" placeholder="Buscar álbum o artista..." id="inp-buscarProducto-nombre">
+                    <button><i class="fa-solid fa-magnifying-glass" id="btn-buscarProducto-nombre"></i></button>
                 </div>
             </section>
 
