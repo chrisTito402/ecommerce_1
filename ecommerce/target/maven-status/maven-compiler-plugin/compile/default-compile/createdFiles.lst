@@ -25,6 +25,7 @@ com\mycompany\ecommerce\prueba\pruebaBO.class
 com\mycompany\ecommerce\servlets\GestionarUsuariosServlet.class
 com\mycompany\ecommerce\servlets\PanelAdminServlet.class
 com\mycompany\ecommerce\negocio\ProductoBO.class
+com\mycompany\ecommerce\dtos\EditarPerfilDTO.class
 com\mycompany\ecommerce\dtos\ProductoDTO.class
 com\mycompany\ecommerce\servlets\CrearProductoServlet.class
 com\mycompany\ecommerce\servlets\PublicarComentarioServlet.class

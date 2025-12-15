@@ -29,7 +29,7 @@ public class PersistenciaDAO implements IPersistencia.IPersistencia {
         //PRODUCTODAO = ProductoMokitoDAO.getInstance();
         //RESENIASDAO = ReseniasDAO.getInstance();
         //FICHADETALLADADAO = FichaDetalladaProductoMokitoDAO.getInstance();
-        
+
         PRODUCTODAO = new ProductoDAO();
         USUARIODAO = new UsuariosDAO();
         FICHADETALLADADAO = new FichaDetalladaDAO();
@@ -109,11 +109,22 @@ public class PersistenciaDAO implements IPersistencia.IPersistencia {
     @Override
     public void crearProducto(Producto producto) {
         PRODUCTODAO.crearProducto(producto);
-     }
+    }
 
     @Override
     public void editarProducto(Producto producto) {
         PRODUCTODAO.editarProducto(producto);
-       }
-    
+    }
+
+    @Override
+    public Usuario buscarUsuarioPorId(Long id) {
+        return USUARIODAO.consultarUsuarioPorId(id);
+
+    }
+
+    @Override
+    public void actualizarUsuario(Usuario usuario) {
+        USUARIODAO.actualizarUsuario(usuario);
+    }
+
 }

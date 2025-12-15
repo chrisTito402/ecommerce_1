@@ -13,7 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link rel="stylesheet" href="CSS/perfil.css"/>
-        <script src="JS/perfil.js"></script>
+
         <title>Perfil</title>
     </head>
     <body>
@@ -26,7 +26,7 @@
                         <h3 class="perfil">
                             Nombre Completo
                             <c:if test="${mensajeNombre != null}">
-                                    <span class="mensaje">${mensajeNombre}</span>
+                                <span class="mensaje">${mensajeNombre}</span>
                             </c:if>
                         </h3>
                         <input type="text" name="nombre" value="${nombre}" placeholder="${sessionScope.usuario.getNombre()}">
@@ -57,16 +57,26 @@
                                 <span class="mensaje">${mensajePassword}</span>
                             </c:if>
                         </h3>
-                        <input type="password" name="password" value="${password}" placeholder="${sessionScope.usuario.getContraseña()}">
+                        <h3 class="perfil">Nueva Contraseña</h3>
+                        <input type="password"
+                               name="password"
+                               placeholder="Nueva contraseña (opcional)">
+
+                        <h3 class="perfil">Confirmar Contraseña</h3>
+                        <input type="password"
+                               name="confirmPassword"
+                               placeholder="Repite la nueva contraseña">
+
                         <div class="centro-botton">
                             <a href="#">Ver Historial</a>
                             <input type="submit" value="Modificar">
-                            <a class="cerrar-sesion" href="/cerrarSesion" id="btn-cerrarSesion">Cerrar Sesión</a>
+                            <a href="#" id="btn-cerrarSesion" class="cerrar-sesion">Cerrar Sesión</a>
                             <span id="mensaje-error"></span>
                         </div>
                     </form>
                 </div> 
             </section>
         </main>
+        <script src="JS/perfil.js"></script>
     </body>
 </html>

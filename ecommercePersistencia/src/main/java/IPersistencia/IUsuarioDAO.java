@@ -16,4 +16,8 @@ public interface IUsuarioDAO {
     
     public Usuario editarUsuario(Usuario usuario);
     
+    public Usuario consultarUsuarioPorId(Long id);
+    
+    public Usuario actualizarUsuario(Usuario usuario); 
+    
 }

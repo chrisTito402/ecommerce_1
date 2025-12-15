@@ -13,7 +13,7 @@ public class UsuarioMapper {
     public UsuarioDTO toDTO(Usuario usuario) {
         UsuarioDTO dto = new UsuarioDTO();
 
-        dto.setIdUsuario(usuario.getId().intValue());
+        dto.setIdUsuario(usuario.getId());
         dto.setNombre(usuario.getNombre());
         dto.setTelefono(usuario.getTelefono());
         dto.setDireccion(usuario.getDireccion());
