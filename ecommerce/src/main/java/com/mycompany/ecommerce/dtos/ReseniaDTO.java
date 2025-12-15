@@ -41,4 +41,10 @@ public class ReseniaDTO {
     public int getRating() {
         return rating;
     }
+
+    @Override
+    public String toString() {
+        return "ReseniaDTO{" + "idResenia=" + idResenia + ", usuarioDTO=" + usuarioDTO + ", productoDTO=" + productoDTO + ", comentario=" + comentario + ", rating=" + rating + '}';
+    }
+    
 }

@@ -31,7 +31,7 @@
             </section>
             <section id="seccion-comentarios" class="ordenar">
                 <div class="comentarios">
-                    <table>
+                    <table id="tabla-resenias">
                         <c:forEach items="${requestScope.resenias}" var="resenia" begin="0" end="${requestScope.resenias.size()}">
                             <tr>
                                 <th>Icon</th>
