@@ -31,6 +31,26 @@ public class ProductoBO {
         return listaProductoDTO;
     }
 
+    public List<ProductoDTO> consultarProductos(String nombre) {
+        ProductoMapper productoMapper = new ProductoMapper();
+        List<Producto> listaProducto = persistencia.consultarProductos(nombre);
+        List<ProductoDTO> listaProductoDTO = new ArrayList<>();
+        for (Producto producto : listaProducto) {
+            listaProductoDTO.add(productoMapper.toDTO(producto));
+        }
+        return listaProductoDTO;
+    }
+    
+    public List<ProductoDTO> consultarProductosPorCategoria(String categoria) {
+        ProductoMapper productoMapper = new ProductoMapper();
+        List<Producto> listaProducto = persistencia.consultarProductosPorCategoria(categoria);
+        List<ProductoDTO> listaProductoDTO = new ArrayList<>();
+        for (Producto producto : listaProducto) {
+            listaProductoDTO.add(productoMapper.toDTO(producto));
+        }
+        return listaProductoDTO;
+    }
+    
     public ProductoDTO consultarProducto(int idProducto) {
         ProductoMapper productoMapper = new ProductoMapper();
         Producto producto = persistencia.consultarProducto(idProducto);

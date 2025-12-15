@@ -16,7 +16,7 @@ public class pruebaBO {
     public static void main(String[] args) {
         IPersistencia persistencia = new PersistenciaDAO();
         ProductoBO productosBO = new ProductoBO(persistencia);
-        List<ProductoDTO> productosDTO = productosBO.consultarProductos();
+        List<ProductoDTO> productosDTO = productosBO.consultarProductosPorCategoria("POP");
         System.out.println(productosDTO);
         
     }

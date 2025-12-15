@@ -19,6 +19,10 @@ public interface IPersistencia {
     public Usuario editarUsuario(Usuario usuario);
     
     public List<Producto> consultarProductos();
+    
+    public List<Producto> consultarProductos(String nombre);
+    
+    public List<Producto> consultarProductosPorCategoria(String categoria);
 
     public List<Resenia> consultarReseniasDeProducto(int idProducto);
     
