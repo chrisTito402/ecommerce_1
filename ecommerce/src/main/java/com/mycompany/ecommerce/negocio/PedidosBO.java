@@ -24,7 +24,14 @@ public class PedidosBO {
         this.persistencia = persistencia;
     }
     
-    public void crearPedido(PedidoDTO pedido) {
+    public void crearPedido(PedidoDTO pedido) throws Exception {
+        for (DetallesPedidosDTO detalles : pedido.getDetallesPedido()) {
+            if (detalles.getProducto().getCantidad() <= 0) {
+                throw new Exception("Error, cantidad fuera de rango.");
+            }
+        }
+        
+        
         Pedido p = new Pedido();
         p.setFechaPedido(LocalDateTime.now());
         UsuarioMapper usuarioMapper = new UsuarioMapper();

@@ -73,7 +73,9 @@ public class Carrito1Resource {
         UsuarioDTO usuario = (UsuarioDTO) request.getSession().getAttribute(AuthFilter.SESSION_KEY_USUARIO);
         
         ProductoDTO producto = productoBO.consultarProducto(idProducto);
-        usuario.getCarrito().agregarProducto(producto);
+        if (!usuario.getCarrito().obtenerCarrito().contains(producto)) {
+            usuario.getCarrito().agregarProducto(producto);
+        }
     }
     
     @DELETE

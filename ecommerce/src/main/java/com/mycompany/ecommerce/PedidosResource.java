@@ -51,7 +51,7 @@ public class PedidosResource {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public void postJson(PedidoDTO pedido, @Context HttpServletRequest request) {
+    public void postJson(PedidoDTO pedido, @Context HttpServletRequest request) throws Exception {
         UsuarioDTO usuario = (UsuarioDTO) request.getSession().getAttribute(AuthFilter.SESSION_KEY_USUARIO);
         pedido.setUsuario(usuario);
         

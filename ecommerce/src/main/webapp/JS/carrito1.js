@@ -18,12 +18,12 @@ window.onload = () => {
         obtenerResumenCompra();
     };
 
-    const realizarCompra = () => {
+    const realizarCompra = (cantidad) => {
         let productosCompra = [];
         productos.forEach(p => {
             let detalle = {
                 producto: p,
-                cantidad: 1
+                cantidad: p.cantidad
             };
             productosCompra.push(detalle);
         });
@@ -139,6 +139,7 @@ window.onload = () => {
             const pPrecio = document.createElement("p");
             const btnEliminar = document.createElement("button");
             const iTrash = document.createElement("i");
+            const inpCantidad = document.createElement("input");
 
             divProducto.setAttribute("class", "producto");
             img.setAttribute("src", producto.rutaImg);
@@ -149,6 +150,7 @@ window.onload = () => {
             btnEliminar.setAttribute("class", "btn-eliminar");
             btnEliminar.setAttribute("data-id", producto.idProducto);
             iTrash.setAttribute("class", "fa fa-trash");
+            inpCantidad.setAttribute("type", "number");
 
             pNombre.innerHTML = producto.nombre;
             pPrecio.innerHTML = producto.precio;
@@ -159,9 +161,14 @@ window.onload = () => {
             divProducto.appendChild(img);
             divProducto.appendChild(divInfo);
             divProducto.appendChild(btnEliminar);
+            divProducto.appendChild(inpCantidad);
 
             btnEliminar.onclick = () => {
                 eliminarProductoCarrito(producto);
+            };
+
+            inpCantidad.onclick = () => {
+                producto.cantidad = producto.cantidad + 1;
             };
 
             sectionProductos.appendChild(divProducto);

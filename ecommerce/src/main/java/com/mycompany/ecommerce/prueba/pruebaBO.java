@@ -37,7 +37,7 @@ public class pruebaBO {
         pedido.setTotal(100);
         
         PedidosBO bo = new PedidosBO(persistencia);
-        bo.crearPedido(pedido);
+        //bo.crearPedido(pedido);
         
     }
 }

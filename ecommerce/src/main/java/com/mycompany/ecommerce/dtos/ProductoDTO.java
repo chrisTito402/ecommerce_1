@@ -15,7 +15,8 @@ public class ProductoDTO {
     private Double precio;
     private Double estrellas;
     private List<String> categorias;
-
+    private int cantidad;
+    
     public ProductoDTO() {
     }
 
@@ -75,6 +76,36 @@ public class ProductoDTO {
 
     public void setCategorias(List<String> categorias) {
         this.categorias = categorias;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 89 * hash + this.idProducto;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final ProductoDTO other = (ProductoDTO) obj;
+        return this.idProducto == other.idProducto;
     }
 
     @Override
